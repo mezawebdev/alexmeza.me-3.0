@@ -1,0 +1,83 @@
+{
+    "showPages": false,
+    "showWorld": true,
+    "world": {
+        "backgroundColor": "#FFFFFF",
+        "camera": {
+            "initialPosition": {
+                "x": 0,
+                "y": 500,
+                "z": -2
+            }
+        },
+        "debug": {
+            "showAxis": true,
+            "axisSize": 1000
+        },
+        "objects": {
+            "showPlanets": true,
+            "showSun": true,
+            "showPlanetsRotationAxis": true,
+            "animation": {
+                "planetsRotationAxis": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            "sun": {
+                "key": "sun",
+                "diameter": 100,
+                "initialPosition": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "rotation": {
+                    "axis": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "angle": 0.01
+                }
+            },
+            "planets": [
+                {
+                    "key": "planet1",
+                    "diameter": 50,
+                    "initialPosition": {
+                        "x": 70,
+                        "y": 0,
+                        "z": 70
+                    },
+                    "rotation": {
+                        "axis": {
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                        },
+                        "angle": 0.05
+                    }
+                },
+                {
+                    "key": "planet2",
+                    "diameter": 50,
+                    "initialPosition": {
+                        "x": -130,
+                        "y": 0,
+                        "z": -130
+                    },
+                    "rotation": {
+                        "axis": {
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                        },
+                        "angle": 0.01
+                    }
+                }
+            ]
+        }
+    }
+}
