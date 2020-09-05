@@ -1,6 +1,6 @@
 const config = {
     showPages: true,
-    showWorld: true,
+    showWorld: false,
     pages:[
         {
             active: false,

@@ -1,8 +1,13 @@
 import App from "../app.config";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "../node_modules/gsap/ScrollTrigger";
 import { useEffect } from "react";
+import { useState } from "react";
+import Trigger from "../components/Utils/Trigger";
 
 const app: any = App;
+
+gsap.registerPlugin(ScrollTrigger);
 
 function iOS(): boolean {
     if (process.browser) {
@@ -20,16 +25,138 @@ function iOS(): boolean {
 }
 
 export default function Home() {
+    const [uuid, setUuid] = useState(Math.round(Math.random() * 10000));
+
     useEffect(() => {
-        gsap.to(".sp-1", { opacity: 1, y: 0, duration: 0.5, delay: 2 });
-        gsap.to(".sp-2", { opacity: 1, y: 0, duration: 0.5, delay: 2.10 });
-        gsap.to(".sp-3", { opacity: 1, y: 0, duration: 0.5, delay: 2.20 });
-        gsap.to(".sp-4", { opacity: 1, y: 0, duration: 0.5, delay: 2.30 });
-        gsap.to(".sp-5", { opacity: 1, y: 0, duration: 0.5, delay: 2.40 });
-        gsap.to(".sp-6", { opacity: 1, y: 0, duration: 0.5, delay: 2.50 });
-        gsap.to(".sp-7", { opacity: 1, y: 0, duration: 0.5, delay: 2.60 });
-        gsap.to(".sp-8", { opacity: 1, y: 0, duration: 0.5, delay: 2.70 });
-        gsap.to(".sp-9", { opacity: 1, y: 0, duration: 0.5, delay: 2.50 })
+        let tl1 = gsap.timeline({
+            onComplete: () => {
+                gsap.to(".sp-1", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: -100,
+                    y: -100,
+                    opacity: 0,
+                });
+
+                gsap.to(".sp-2", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: -75,
+                    y: -100,
+                    opacity: 0,
+                });
+        
+                gsap.to(".sp-3", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: -50,
+                    y: -100,
+                    opacity: 0,
+                });
+        
+                gsap.to(".sp-4", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: -25,
+                    y: -100,
+                    opacity: 0,
+                });
+        
+                gsap.to(".sp-5", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: 25,
+                    y: -100,
+                    opacity: 0,
+                });
+        
+                gsap.to(".sp-6", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: 50,
+                    y: -100,
+                    opacity: 0,
+                });
+        
+                gsap.to(".sp-7", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: 75,
+                    y: -100,
+                    opacity: 0,
+                });
+        
+                gsap.to(".sp-8", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    x: 100,
+                    y: -100,
+                    opacity: 0,
+                });
+
+                gsap.to(".sp-9", {
+                    scrollTrigger: {
+                        trigger: "#page--home",
+                        markers: true,
+                        scrub: true,
+                        start: "5% top",
+                        end: "bottom 50%"
+                    },
+                    y: -100,
+                    opacity: 0
+                });
+            }
+        });
+
+        tl1.to(".sp-1", { opacity: 1, y: 0, duration: 0.5, }, 0);
+        tl1.to(".sp-2", { opacity: 1, y: 0, duration: 0.5, }, 0.1);
+        tl1.to(".sp-3", { opacity: 1, y: 0, duration: 0.5, }, 0.2);
+        tl1.to(".sp-4", { opacity: 1, y: 0, duration: 0.5, }, 0.3);
+        tl1.to(".sp-5", { opacity: 1, y: 0, duration: 0.5, }, 0.4);
+        tl1.to(".sp-6", { opacity: 1, y: 0, duration: 0.5, }, 0.5);
+        tl1.to(".sp-7", { opacity: 1, y: 0, duration: 0.5, }, 0.6);
+        tl1.to(".sp-8", { opacity: 1, y: 0, duration: 0.5, }, 0.7);
+        tl1.to(".sp-9", { opacity: 1, y: 0, duration: 0.5, }, 0.8);
     }, []);
 
     return (
@@ -56,6 +183,8 @@ export default function Home() {
                     </div>
                 </div>
             </main>
+
+            <Trigger id={`trigger-${ uuid }`} />
         </div>
     );
 }

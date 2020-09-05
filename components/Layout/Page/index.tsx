@@ -1,6 +1,6 @@
 function Page(props) {
     return (
-        <div className="page">
+        <div className={`page${ props.subpage ? ' subpage' : null }`}>
             { props.children }
         </div>
     );

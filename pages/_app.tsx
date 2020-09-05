@@ -32,18 +32,6 @@ function AlexMeza({ Component, pageProps }: AppProps) {
     useEffect(() => {
         setActivePage(getCurrentPage());
 
-        {/*
-        // @ts-ignore */}
-        const controller = new ScrollMagic.Controller();
-
-        {/*
-        // @ts-ignore */}
-        const scene = new ScrollMagic.Scene({
-            duration: 500
-        }).addIndicators();
-
-        controller.addScene(scene);
-
         if (App.showWorld) {
             world = new World("canvas");
 
@@ -57,19 +45,12 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         <div id="alex-meza"> 
             <Head>
                 <title>ALEX MEZA | Web Developer</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <link rel="icon" href="/favicon.ico" />
                 {/* <script 
                     src="https://cdn.babylonjs.com/babylon.js" 
                     type="text/javascript">
                 </script> */}
-                <script
-                    src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
-                    type="text/javascript">
-                </script>
-                <script
-                    src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"
-                    type="text/javascript">
-                </script>
             </Head>
             <div className="ct">
                 <Navigation />
@@ -81,13 +62,13 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             <Page>
                 <Home />
             </Page>
-            <Page>
+            <Page subpage={true}>
                 <About />
             </Page>
-            <Page>
+            <Page subpage={true}>
                 <Work />
             </Page>
-            <Page>
+            <Page subpage={true}>
                 <Contact />
             </Page>
         </div>
