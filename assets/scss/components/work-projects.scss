@@ -4,11 +4,29 @@
     grid-template-columns : 1fr 1fr;
 
     .work-project {
-        position : relative;
-        height   : 100px;
+        position   : relative;
+        height     : 125px;
+        margin-top : -20px;
+
+        @media (min-width : $breakpoint-xsm) {
+            height : 150px;
+        }
+
+        @media (min-width : $breakpoint-md) {
+            height : 200px;
+        }
+
+        @media (min-width : $breakpoint-xmd) {
+            height : 250px;
+        }
+
+        &:first-child {
+            margin-top : 0px;
+        }
 
         &:nth-child(odd) {
             grid-column : 2;
+            left        : -40px;
         }
 
         &:nth-child(3) {
@@ -29,10 +47,9 @@
 
         .project-contents {
             background : rgba(0, 0, 0, 0.4);
-            width      : 100%;
+            width      : calc(100% + 40px);
             position   : absolute;
-            height     : 125%;
-            outline    : 1px solid blue;
+            height     : 100%;
         }
     }
 }

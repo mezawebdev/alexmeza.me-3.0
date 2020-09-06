@@ -6,7 +6,7 @@ import Field from "../components/Blocks/Field";
 export default function Contact() {
     return (
         <div id="page--contact">
-            <Header>CONTACT</Header>
+            <Header align="left">CONTACT</Header>
             <Body>
                 <div className="contact-form">
                     <div className="ct">

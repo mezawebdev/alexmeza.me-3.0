@@ -1,13 +1,14 @@
 body {
     // font-family : "Stellar-Light", Helvetica, sans-serif;
-    font-family : "Helvetica Neue", Helvetica, sans-serif;
+    font-family : "Stellar-Light", Helvetica, sans-serif;
     color       : white;
     // overflow    : hidden;
-    font-weight    : 100;
+    font-weight    : 200;
     box-sizing     : border-box;
     background     : rgb(50, 50, 50);
     line-height    : 1.5;
     letter-spacing : 1px;
+    font-size      : 0.9em;
 
     @media (min-width : $breakpoint-xsm) {
         font-size : 1.1em;
@@ -33,11 +34,11 @@ h1 {
     font-family : "Blanka-Regular", Hevetica, sans-serif;
 }
 
-h3 {
-    margin      : 0;
-    line-height : 1;
-    font-family : "Blanka-Regular", Hevetica, sans-serif;
-}
+// h3 {
+//     margin      : 0;
+//     line-height : 1;
+//     // font-family : "Blanka-Regular", Hevetica, sans-serif;
+// }
 
 h1,
 h2,
@@ -47,6 +48,7 @@ h5,
 h6 {
     line-height : 1;
     margin      : 0;
+    font-family : "Stellar-Light", Hevetica, sans-serif;
 }
 
 .ct {

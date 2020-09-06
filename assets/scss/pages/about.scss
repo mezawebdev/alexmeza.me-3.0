@@ -2,72 +2,159 @@
     height : 100%;
 
     .body {
-        img {
-            width : 78%;
-            max-width : 500px
-        }
-
-        .about-me-wrapper {
-            width           : 100%;
-            box-sizing      : border-box;
-            margin-top      : -50px;
-            display         : flex;
-            justify-content : flex-end;
+        .about-block {
+            width      : 100%;
+            box-sizing : border-box;
+            margin-top : -20px;
 
             @media (min-width : $breakpoint-md) {
-                margin-top : -75px;
+                margin-top : -20px;
             }
 
-            @media (min-width : $breakpoint-xmd) {
-                margin-top : -100px;
+            &.right {
+                justify-content : flex-end;
+                display         : flex;
             }
 
-            @media (min-width : $breakpoint-lg) {
-                margin-top : -125px;
+            &.center {
+                display         : flex;
+                justify-content : center;
             }
 
-            .about-me {
+            &.bottom-padding {
+                .block-content {
+                    padding-bottom : 35px;
+
+                    @media (min-width : $breakpoint-xsm) {
+                        padding-bottom : 45px;
+                    }
+    
+                    @media (min-width : $breakpoint-md) {
+                        padding-bottom : 55px;
+                    }
+    
+                    @media (min-width : $breakpoint-xmd) {
+                        padding-bottom : 60px;
+                    }
+                }
+            }
+
+            .block-content {
                 background : rgba(0, 0, 0, 0.75);
-                width      : 75%;
+                width      : 45%;
                 position   : relative;
-                padding    : 15px;
+                padding    : 25px;
                 max-width  : 500px;
 
+                @media (min-width : $breakpoint-xsm) {
+                    padding : 35px;
+                    width   : 65%;
+                }
+
                 @media (min-width : $breakpoint-md) {
-                    padding : 25px;
+                    padding : 45px;
                     width   : 80%;
                 }
 
                 @media (min-width : $breakpoint-xmd) {
-                    padding : 30px;
+                    padding : 50px;
                 }
 
-                @media (min-width : $breakpoint-lg) {
-                    padding : 40px;
+                h4 {
+                    font-weight : 300;
+                    font-size   : 1.25em;
+                    text-align  : center;
+                }
+            }
+        }
+
+        .row-1 {
+            margin-bottom : 0px;
+
+            @media (min-width : $breakpoint-xsm) {
+                margin-bottom : -50px;
+            }
+
+            @media (min-width : $breakpoint-md) {
+                margin-bottom : -80px;
+            }
+
+            @media (min-width : $breakpoint-xmd) {
+                margin-bottom : -100px;
+            }
+
+            .profile {
+                width     : 100%;
+                max-width : 600px;
+
+                @media (min-width : $breakpoint-xsm) {
+                    width : 78%;
+                }
+            }
+        }
+
+        .row-2 {
+            .bolded {
+                font-weight : 400;
+            }
+
+            .code-is-art {
+                display       : block;
+                margin-bottom : 20px;
+                font-style    : italic;
+                font-size     : 1.3em;
+                font-weight   : 200;
+            }
+        }
+
+        .row-4 {
+            .block-content {
+                width : 55%;
+            }
+
+            .list {
+                display               : grid;
+                grid-gap              : 15px;
+                grid-template-columns : repeat(3, 1fr);
+                grid-template-rows    : repeat(5, 39px);
+                margin-top            : 30px;
+
+                @media (min-width : $breakpoint-xsm) {
+                    grid-template-columns : repeat(4, 1fr);
+                    grid-template-rows    : repeat(4, 39px);
+                    margin-top            : 50px;
                 }
 
-                .bolded {
-                    font-weight : 400;
+                @media (min-width : $breakpoint-md) {
+                    grid-template-columns : repeat(5, 1fr);
+                    grid-gap              : 20px;
+                    grid-template-rows    : repeat(3, 39px);
                 }
 
-                .code-is-art {
-                    display       : block;
-                    margin-bottom : 20px;
-                    font-style    : italic;
-                    font-size     : 1.3em;
-                    font-weight   : 200;
+                @media (min-width : $breakpoint-xmd) {
+                    grid-template-columns : repeat(4, 1fr);
+                    grid-template-rows    : repeat(4, 70px);
+                    grid-gap : 25px;
                 }
 
-                .technologies {
-                    margin-top : 20px;
+                .tech {
+                    display            : grid;
+                    grid-template-rows : 1fr 1fr;
+                    text-align         : center;
+                    font-size          : 0.75em;
 
-                    .list {
-                        display               : grid;
-                        grid-template-columns : 1fr 1fr 1fr;
+                    &:nth-child(7) {
+                        img {
+                            filter : invert(100%);
+                        }
+                    }
 
-                        .tech {
-                            display               : grid;
-                            grid-template-columns : 1fr 1fr;
+                    img {
+                        // width : 20px;
+                        height : 20px;
+
+                        @media (min-width : $breakpoint-xmd) {
+                            height : 50px;
                         }
                     }
                 }

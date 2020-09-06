@@ -1,6 +1,6 @@
 const config = {
     showPages: true,
-    showWorld: false,
+    showWorld: true,
     pages:[
         {
             active: false,
@@ -83,6 +83,14 @@ const config = {
         {
             label: "Wordpress",
             image: "/assets/images/wordpress.png"
+        },
+        {
+            label: "Sass",
+            image: "/assets/images/sass.png"
+        },
+        {
+            label: "Bootstrap",
+            image: "/assets/images/bootstrap.png"
         }
     ],
     world: {

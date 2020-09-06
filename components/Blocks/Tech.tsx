@@ -1,6 +1,6 @@
 export default function Tech(props) {
     return (
-        <div className="tech">
+        <div className={`tech ${ props.label }`}>
             <div>
                 <img src={props.image} />
             </div>  
