@@ -9,11 +9,11 @@ import config from "../app.config";
 import Navigation from "../components/Navigation/Navigation";
 import Router from "next/router";
 import Page from "../components/Layout/Page";
+import Pages from "../components/Layout/Pages";
 import Home from "./home";
 import About from "../subpages/about";
 import Work from "../subpages/work";
 import Contact from "../subpages/contact";
-// import ScrollMagic from "scrollmagic";
 
 let world: World,
     App: any = config;
@@ -47,30 +47,25 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <title>ALEX MEZA | Web Developer</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <link rel="icon" href="/favicon.ico" />
-                {/* <script 
-                    src="https://cdn.babylonjs.com/babylon.js" 
-                    type="text/javascript">
-                </script> */}
             </Head>
-            <div className="ct">
-                <Navigation />
-            </div>
+            <Navigation />
             <canvas id="canvas"></canvas>
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
             {/* { App.showPages ? <Component {...pageProps} /> : null } */}
-            {/* <div id="pinned"></div> */}
-            <Page>
-                <Home />
-            </Page>
-            <Page subpage={true}>
-                <About />
-            </Page>
-            <Page subpage={true}>
-                <Work />
-            </Page>
-            <Page subpage={true}>
-                <Contact />
-            </Page>
+            <Pages>
+                <Page>
+                    <Home />
+                </Page>
+                <Page subpage={true}>
+                    <About />
+                </Page>
+                <Page subpage={true}>
+                    <Work />
+                </Page>
+                <Page subpage={true}>
+                    <Contact />
+                </Page>
+            </Pages>
         </div>
     );
 }

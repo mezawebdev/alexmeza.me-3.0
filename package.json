@@ -11,6 +11,7 @@
     "babylonjs": "^4.1.0",
     "babylonjs-materials": "^4.1.0",
     "gsap": "^3.5.1",
+    "locomotive-scroll": "^3.6.1",
     "next": "9.5.2",
     "normalize.css": "^8.0.1",
     "react": "16.13.1",

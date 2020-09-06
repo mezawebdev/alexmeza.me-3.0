@@ -23,6 +23,68 @@ const config = {
             label: "CONTACT"
         }
     ],
+    projects: [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+    ],
+    technologies: [
+        {
+            label: "HTML5",
+            image: "/assets/images/html5-white.png"
+        },
+        {
+            label: "CSS3",
+            image: "/assets/images/css3-white.png"
+        },
+        {
+            label: "JavaScript",
+            image: "/assets/images/js-white.png"
+        },
+        {
+            label: "Vue.js",
+            image: "/assets/images/vue.png"
+        },
+        {
+            label: "Nuxt.js",
+            image: "/assets/images/nuxtjs.svg"
+        },
+        {
+            label: "React.js",
+            image: "/assets/images/react.png"
+        },
+        {
+            label: "Next.js",
+            image: "/assets/images/nextjs.png"
+        },
+        {
+            label: "Babylon.js",
+            image: "/assets/images/babylonjs.png"
+        },
+        {
+            label: "Node.js",
+            image: "/assets/images/nodejs.svg"
+        },
+        {
+            label: "MySQL",
+            image: "/assets/images/mysql.png"
+        },
+        {
+            label: "PHP",
+            image: "/assets/images/php.png"
+        },
+        {
+            label: "Laravel",
+            image: "/assets/images/laravel.png"
+        },
+        {
+            label: "Wordpress",
+            image: "/assets/images/wordpress.png"
+        }
+    ],
     world: {
         backgroundColor: "#FFFFFF",
         scale: 0.0002,

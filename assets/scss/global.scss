@@ -1,10 +1,17 @@
 body {
     // font-family : "Stellar-Light", Helvetica, sans-serif;
-    font-family : "Yantramanav", Helvetica, sans-serif;
+    font-family : "Helvetica Neue", Helvetica, sans-serif;
     color       : white;
     // overflow    : hidden;
-    font-weight : 100;
-    background  : black;
+    font-weight    : 100;
+    box-sizing     : border-box;
+    background     : rgb(50, 50, 50);
+    line-height    : 1.5;
+    letter-spacing : 1px;
+
+    @media (min-width : $breakpoint-xsm) {
+        font-size : 1.1em;
+    }
 }
 
 canvas {
@@ -22,7 +29,24 @@ button {
 
 h1 {
     margin      : 0;
+    line-height : 1;
     font-family : "Blanka-Regular", Hevetica, sans-serif;
+}
+
+h3 {
+    margin      : 0;
+    line-height : 1;
+    font-family : "Blanka-Regular", Hevetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height : 1;
+    margin      : 0;
 }
 
 .ct {

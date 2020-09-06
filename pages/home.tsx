@@ -7,6 +7,8 @@ import Trigger from "../components/Utils/Trigger";
 
 const app: any = App;
 
+const debug: boolean = false;
+
 gsap.registerPlugin(ScrollTrigger);
 
 function iOS(): boolean {
@@ -33,8 +35,8 @@ export default function Home() {
                 gsap.to(".sp-1", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -46,8 +48,8 @@ export default function Home() {
                 gsap.to(".sp-2", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -59,8 +61,8 @@ export default function Home() {
                 gsap.to(".sp-3", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -72,8 +74,8 @@ export default function Home() {
                 gsap.to(".sp-4", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -85,8 +87,8 @@ export default function Home() {
                 gsap.to(".sp-5", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -98,8 +100,8 @@ export default function Home() {
                 gsap.to(".sp-6", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -111,8 +113,8 @@ export default function Home() {
                 gsap.to(".sp-7", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -124,8 +126,8 @@ export default function Home() {
                 gsap.to(".sp-8", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -137,8 +139,8 @@ export default function Home() {
                 gsap.to(".sp-9", {
                     scrollTrigger: {
                         trigger: "#page--home",
-                        markers: true,
-                        scrub: true,
+                        markers: debug,
+                        scrub: 0.5,
                         start: "5% top",
                         end: "bottom 50%"
                     },
@@ -162,29 +164,25 @@ export default function Home() {
     return (
         <div id="page--home">
             <main>
-                <div className="ct">
-                    <div className="content">
-                        <div className="centered">
-                            <div className="title">
-                                <h1>
-                                    <span className="sp-1">A</span>
-                                    <span className="sp-2">L</span>
-                                    <span className="sp-3">E</span>
-                                    <span className="sp-4">X</span>
-                                    &nbsp;
-                                    <span className="sp-5">M</span>
-                                    <span className="sp-6">E</span>
-                                    <span className="sp-7">Z</span>
-                                    <span className="sp-8">A</span>
-                                </h1>
-                                <h2 className="sp-9">Web Developer</h2>
-                            </div>
+                <div className="content">
+                    <div className="centered">
+                        <div className="title">
+                            <h1>
+                                <span className="sp-1">A</span>
+                                <span className="sp-2">L</span>
+                                <span className="sp-3">E</span>
+                                <span className="sp-4">X</span>
+                                &nbsp;
+                                <span className="sp-5">M</span>
+                                <span className="sp-6">E</span>
+                                <span className="sp-7">Z</span>
+                                <span className="sp-8">A</span>
+                            </h1>
+                            <h2 className="sp-9">Web Developer</h2>
                         </div>
                     </div>
                 </div>
             </main>
-
-            <Trigger id={`trigger-${ uuid }`} />
         </div>
     );
 }

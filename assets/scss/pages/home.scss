@@ -25,6 +25,10 @@
                         font-family    : "Blanka-Regular", Helvetica, sans-serif;
                         letter-spacing : 5px;
                         white-space    : nowrap;
+
+                        @media (min-width : $breakpoint-xsm) {
+                            font-size : 4em;
+                        }
                         
                         @media (min-width : $breakpoint-md) {
                             font-size      : 6em;
@@ -42,9 +46,9 @@
                         }
 
                         span {
-                            opacity   : 0;
+                            // opacity   : 0;
                             display   : inline-block;
-                            transform : translateY(-20px);
+                            // transform : translateY(-20px);
                         }
                     }
 
@@ -53,8 +57,8 @@
                         margin-top  : 10px;
                         font-size   : 1.3em;
                         font-weight : 100;
-                        opacity     : 0;
-                        transform   : translateY(-20px);
+                        // opacity     : 0;
+                        // transform   : translateY(-20px);
                         display     : inline-block;
 
                         @media (min-width : $breakpoint-md) {

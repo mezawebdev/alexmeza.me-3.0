@@ -1,6 +1,9 @@
 #page--contact {
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    height          : 100%;
+    .body {
+        .fields {
+            .field {
+                // width : calc(100% - 25px);
+            }
+        }
+    }
 }

@@ -1,0 +1,38 @@
+.work-projects {
+    display               : grid;
+    width                 : 100%;
+    grid-template-columns : 1fr 1fr;
+
+    .work-project {
+        position : relative;
+        height   : 100px;
+
+        &:nth-child(odd) {
+            grid-column : 2;
+        }
+
+        &:nth-child(3) {
+            grid-row : 3;
+        }
+
+        &:nth-child(4) {
+            grid-row : 4;
+        }
+
+        &:nth-child(5) {
+            grid-row : 5;
+        }
+
+        &:nth-child(6) {
+            grid-row : 6;
+        }
+
+        .project-contents {
+            background : rgba(0, 0, 0, 0.4);
+            width      : 100%;
+            position   : absolute;
+            height     : 125%;
+            outline    : 1px solid blue;
+        }
+    }
+}

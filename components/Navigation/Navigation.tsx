@@ -11,11 +11,13 @@ export default function Navigation() {
 
     return (
         <div id="navigation">
-            {
-                app.pages.map((page, i) => {
-                    return <button key={i}>{ page.label }</button>
-                })
-            }
+            <div className="ct">
+                <div className="inner">
+                    {app.pages.map((page, i) => {
+                        return <button key={i}>{ page.label }</button>
+                    })}
+                </div>
+            </div>
         </div>
     );
 }

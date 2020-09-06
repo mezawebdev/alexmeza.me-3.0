@@ -1,6 +1,6 @@
 function Page(props) {
     return (
-        <div className={`page${ props.subpage ? ' subpage' : null }`}>
+        <div className={`page${ props.subpage ? ' subpage' : '' }${ props.autoHeight ? ' auto-height' : '' }`}>
             { props.children }
         </div>
     );

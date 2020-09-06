@@ -1,31 +1,77 @@
 #page--about {
-    height      : 100%;
-    outline     : 1px solid blue;
+    height : 100%;
 
-    .header {
-        position : absolute;
-        top      : 90px;
-    }
-
-    .content {
-        // outline : 1px solid blue;
-        height      : 100%;
-        align-items : center;
-        display     : flex;
-        position    : relative;
-        top         : 50px;
-
+    .body {
         img {
-            width : 250px;
+            width : 78%;
+            max-width : 500px
         }
 
-        .about-me {
-            background : rgb(0, 100, 150);
-            width      : 85%;
-            position   : relative;
-            right      : -25px;
-            top        : -20px;
-            padding    : 10px;
+        .about-me-wrapper {
+            width           : 100%;
+            box-sizing      : border-box;
+            margin-top      : -50px;
+            display         : flex;
+            justify-content : flex-end;
+
+            @media (min-width : $breakpoint-md) {
+                margin-top : -75px;
+            }
+
+            @media (min-width : $breakpoint-xmd) {
+                margin-top : -100px;
+            }
+
+            @media (min-width : $breakpoint-lg) {
+                margin-top : -125px;
+            }
+
+            .about-me {
+                background : rgba(0, 0, 0, 0.75);
+                width      : 75%;
+                position   : relative;
+                padding    : 15px;
+                max-width  : 500px;
+
+                @media (min-width : $breakpoint-md) {
+                    padding : 25px;
+                    width   : 80%;
+                }
+
+                @media (min-width : $breakpoint-xmd) {
+                    padding : 30px;
+                }
+
+                @media (min-width : $breakpoint-lg) {
+                    padding : 40px;
+                }
+
+                .bolded {
+                    font-weight : 400;
+                }
+
+                .code-is-art {
+                    display       : block;
+                    margin-bottom : 20px;
+                    font-style    : italic;
+                    font-size     : 1.3em;
+                    font-weight   : 200;
+                }
+
+                .technologies {
+                    margin-top : 20px;
+
+                    .list {
+                        display               : grid;
+                        grid-template-columns : 1fr 1fr 1fr;
+
+                        .tech {
+                            display               : grid;
+                            grid-template-columns : 1fr 1fr;
+                        }
+                    }
+                }
+            }
         }
     }
 }

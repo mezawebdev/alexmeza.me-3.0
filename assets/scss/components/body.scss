@@ -1,0 +1,7 @@
+.body {
+    margin-top : 35px;
+
+    @media (min-width : $breakpoint-xsm) {
+        margin-top : 50px;
+    }
+}
