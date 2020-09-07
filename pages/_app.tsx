@@ -15,6 +15,7 @@ import About from "../subpages/about";
 import Work from "../subpages/work";
 import Contact from "../subpages/contact";
 
+
 let world: World,
     App: any = config;
 
@@ -47,6 +48,13 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <title>ALEX MEZA | Web Developer</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+                <script
+                    src="https://code.jquery.com/jquery-3.5.1.min.js"
+                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                    crossOrigin="anonymous">
+                </script>
+                <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             </Head>
             <Navigation />
             <canvas id="canvas"></canvas>

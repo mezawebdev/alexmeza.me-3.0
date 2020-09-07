@@ -1,0 +1,47 @@
+.infinite-slider {
+    box-shadow : 0 10px 20px -5px rgba(0, 0, 0, .125);
+    overflow   : hidden;
+    position   : relative;
+    width      : 100%;
+    // outline    : 1px solid rgb(66, 40, 40);
+
+    *:focus {
+        outline : none;
+    }
+
+    // &:before {
+    //     content         : "";
+    //     position        : absolute;
+    //     left            : 0px;
+    //     top             : 0px;
+    //     height          : 100%;
+    //     // background      : linear-gradient(-90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+    //     z-index         : 10;
+    //     // backdrop-filter : blur(10px);
+    //     width           : 50px;
+    // }
+
+    // &:after {
+    //     content         : "";
+    //     position        : absolute;
+    //     right           : 0px;
+    //     top             : 0px;
+    //     height          : 100%;
+    //     // backdrop-filter : blur(10px);
+    //     // background      : linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));;
+    //     z-index         : 10;
+    //     width           : 50px;
+    // }
+
+    .slick-dawg {
+        .slide {
+            display         : flex;
+            justify-content : center;
+            // width           : 150px;
+            
+            img {
+                height : 75px;
+            }
+        }
+    }
+}
