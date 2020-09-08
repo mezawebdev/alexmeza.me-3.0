@@ -57,15 +57,19 @@
                 opacity             : 0;
 
                 @media (min-width : $breakpoint-xsm) {
-                    height : 150px;
-                }
-
-                @media (min-width : $breakpoint-md) {
                     height : 200px;
                 }
 
-                @media (min-width : $breakpoint-xmd) {
+                @media (min-width : $breakpoint-md) {
                     height : 250px;
+                }
+
+                @media (min-width : $breakpoint-xmd) {
+                    height : 300px;
+                }
+
+                @media (min-width : $breakpoint-lg) {
+                    height : 340px;
                 }
             }
         }

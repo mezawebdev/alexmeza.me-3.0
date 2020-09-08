@@ -11,35 +11,112 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Work() {
     const professionalProjects = useRef(null);
+    const personalProjects = useRef(null);
+    const experimentalProjects = useRef(null);
 
     useEffect(() => {
         let tl = gsap.timeline(),
-            tl2 = gsap.timeline();
+            tl2 = gsap.timeline({
+                clearProps: "all"
+            }),
+            tl3 = gsap.timeline(),
+            tl4 = gsap.timeline({
+                clearProps: "all"
+            }),
+            tl5 = gsap.timeline(),
+            positionOffset = 1.1,
+            parallaxSpeed = -50;
 
         tl.to(".sp-1", { opacity: 1, y: 0, duration: 0.5 });
         tl.to(".sp-2", { opacity: 1, y: 0, duration: 0.5 }, 0.1);
         tl.to(".sp-3", { opacity: 1, y: 0, duration: 0.5 }, 0.2);
         tl.to(".sp-4", { opacity: 1, y: 0, duration: 0.5 }, 0.3);
-
-        console.log(professionalProjects.current.children);
+        tl.to(".sp-5", { opacity: 1, y: 0, duration: 0.5 }, 0.8);
 
         for (let i = 0; i < professionalProjects.current.children.length; i++) {
-            let current = professionalProjects.current.children[i].children[0],
-                isOdd = i % 2 === 0;
+            let current = professionalProjects.current.children[i].children[0];
             
             tl2.to(current, {
                 opacity: 1,
                 duration: 1,
                 x: 0,
                 y: 0,
-                scrollTrigger: {
-                    trigger: "#page--home",
-                    markers: true,
-                    scrub: 1,
-                    start: "top top",
-                    end: "bottom bottom"
+                onComplete: () => {
+                    tl3.to(current, {
+                        duration: 0.25,
+                        opacity: 1,
+                        y: parallaxSpeed * (i + 1),
+                        scrollTrigger: {
+                            trigger: ".professional",
+                            scrub: 1,
+                            start: "top 50%",
+                            end: "100% 100%"
+                        }
+                    });
                 }
-            });
+            }, positionOffset + (0.1 * i));
+        }
+
+        for (let i = 0; i < personalProjects.current.children.length; i++) {
+            let current = personalProjects.current.children[i].children[0];
+            
+            tl4.to(current, {
+                opacity: 1,
+                duration: 1,
+                x: 0,
+                y: 0,
+                scrollTrigger: {
+                    trigger: current,
+                    scrub: 1,
+                    once: true,
+                    start: "0% 55%",
+                    end: "50% 100%"
+                },
+                onComplete: () => {
+                    tl5.to(current, {
+                        duration: 0.25,
+                        opacity: 1,
+                        y: parallaxSpeed * (i + 1),
+                        scrollTrigger: {
+                            trigger: "#page--work",
+                            scrub: 1,
+                            start: "50% 0%",
+                            end: "100% 100%"
+                        }
+                    });
+                }
+            }, positionOffset + (0.1 * i));
+        }
+
+        for (let i = 0; i < experimentalProjects.current.children.length; i++) {
+            let current = experimentalProjects.current.children[i].children[0];
+            
+            tl4.to(current, {
+                opacity: 1,
+                duration: 1,
+                x: 0,
+                y: 0,
+                scrollTrigger: {
+                    trigger: current,
+                    scrub: 1,
+                    once: true,
+                    start: "0% 55%",
+                    end: "50% 100%"
+                },
+                onComplete: () => {
+                    tl5.to(current, {
+                        duration: 0.25,
+                        opacity: 1,
+                        y: parallaxSpeed * (i + 1),
+                        scrollTrigger: {
+                            trigger: "#page--work",
+                            scrub: 1,
+                            start: "50% 0%",
+                            end: "100% 100%"
+                        }
+                    });
+                }
+            }, positionOffset + (0.1 * i));
         }
     }, []);
 
@@ -56,7 +133,7 @@ export default function Work() {
             <Body>
                 <div className="ct">
                     <WorkProjects>
-                        <h4>PROFESSIONAL</h4>
+                        <h4 className="sp-5">PROFESSIONAL</h4>
                         <div 
                             ref={professionalProjects}
                             className="professional project-list">
@@ -74,7 +151,9 @@ export default function Work() {
                             })}
                         </div>
                         <h4>PERSONAL</h4>
-                        <div className="personal project-list">
+                        <div 
+                            ref={personalProjects}
+                            className="personal project-list">
                             {App.projects.map((project, i) => {
                                 return (
                                     project.type === "personal" ?
@@ -89,7 +168,9 @@ export default function Work() {
                             })}
                         </div>
                         <h4>EXPERIMENTAL</h4>
-                        <div className="experimental project-list">
+                        <div 
+                            ref={experimentalProjects}
+                            className="experimental project-list">
                             {App.projects.map((project, i) => {
                                 return (
                                     project.type === "experimental" ?
