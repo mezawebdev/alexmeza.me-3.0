@@ -1,9 +1,9 @@
-export default function WorkProject() {
+export default function WorkProject(props) {
     return (
-        <div className="work-project">
-            <div className="project-contents box-shadow global-border-radius">
-
-            </div>
+        <div
+            style={{backgroundImage: `url(${ props.thumbnail })`}}
+            className="work-project box-shadow">
+            
         </div>
     );
 }

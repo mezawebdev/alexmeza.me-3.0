@@ -24,12 +24,96 @@ const config = {
         }
     ],
     projects: [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
+        {
+            type: "professional",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "professional",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "professional",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "professional",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "personal",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "personal",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "personal",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "personal",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "experimental",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        },
+        {
+            type: "experimental",
+            title: "",
+            description: "",
+            misc: "",
+            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            images: [],
+            technologies: []
+        }
     ],
     technologies: [
         {

@@ -22,12 +22,14 @@
     }
 
     .decor {
-        display    : inline-block;
-        height     : 5px;
-        position   : relative;
-        width      : 50px;
-        background : white;
-        top        : -11px;
+        display         : inline-block;
+        height          : 5px;
+        position        : relative;
+        width           : 0px;
+        background      : white;
+        top             : -11px;
+        animation       : decor 0.5s ease-in-out 1 forwards;
+        animation-delay : 0.5s;
 
         &.left {
             left : 15px;
@@ -36,5 +38,17 @@
         &.right {
             right : 15px;
         }
+
+        @keyframes decor {
+            100% {
+                width : 50px;
+            }
+        }
+    }
+
+    .sp {
+        transform : translateY(-20px);
+        display   : inline-block;
+        opacity   : 0;
     }
 }

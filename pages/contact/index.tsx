@@ -1,11 +1,13 @@
-import Header from "../components/Layout/Header";
-import Body from "../components/Layout/Body";
-import Fields from "../components/Blocks/Fields";
-import Field from "../components/Blocks/Field";
+import Header from "../../components/Layout/Header";
+import Body from "../../components/Layout/Body";
+import Fields from "../../components/Blocks/Fields";
+import Field from "../../components/Blocks/Field";
 
 export default function Contact() {
     return (
-        <div id="page--contact">
+        <div 
+            className="subpage"
+            id="page--contact">
             <Header align="left">CONTACT</Header>
             <Body>
                 <div className="contact-form">

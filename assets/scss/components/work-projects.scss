@@ -1,55 +1,73 @@
 .work-projects {
-    display               : grid;
-    width                 : 100%;
-    grid-template-columns : 1fr 1fr;
+    width : 100%;
 
-    .work-project {
-        position   : relative;
-        height     : 125px;
-        margin-top : -20px;
+    h4 {
+        display       : block;
+        margin-bottom : 25px;
+        font-size     : 1.25em;
 
         @media (min-width : $breakpoint-xsm) {
-            height : 150px;
+            font-size     : 1.6em;
+            margin-bottom : 30px;
+        }
+    }
+
+    .project-list {
+        margin-bottom : 50px;
+
+        @media (min-width : $breakpoint-xsm) {
+            margin-bottom : 100px;
         }
 
-        @media (min-width : $breakpoint-md) {
-            height : 200px;
+        &:last-child {
+            margin-bottom : 0px;
         }
 
-        @media (min-width : $breakpoint-xmd) {
-            height : 250px;
-        }
+        .row {
+            width      : 100%;
+            box-sizing : border-box;
+            display    : flex;
+            margin-top : -20px;
 
-        &:first-child {
-            margin-top : 0px;
-        }
+            &:first-child {
+                margin-top : 0px;
+            }
 
-        &:nth-child(odd) {
-            grid-column : 2;
-            left        : -40px;
-        }
+            &:nth-child(even) {
+                justify-content : flex-end;
 
-        &:nth-child(3) {
-            grid-row : 3;
-        }
+                .work-project {
+                    transform : translate(20px, -5px)
+                }
+            }
 
-        &:nth-child(4) {
-            grid-row : 4;
-        }
+            &:nth-child(odd) {
+                .work-project {
+                    transform : translate(-20px, -5px);
+                }
+            }
 
-        &:nth-child(5) {
-            grid-row : 5;
-        }
+            .work-project {
+                position            : relative;
+                height              : 125px;
+                border-radius       : $global-border-radius;
+                width               : 55%;
+                background-size     : cover;
+                background-position : 50% 0%;
+                opacity             : 0;
 
-        &:nth-child(6) {
-            grid-row : 6;
-        }
+                @media (min-width : $breakpoint-xsm) {
+                    height : 150px;
+                }
 
-        .project-contents {
-            background : rgba(0, 0, 0, 0.4);
-            width      : calc(100% + 40px);
-            position   : absolute;
-            height     : 100%;
+                @media (min-width : $breakpoint-md) {
+                    height : 200px;
+                }
+
+                @media (min-width : $breakpoint-xmd) {
+                    height : 250px;
+                }
+            }
         }
     }
 }

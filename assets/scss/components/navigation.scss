@@ -90,6 +90,10 @@
                     border-top-right-radius    : 5px;
                     border-bottom-right-radius : 5px;
                 }
+
+                &.active { 
+                    background : rgb(206, 106, 106);
+                }
         
                 @media (min-width : $breakpoint-md) {
                     display         : flex;

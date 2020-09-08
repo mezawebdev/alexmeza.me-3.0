@@ -1,4 +1,3 @@
-// import '../styles/globals.css';
 import "normalize.css";
 import { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -8,12 +7,7 @@ import "../assets/scss/app.scss";
 import config from "../app.config";
 import Navigation from "../components/Navigation/Navigation";
 import Router from "next/router";
-import Page from "../components/Layout/Page";
-import Pages from "../components/Layout/Pages";
-import Home from "./home";
-import About from "../subpages/about";
-import Work from "../subpages/work";
-import Contact from "../subpages/contact";
+import { PageTransition } from 'next-page-transitions';
 
 
 let world: World,
@@ -59,21 +53,26 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             <Navigation />
             <canvas id="canvas"></canvas>
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
-            {/* { App.showPages ? <Component {...pageProps} /> : null } */}
-            <Pages>
-                <Page>
-                    <Home />
-                </Page>
-                <Page subpage={true}>
-                    <About />
-                </Page>
-                <Page subpage={true}>
-                    <Work />
-                </Page>
-                <Page subpage={true}>
-                    <Contact />
-                </Page>
-            </Pages>
+            { App.showPages ? 
+                <PageTransition timeout={300} classNames="page-transition">
+                    <Component {...pageProps} /> 
+                </PageTransition> : null }
+            <style jsx global>{`
+                .page-transition-enter {
+                    opacity: 0;
+                }
+                .page-transition-enter-active {
+                    opacity: 1;
+                    transition: opacity 300ms;
+                }
+                .page-transition-exit {
+                    opacity: 1;
+                }
+                .page-transition-exit-active {
+                    opacity: 0;
+                    transition: opacity 300ms;
+                }
+            `}</style>
         </div>
     );
 }
