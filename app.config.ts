@@ -1,6 +1,6 @@
 const config = {
     showPages: true,
-    showWorld: false,
+    showWorld: true,
     pages:[
         {
             active: false,
@@ -175,6 +175,16 @@ const config = {
         {
             label: "Bootstrap",
             image: "/assets/images/bootstrap.png"
+        }
+    ],
+    brands: [
+        {
+            label: "Rescue Agency",
+            image: "/assets/brands/rescue.svg"
+        },
+        {
+            label: "Sunsick Studio",
+            image: "/assets/brands/sunsick.png"
         }
     ],
     world: {

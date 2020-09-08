@@ -37,22 +37,30 @@ export default function Work() {
             let current = professionalProjects.current.children[i].children[0];
             
             tl2.to(current, {
-                opacity: 1,
+                opacity: 0.99,
                 duration: 1,
                 x: 0,
                 y: 0,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: current,
+                    scrub: 1,
+                    // once: true,
+                    start: "0% 90%",
+                    end: "50% 100%"
+                },
                 onComplete: () => {
-                    tl3.to(current, {
-                        duration: 0.25,
-                        opacity: 1,
-                        y: parallaxSpeed * (i + 1),
-                        scrollTrigger: {
-                            trigger: ".professional",
-                            scrub: 1,
-                            start: "top 50%",
-                            end: "100% 100%"
-                        }
-                    });
+                    // tl3.to(current, {
+                    //     duration: 0.25,
+                    //     opacity: 1,
+                    //     y: parallaxSpeed * (i + 1),
+                    //     scrollTrigger: {
+                    //         trigger: ".professional",
+                    //         scrub: 1,
+                    //         start: "top 50%",
+                    //         end: "100% 100%"
+                    //     }
+                    // });
                 }
             }, positionOffset + (0.1 * i));
         }
@@ -61,29 +69,30 @@ export default function Work() {
             let current = personalProjects.current.children[i].children[0];
             
             tl4.to(current, {
-                opacity: 1,
+                opacity: 0.99,
                 duration: 1,
                 x: 0,
                 y: 0,
+                scale: 1,
                 scrollTrigger: {
                     trigger: current,
                     scrub: 1,
-                    once: true,
-                    start: "0% 55%",
+                    // once: true,
+                    start: "0% 80%",
                     end: "50% 100%"
                 },
                 onComplete: () => {
-                    tl5.to(current, {
-                        duration: 0.25,
-                        opacity: 1,
-                        y: parallaxSpeed * (i + 1),
-                        scrollTrigger: {
-                            trigger: "#page--work",
-                            scrub: 1,
-                            start: "50% 0%",
-                            end: "100% 100%"
-                        }
-                    });
+                    // tl5.to(current, {
+                    //     duration: 0.25,
+                    //     opacity: 1,
+                    //     y: parallaxSpeed * (i + 1),
+                    //     scrollTrigger: {
+                    //         trigger: "#page--work",
+                    //         scrub: 1,
+                    //         start: "50% 0%",
+                    //         end: "100% 100%"
+                    //     }
+                    // });
                 }
             }, positionOffset + (0.1 * i));
         }
@@ -92,29 +101,30 @@ export default function Work() {
             let current = experimentalProjects.current.children[i].children[0];
             
             tl4.to(current, {
-                opacity: 1,
+                opacity: 0.99,
                 duration: 1,
                 x: 0,
                 y: 0,
+                scale: 1,
                 scrollTrigger: {
                     trigger: current,
                     scrub: 1,
-                    once: true,
-                    start: "0% 55%",
+                    // once: true,
+                    start: "0% 90%",
                     end: "50% 100%"
                 },
                 onComplete: () => {
-                    tl5.to(current, {
-                        duration: 0.25,
-                        opacity: 1,
-                        y: parallaxSpeed * (i + 1),
-                        scrollTrigger: {
-                            trigger: "#page--work",
-                            scrub: 1,
-                            start: "50% 0%",
-                            end: "100% 100%"
-                        }
-                    });
+                    // tl5.to(current, {
+                    //     duration: 0.25,
+                    //     opacity: 1,
+                    //     y: parallaxSpeed * (i + 1),
+                    //     scrollTrigger: {
+                    //         trigger: "#page--work",
+                    //         scrub: 1,
+                    //         start: "50% 0%",
+                    //         end: "100% 100%"
+                    //     }
+                    // });
                 }
             }, positionOffset + (0.1 * i));
         }

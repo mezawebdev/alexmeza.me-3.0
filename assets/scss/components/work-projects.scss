@@ -37,13 +37,13 @@
                 justify-content : flex-end;
 
                 .work-project {
-                    transform : translate(20px, -5px)
+                    transform : translate(200px, -5px) scale(0.5);
                 }
             }
 
             &:nth-child(odd) {
                 .work-project {
-                    transform : translate(-20px, -5px);
+                    transform : translate(-200px, -5px) scale(0.5);
                 }
             }
 

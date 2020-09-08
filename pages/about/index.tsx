@@ -54,7 +54,7 @@ export default function About(props) {
                                 <h4 className="font-family-regular">Brands I've Worked With</h4>
                                 <div className="brands">
                                     <InfiniteSlider
-                                        slides={App.technologies} />
+                                        slides={App.brands} />
                                 </div>
                             </div>
                             <div className="section">

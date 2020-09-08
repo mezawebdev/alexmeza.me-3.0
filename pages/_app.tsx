@@ -8,7 +8,7 @@ import config from "../app.config";
 import Navigation from "../components/Navigation/Navigation";
 import Router from "next/router";
 import { PageTransition } from 'next-page-transitions';
-
+import LoadingScreenWindow from "../components/Utils/LoadingScreenWindow";
 
 let world: World,
     App: any = config;
@@ -24,6 +24,10 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         active: false
     });
 
+    const [worldLoaded, setWorldLoaded] = useState(true);
+
+    const [appLoaded, setAppLoaded] = useState(false);
+
     useEffect(() => {
         setActivePage(getCurrentPage());
 
@@ -34,6 +38,10 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 world.resize();
             });
         }
+
+        window.addEventListener("load", () => {
+            setAppLoaded(true);
+        });
     }, []);
 
     return (
@@ -43,6 +51,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+                <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
                 <script
                     src="https://code.jquery.com/jquery-3.5.1.min.js"
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -50,11 +59,14 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 </script>
                 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             </Head>
+            { appLoaded ? null : <LoadingScreenWindow /> }
             <Navigation />
             <canvas id="canvas"></canvas>
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
-            { App.showPages ? 
-                <PageTransition timeout={300} classNames="page-transition">
+            { App.showPages && worldLoaded && appLoaded ? 
+                <PageTransition  
+                    timeout={300} 
+                    classNames="page-transition">
                     <Component {...pageProps} /> 
                 </PageTransition> : null }
             <style jsx global>{`

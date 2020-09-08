@@ -15,12 +15,12 @@ export default class CustomLoadingScreen implements ILoadingScreen {
     constructor(public loadingUIText: string) {
 
     }
-    
+
     public displayLoadingUI(): void {
-      alert(this.loadingUIText);
+        alert(this.loadingUIText);
     }
-  
+
     public hideLoadingUI(): void {
-      alert("Loaded!");
+        alert("Loaded!");
     }
 }

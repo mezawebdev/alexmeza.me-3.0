@@ -1,5 +1,6 @@
 #page--about {
-    height : 100%;
+    height     : 100%;
+    overflow-x : hidden;
 
     .body {
         .row-1 {
@@ -96,9 +97,9 @@
                 }
     
                 .block-content {
-                    background      : rgba(0, 0, 0, 0.75);
+                    // background      : rgba(0, 0, 0, 0.75);
                     width           : 100%;
-                    backdrop-filter : blur(10px);
+                    // backdrop-filter : blur(10px);
                     position        : relative;
                     padding         : 25px;
                     max-width       : 500px;

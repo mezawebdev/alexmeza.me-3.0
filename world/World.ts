@@ -35,6 +35,7 @@ class World {
         this.canvasElId = canvasElId;
         this.canvas = document.getElementById(this.canvasElId) as HTMLCanvasElement;
         this.engine = new BABYLON.Engine(this.canvas, true, { stencil: true });
+        // this.engine.displayLoadingUI();
         this.scene = new BABYLON.Scene(this.engine);
         this.camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 1, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
         this.camera.setTarget(BABYLON.Vector3.Zero());
