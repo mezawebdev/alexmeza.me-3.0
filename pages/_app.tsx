@@ -39,9 +39,17 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             });
         }
 
-        window.addEventListener("load", () => {
+        setAppLoaded(true);
+
+        window.onload = () => {
+            console.log("LOADED!");
             setAppLoaded(true);
-        });
+        }
+
+        // window.addEventListener("load", () => {
+        //     console.log("LOADED!");
+        //     setAppLoaded(true);
+        // });
     }, []);
 
     return (

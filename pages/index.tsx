@@ -2,6 +2,7 @@ import App from "../app.config";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useState } from "react";
+import Panel from "../components/Layout/SpaceUI/Panel";
 
 const app: any = App;
 
@@ -164,20 +165,22 @@ export default function Home() {
             <main>
                 <div className="content">
                     <div className="centered">
-                        <div className="title">
-                            <h1>
-                                <span className="sp-1">A</span>
-                                <span className="sp-2">L</span>
-                                <span className="sp-3">E</span>
-                                <span className="sp-4">X</span>
-                                &nbsp;
-                                <span className="sp-5">M</span>
-                                <span className="sp-6">E</span>
-                                <span className="sp-7">Z</span>
-                                <span className="sp-8">A</span>
-                            </h1>
-                            <h2 className="sp-9">WEB DEVELOPER</h2>
-                        </div>
+                        <Panel>
+                            <div className="title">
+                                <h1>
+                                    <span className="sp-1">A</span>
+                                    <span className="sp-2">L</span>
+                                    <span className="sp-3">E</span>
+                                    <span className="sp-4">X</span>
+                                    &nbsp;
+                                    <span className="sp-5">M</span>
+                                    <span className="sp-6">E</span>
+                                    <span className="sp-7">Z</span>
+                                    <span className="sp-8">A</span>
+                                </h1>
+                                <h2 className="sp-9">WEB DEVELOPER</h2>
+                            </div>
+                        </Panel>
                     </div>
                 </div>
             </main>

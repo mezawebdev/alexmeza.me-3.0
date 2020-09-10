@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useRouter } from 'next/router';
 import { PageTransition } from 'next-page-transitions'
+import Panel from "../Layout/SpaceUI/Panel";
 
 const app: any = App;
 
@@ -42,9 +43,9 @@ export default function Navigation() {
                     {mobileMenuOpened ? null : <i className="las la-bars"></i>}
                     {mobileMenuOpened ? <i className="las la-times"></i> : null}
                 </button>
-                <div className={`font-family-title text-shadow logo${ currentPage.path !== '/' ? " toggled-logo" : "" }`}>
+                <Panel classes={`font-family-title text-shadow logo${ currentPage.path !== '/' ? " toggled-logo" : "" }`}>
                     ALEX MEZA
-                </div>
+                </Panel>
                 <div className={`inner${ mobileMenuOpened ? ' mobile-menu-toggled' : '' }`}>
                     {app.pages.map((page, i) => {
                         return (

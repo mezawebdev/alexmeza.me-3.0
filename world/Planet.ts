@@ -163,7 +163,7 @@ export default class Planet {
                         });
                     }
 
-                    if (layer.rotate) {
+                    if (layer.highlight) {
                         hlLayers.push(new BABYLON.HighlightLayer(`${ layer.type }-${ i }-hl`, this.scene));
                         hlLayers[hlLayers.length - 1].addMesh(this.layerMeshes[this.layerMeshes.length - 1], BABYLON.Color3.FromHexString(layer.highlightColor));
                     }

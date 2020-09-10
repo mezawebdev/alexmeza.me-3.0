@@ -6,6 +6,7 @@ export default function InfiniteSlider(props) {
     const slick = useRef(null);
 
     useEffect(() => {
+        // @ts-ignore
         $(slick.current).slick({
             infinite: true,
             speed: 300,

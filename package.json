@@ -8,6 +8,7 @@
     "start": "next start -p 4123"
   },
   "dependencies": {
+    "@types/jquery": "^3.5.1",
     "babylonjs": "^4.1.0",
     "babylonjs-materials": "^4.1.0",
     "gsap": "^3.5.1",

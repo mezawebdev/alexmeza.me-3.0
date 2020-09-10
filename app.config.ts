@@ -180,11 +180,11 @@ const config = {
     brands: [
         {
             label: "Rescue Agency",
-            image: "/assets/brands/rescue.svg"
+            image: "/assets/images/brands/rescue.svg"
         },
         {
             label: "Sunsick Studio",
-            image: "/assets/brands/sunsick.png"
+            image: "/assets/images/brands/sunsick.png"
         }
     ],
     world: {
@@ -218,7 +218,10 @@ const config = {
             initialPosition: {
                 x: 465,
                 y: 12,
-                z: 465
+                z: 465,
+                alpha: 10,
+                beta: 10,
+                radius: 1
             },
             animate: true
         },
@@ -306,7 +309,7 @@ const config = {
             stars: {
                 enabled: true,
                 texture: "/assets/textures/particle.png",
-                emitRate: 100000,
+                emitRate: 5000,
                 minSize: 5,
                 maxSize: 10,
                 minLifeTime: 10,
@@ -417,7 +420,7 @@ const config = {
                             texture: "/assets/textures/clouds_1.png",
                             rotate: true,
                             rotationSpeed: -0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#d9b881",
                             alpha: 0.5
                         }
@@ -466,7 +469,7 @@ const config = {
                             texture: "/assets/textures/earth_atmosphere.png",
                             rotate: true,
                             rotationSpeed: -0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#3d91ff"
                         }
                     ],
@@ -484,8 +487,8 @@ const config = {
                         get z() { return config.world.objects.planets[2].initialPosition.z }
                     },
                     cameraPlacement: {
-                        x: 465,
-                        y: 12,
+                        x: 460,
+                        y: 14,
                         z: 465
                     }
                 },
@@ -522,7 +525,7 @@ const config = {
                             texture: "/assets/textures/clouds_2.png",
                             rotate: true,
                             rotationSpeed: -0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#fae4b4",
                             alpha: 0.1
                         }
@@ -571,7 +574,7 @@ const config = {
                             texture: "/assets/textures/clouds_2.png",
                             rotate: true,
                             rotationSpeed: -0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#fae4b4",
                             alpha: 0.25
                         },
@@ -580,7 +583,7 @@ const config = {
                             texture: "/assets/textures/clouds_1.png",
                             rotate: true,
                             rotationSpeed: 0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#fae4b4",
                             alpha: 0.25
                         }
@@ -629,7 +632,7 @@ const config = {
                             texture: "/assets/textures/clouds_2.png",
                             rotate: true,
                             rotationSpeed: -0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#bbb37c",
                             alpha: 0.25
                         },
@@ -638,7 +641,7 @@ const config = {
                             texture: "/assets/textures/clouds_1.png",
                             rotate: true,
                             rotationSpeed: 0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#bbb37c",
                             alpha: 0.25
                         }
@@ -688,7 +691,7 @@ const config = {
                             texture: "/assets/textures/clouds_2.png",
                             rotate: true,
                             rotationSpeed: -0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#57faff",
                             alpha: 0.25
                         },
@@ -697,7 +700,7 @@ const config = {
                             texture: "/assets/textures/clouds_1.png",
                             rotate: true,
                             rotationSpeed: 0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#57faff",
                             alpha: 0.25
                         }
@@ -747,7 +750,7 @@ const config = {
                             texture: "/assets/textures/clouds_1.png",
                             rotate: true,
                             rotationSpeed: 0.001,
-                            highlight: true,
+                            highlight: false,
                             highlightColor: "#4267bf",
                             alpha: 0.1
                         }
