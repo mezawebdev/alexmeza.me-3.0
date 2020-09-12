@@ -2,19 +2,27 @@ import App from "../../app.config";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useRouter } from 'next/router';
-import { PageTransition } from 'next-page-transitions'
 import Panel from "../Layout/SpaceUI/Panel";
 
 const app: any = App;
 
-export default function Navigation() {
+export default function Navigation(props) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
     const [currentPage, setCurrentPage] = useState(App.pages[0]);
     const router = useRouter();
+    const transitioning = false;
 
     function goToPage(page: any): void {
         // TODO: Move world to new planet
+        // if (props.world) {
+        //     props.world.goToTarget(page.target);
+        // }
+
+        if (props.onNavClick) {
+            props.onNavClick();
+        }
+        
         toggleMobileMenu();
         setCurrentPage(page);
         router.push(page.path);
@@ -28,10 +36,6 @@ export default function Navigation() {
         gsap.to("#navigation", { opacity: 1, y: 0, duration: 0.5, delay: 2 });
 
         setCurrentPage(App.pages.find(page_ => { return page_.path === window.location.pathname; }));
-
-        // window.addEventListener("scroll", () => {
-        //     window.scrollY > window.innerHeight - 200 ? setScrolled(true) : setScrolled(false);
-        // });
     }, []);
 
     return (

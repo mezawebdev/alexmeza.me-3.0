@@ -9,6 +9,7 @@ import Navigation from "../components/Navigation/Navigation";
 import Router from "next/router";
 import { PageTransition } from 'next-page-transitions';
 import LoadingScreenWindow from "../components/Utils/LoadingScreenWindow";
+import ReactCSSTransitionGroup from 'react-transition-group';
 
 let world: World,
     App: any = config;
@@ -23,10 +24,11 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         path: "",
         active: false
     });
-
     const [worldLoaded, setWorldLoaded] = useState(true);
-
     const [appLoaded, setAppLoaded] = useState(false);
+    const onNavClick = () => {
+        console.log("yo");
+    }
 
     useEffect(() => {
         setActivePage(getCurrentPage());
@@ -39,17 +41,9 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             });
         }
 
-        setAppLoaded(true);
-
-        window.onload = () => {
-            console.log("LOADED!");
+        window.addEventListener("load", () => {
             setAppLoaded(true);
-        }
-
-        // window.addEventListener("load", () => {
-        //     console.log("LOADED!");
-        //     setAppLoaded(true);
-        // });
+        });
     }, []);
 
     return (
@@ -68,7 +62,9 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             </Head>
             { appLoaded ? null : <LoadingScreenWindow /> }
-            <Navigation />
+            <Navigation 
+                world={world || null}
+                onNavClick={onNavClick} />
             <canvas id="canvas"></canvas>
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
             { App.showPages && worldLoaded && appLoaded ? 

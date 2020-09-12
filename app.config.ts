@@ -5,22 +5,26 @@ const config = {
         {
             active: false,
             path: "/",
-            label: "HOME"
+            label: "HOME",
+            target: "earth"
         },
         {
             active: false,
             path: "/about",
-            label: "ABOUT"
+            label: "ABOUT",
+            target: "saturn"
         },
         {
             active: false,
             path: "/work",
-            label: "WORK"
+            label: "WORK",
+            target: "mars"
         },
         {
             active: false,
             path: "/contact",
-            label: "CONTACT"
+            label: "CONTACT",
+            target: "neptune"
         }
     ],
     projects: [

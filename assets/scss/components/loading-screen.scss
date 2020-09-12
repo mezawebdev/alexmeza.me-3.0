@@ -1,7 +1,9 @@
+$loader-size : 200px;
+
 #loading-screen {
     width           : 100vw;
     height          : 100vh;
-    background      : black;
+    background      : rgb(10, 10, 10);
     z-index         : 10000;
     position        : fixed;
     top             : 0px;
@@ -9,4 +11,118 @@
     display         : flex;
     justify-content : center;
     align-items     : center;
+    opacity         : 1;
+    transition      : opacity 0.25s ease-in-out;
+
+    &.removed {
+        opacity        : 0;
+        pointer-events : none;
+    }
+
+    .bg {
+        width    : 100%;
+        height   : 100%;
+        position : absolute;
+        top      : 0px;
+        left     : 0px;
+
+        &.bg-1 {
+            background-image    : url("/assets/images/loader-bg.jpg");
+            background-size     : cover;
+            background-position : 50% 50%;
+            filter              : saturate(0.6);
+            opacity             : 0.2;
+        }
+
+        &.bg-2 {
+            backdrop-filter : blur(7px);
+        }
+    }
+
+    .stars {
+        position   : absolute;
+        top        : 0px;
+        left       : 0px;
+        z-index    : 1;
+
+        span {
+            display       : block;
+            position      : absolute;
+            background    : white;
+            border-radius : 100px;
+            opacity       : 0;
+            box-shadow    : 0px 0px 6px rgba(255, 255, 255, 0.9);
+            animation     : fade-in 0.25s linear 1 forwards;
+        }
+    }
+
+    .content {
+        position  : relative;
+        animation : grow 0.5s ease-in-out 1 forwards;
+        opacity   : 0;
+        z-index   : 2;
+        transform : scale(0.5);
+
+        .text {
+            position  : absolute;
+            left      : 50%;
+            top       : 50%;
+            font-size : 2.5em;
+            transform : translate(-50%, -50%);
+            animation : text 1s ease-in-out infinite alternate;
+        }
+
+        svg {
+            circle {
+                &:nth-child(3) {
+                    animation        : spin1 5s linear infinite;
+                    transform-origin : 50% 50%;
+                }
+
+                &:nth-child(4) {
+                    animation        : spin2 10s linear infinite;
+                    transform-origin : 50% 50%;
+                }
+            }
+        }
+    }
+
+    @keyframes text {
+        0% {
+            transform : translate(-50%, -50%) scale(1);
+        }
+
+        50% {
+            transform : translate(-50%, -50%) scale(1.05);
+        }
+
+        0% {
+            transform : translate(-50%, -50%) scale(1);
+        }
+    }
+
+    @keyframes fade-in {
+        100% {
+            opacity : 1;
+        }
+    }
+    
+    @keyframes grow {
+        100% {
+            transform : scale(1);
+            opacity   : 1;
+        }
+    }
+    
+    @keyframes spin1 {
+        100% {
+            transform : rotate(360deg);
+        }
+    }
+    
+    @keyframes spin2 {
+        100% {
+            transform : rotate(-360deg);
+        }
+    }
 }

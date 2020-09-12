@@ -1,0 +1,30 @@
+.space-ui-panel {
+    border-radius   : 5px;
+    position        : relative;
+    backdrop-filter : blur(2px);
+    background      : rgba(29, 36, 50, 0.5);
+    box-shadow      : 0px 0px 7px rgba(255, 255, 255, 0.9), inset 0px 0px 7px rgba(255, 255, 255, 0.9);
+    padding         : 10px;
+    opacity         : 0;
+    border          : none;
+    overflow        : hidden;
+    animation       : space-ui-panel-fade-in 0.5s linear 1 forwards;
+
+    &:before {
+        width          : 100%;
+        position       : absolute;
+        left           : 0px;
+        top            : 0px;
+        height         : 100%;
+        pointer-events : none;
+        z-index        : 10;
+        box-shadow     : 0px 0px 7px rgba(255, 255, 255, 0.9), inset 0px 0px 7px rgba(255, 255, 255, 0.9);
+        content        : '';
+    }
+}
+
+@keyframes space-ui-panel-fade-in {
+    100% {
+        opacity : 1;
+    }
+}
