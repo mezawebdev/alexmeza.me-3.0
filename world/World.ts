@@ -35,7 +35,6 @@ class World {
         this.canvasElId = canvasElId;
         this.canvas = document.getElementById(this.canvasElId) as HTMLCanvasElement;
         this.engine = new BABYLON.Engine(this.canvas, true, { stencil: true });
-        // this.engine.displayLoadingUI();
         this.scene = new BABYLON.Scene(this.engine);
         this.camera = new BABYLON.ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
         this.camera.setTarget(BABYLON.Vector3.Zero());
@@ -113,9 +112,6 @@ class World {
                 this.target = new Target(this, planetToFollow);
                 this.camera.setTarget(this.target.mesh);
                 this.camera.position = new BABYLON.Vector3(planetToFollow.cameraPlacement.x, planetToFollow.cameraPlacement.y, planetToFollow.cameraPlacement.z)
-                // this.camera.position.x = planetToFollow.cameraPlacement.x;
-                // this.camera.position.y = planetToFollow.cameraPlacement.y;
-                // this.camera.position.z = planetToFollow.cameraPlacement.z;
             }
         }
 
@@ -200,6 +196,8 @@ class World {
             this.target.mesh.animations = [animationX, animationZ];
 
             this.scene.beginAnimation(this.target.mesh, 0, 100, false, 2);
+
+            this.target.mesh.parent = newTargetPlanet.rotationAxis.pivot;
 
             // @ts-ignore
             window.showMessage(`going to planet: ${ newTargetPlanet.key }`);
