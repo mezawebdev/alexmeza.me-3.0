@@ -1,0 +1,16 @@
+#console {
+    width           : calc(99.5vw - 30px);
+    height          : calc(99.5vh - 30px);
+    position        : fixed;
+    border          : 2px solid red;
+    top             : 0px;
+    left            : 0px;
+    color           : red;
+    display         : flex;
+    font-weight     : bold;
+    padding         : 15px;
+    align-items     : flex-end;
+    justify-content : flex-start;
+    text-transform  : uppercase;
+    pointer-events  : none;
+}

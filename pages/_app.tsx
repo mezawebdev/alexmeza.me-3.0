@@ -9,7 +9,7 @@ import Navigation from "../components/Navigation/Navigation";
 import Router from "next/router";
 import { PageTransition } from 'next-page-transitions';
 import LoadingScreenWindow from "../components/Utils/LoadingScreenWindow";
-import ReactCSSTransitionGroup from 'react-transition-group';
+import Console from "../components/Utils/Console";
 
 let world: World,
     App: any = config;
@@ -26,8 +26,12 @@ function AlexMeza({ Component, pageProps }: AppProps) {
     });
     const [worldLoaded, setWorldLoaded] = useState(true);
     const [appLoaded, setAppLoaded] = useState(false);
-    const onNavClick = () => {
-        console.log("yo");
+    const [transition, setTransition] = useState(false);
+    const onNavClick = pageData => {
+        if (App.showWorld) {
+            setTransition(true);
+            world.moveToNewTarget(pageData.target);
+        }
     }
 
     useEffect(() => {
@@ -62,17 +66,17 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             </Head>
             { appLoaded ? null : <LoadingScreenWindow /> }
-            <Navigation 
-                world={world || null}
-                onNavClick={onNavClick} />
-            <canvas id="canvas"></canvas>
+            { App.world.debug.showConsole ? <Console /> : null }
+            <Navigation onNavClick={onNavClick} />
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
             { App.showPages && worldLoaded && appLoaded ? 
-                <PageTransition  
-                    timeout={300} 
-                    classNames="page-transition">
-                    <Component {...pageProps} /> 
-                </PageTransition> : null }
+                <div className={`pages-wrapper${ transition ? " transition" : "" }`}>   
+                    <PageTransition  
+                        timeout={300} 
+                        classNames="page-transition">
+                        <Component {...pageProps} /> 
+                    </PageTransition>
+                </div> : null }
             <style jsx global>{`
                 .page-transition-enter {
                     opacity: 0;

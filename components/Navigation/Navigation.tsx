@@ -11,21 +11,12 @@ export default function Navigation(props) {
     const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
     const [currentPage, setCurrentPage] = useState(App.pages[0]);
     const router = useRouter();
-    const transitioning = false;
 
     function goToPage(page: any): void {
-        // TODO: Move world to new planet
-        // if (props.world) {
-        //     props.world.goToTarget(page.target);
-        // }
-
-        if (props.onNavClick) {
-            props.onNavClick();
-        }
-        
         toggleMobileMenu();
         setCurrentPage(page);
         router.push(page.path);
+        if (props.onNavClick) props.onNavClick(page);
     }
 
     function toggleMobileMenu() {

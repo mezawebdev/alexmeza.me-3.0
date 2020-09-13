@@ -166,6 +166,47 @@ class World {
         this.sun.mesh.rotation.y += this.sun.rotation.speed;
         this.sun.mesh.rotation.z += this.sun.rotation.speed;
     }
+
+    public getPlanetByKey(key: string): Planet {
+        return this.planets.find(planet => { return planet.key === key });
+    }
+
+    public moveToNewTarget(targetKey: string): void {
+        let animationX = new BABYLON.Animation("newTargetX", "position.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+            animationZ = new BABYLON.Animation("newTargetZ", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+            newTargetPlanet: Planet = this.getPlanetByKey(targetKey);
+
+        if (newTargetPlanet) {
+            animationX.setKeys([
+                {
+                    frame: 0,
+                    value: this.target.mesh.position.x
+                }, {
+                    frame: 100,
+                    value: newTargetPlanet.mesh.position.x
+                }
+            ]);
+
+            animationZ.setKeys([
+                {
+                    frame: 0,
+                    value: this.target.mesh.position.z
+                }, {
+                    frame: 100,
+                    value: newTargetPlanet.mesh.position.z
+                }
+            ]);
+
+            this.target.mesh.animations = [animationX, animationZ];
+
+            this.scene.beginAnimation(this.target.mesh, 0, 100, false, 2);
+
+            // @ts-ignore
+            window.showMessage(`going to planet: ${ newTargetPlanet.key }`);
+        } else {
+            return;
+        }
+    }
 }
 
 export default World;

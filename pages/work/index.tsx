@@ -9,7 +9,7 @@ import { ScrollTrigger } from "../../node_modules/gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Work() {
+export default function Work(props) {
     const professionalProjects = useRef(null);
     const personalProjects = useRef(null);
     const experimentalProjects = useRef(null);

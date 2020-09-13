@@ -1,6 +1,9 @@
 import World from "./World";
 import Planet from "./Planet";
 import * as B from "babylonjs";
+import config from "../app.config";
+
+const App: any = config;
 
 export default class Target {
     world: World;
@@ -24,6 +27,6 @@ export default class Target {
         this.mesh.material = new B.StandardMaterial("target-material", this.world.scene);
         this.mesh.material.emissiveColor = new B.Color3(1, 0, 0);
         this.mesh.parent = this.planetToFollow.rotationAxis.pivot;
-        this.mesh.material.alpha = 0;
+        this.mesh.material.alpha = App.world.debug.showTarget ? 1 : 0;
     }
 }
