@@ -19,23 +19,20 @@
         height : 64px;
     }
 
-    * {
-        // outline : 1px solid red;
-    }
-
     .ct {
-        height      : 100%;
-        display     : flex;
-        align-items : center;
+        height          : 100%;
+        display         : flex;
+        align-items     : center;
+        justify-content : space-between;
 
         @media (min-width : $breakpoint-md) {
-            display         : flex;
-            justify-content : flex-end;
+            // display         : flex;
+            // justify-content : flex-end;
         }
 
         &.toggled-logo {
             @media (min-width : $breakpoint-md) {
-                justify-content: space-between;
+                // justify-content: space-between;
             }
         }
 
@@ -43,32 +40,41 @@
         //     justify-content : 
         // }
 
-        .logo {
-            display     : none;
-            font-size   : 2em;
-            position    : absolute;
-            line-height : 1;
-            top         : 1px;
-
-            @media (min-width : $breakpoint-md) {
-                font-size : 2.4em;
-            }
+        .logo-wrapper {
+            opacity        : 0;
+            pointer-events : none;
+            transition     : 0.25s opacity ease-in-out;
 
             &.toggled-logo {
-                display : table;
-
-                @media (min-width : $breakpoint-md) {
-                    position : relative;
-                    top      : 0px;
-                }
+                opacity        : 1;
+                pointer-events : all;
             }
 
-            .panel-children {
-                position : relative;
-                top      : -2px;
-
-                @media (min-width : $breakpoint-xsm) {
-                    top : -3px;
+            .logo {
+                display        : table;
+                font-size      : 2em;
+                position       : absolute;
+                line-height    : 1;
+                top            : 1px;
+    
+                @media (min-width : $breakpoint-md) {
+                    font-size : 2.4em;
+                }
+    
+                &.toggled-logo {
+                    @media (min-width : $breakpoint-md) {
+                        position : relative;
+                        top      : 0px;
+                    }
+                }
+    
+                .panel-children {
+                    position : relative;
+                    top      : -2px;
+    
+                    @media (min-width : $breakpoint-xsm) {
+                        top : -3px;
+                    }
                 }
             }
         }
@@ -150,14 +156,33 @@
                 font-weight   : 300;
                 text-shadow   : 0px 0px 4px rgba(255, 255, 255, 0.9);
                 color         : white;
-                transition    : background 0.25s ease-in-out;
+                transition    : transitions(0.25s, border-right, border-left, background);
                 
                 &:focus {
                     outline : none;
                 }
 
+                &:before {
+                    transition : transitions(0.25s, width, left, top, height, box-shadow);
+                }
+
                 &:hover {
-                    background : rgb(206, 106, 106);
+                    border-right : 1px solid rgb(150, 150, 150);
+                    border-left  : 1px solid rgb(150, 150, 150);
+                    position     : relative;
+                    background   : linear-gradient(-180deg, rgba(49, 56, 70, 0.5), rgba(99, 106, 120, 0.5), rgba(49, 56, 70, 0.5));
+
+                    &:before {
+                        width          : 100%;
+                        position       : absolute;
+                        left           : 0px;
+                        top            : 0px;
+                        height         : 100%;
+                        pointer-events : none;
+                        z-index        : 10;
+                        box-shadow     : 0px 0px 4px rgba(255, 255, 255, 0.9), inset 0px 0px 4px rgba(255, 255, 255, 0.9);
+                        content        : '';
+                    }
                 }
         
                 &:first-child {

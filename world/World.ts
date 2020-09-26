@@ -167,10 +167,11 @@ class World {
         return this.planets.find(planet => { return planet.key === key });
     }
 
-    public moveToNewTarget(targetKey: string): void {
+    public async moveToNewTarget(targetKey: string, cb: any = function(){}) {
         let animationX = new BABYLON.Animation("newTargetX", "position.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
             animationZ = new BABYLON.Animation("newTargetZ", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
-            newTargetPlanet: Planet = this.getPlanetByKey(targetKey);
+            newTargetPlanet: Planet = this.getPlanetByKey(targetKey),
+            easingFunction = new BABYLON.PowerEase();
 
         if (newTargetPlanet) {
             animationX.setKeys([
@@ -193,14 +194,25 @@ class World {
                 }
             ]);
 
+            easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+
+            animationX.setEasingFunction(easingFunction);
+            animationZ.setEasingFunction(easingFunction);
+
             this.target.mesh.animations = [animationX, animationZ];
 
-            this.scene.beginAnimation(this.target.mesh, 0, 100, false, 2);
+            let runningAnim = this.scene.beginAnimation(this.target.mesh, 0, 100, false, 2);
 
             this.target.mesh.parent = newTargetPlanet.rotationAxis.pivot;
 
             // @ts-ignore
             window.showMessage(`going to planet: ${ newTargetPlanet.key }`);
+
+            console.log("yo2!");
+            await runningAnim.waitAsync();
+            await runningAnim.waitAsync();
+            console.log("yo!");
+            cb();
         } else {
             return;
         }

@@ -1,8 +1,63 @@
 #page--contact {
     .body {
-        .fields {
-            .field {
-                // width : calc(100% - 25px);
+        .row {
+            width : 100%;
+        }
+
+        .row-1 {
+            opacity   : 0;
+            transform : translate(20px, -20px);
+
+            @media (min-width : $breakpoint-md) {
+                display         : flex;
+                justify-content : flex-end;
+            }
+            
+            img {
+                width         : 100%;
+                border-radius : 7px;
+                max-width     : 600px;
+
+                @media (min-width : $breakpoint-md) {
+                    width : 78%;
+                }
+            }
+        }
+
+        .row-2 {
+            opacity   : 0;
+            transform : translate(-20px, -20px);
+
+            @media (min-width : $breakpoint-xsm){
+                margin-top : -100px;
+            }
+
+            @media (min-width : $breakpoint-xmd) {
+                margin-top : -120px;
+            }
+
+            @media (min-width : $breakpoint-lg) {
+                margin-top : -280px;
+            }
+
+            .space-ui-panel {
+                padding : 25px;
+
+                @media (min-width : $breakpoint-md) {
+                    padding : 45px;
+                    width   : 50%;
+                }
+
+                p {
+                    margin     : 0;
+                    font-size  : 1.5em;
+                    font-style : italic;
+                    text-align : center;
+                }
+
+                .fields {
+                    margin-top : 25px;
+                }
             }
         }
     }

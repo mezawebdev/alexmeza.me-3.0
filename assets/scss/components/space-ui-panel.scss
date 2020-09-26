@@ -1,13 +1,13 @@
 .space-ui-panel {
-    border-radius   : 5px;
+    border-radius   : 7px;
     position        : relative;
     backdrop-filter : blur(2px);
     background      : rgba(29, 36, 50, 0.5);
-    box-shadow      : 0px 0px 7px rgba(255, 255, 255, 0.9), inset 0px 0px 7px rgba(255, 255, 255, 0.9);
+    box-shadow      : 0px 4px 16px rgba(0, 0, 0, 0.5);
     padding         : 10px;
     opacity         : 0;
-    border          : none;
-    overflow        : hidden;
+    border          : 1px solid #969696;
+    // overflow        : hidden;
     animation       : space-ui-panel-fade-in 0.5s linear 1 forwards;
 
     &:before {
@@ -18,8 +18,10 @@
         height         : 100%;
         pointer-events : none;
         z-index        : 10;
-        box-shadow     : 0px 0px 7px rgba(255, 255, 255, 0.9), inset 0px 0px 7px rgba(255, 255, 255, 0.9);
         content        : '';
+        box-shadow     : 
+            0px 0px 4px rgba(255, 255, 255, 0.9), 
+            inset 0px 0px 4px rgba(255, 255, 255, 0.9);
     }
 }
 

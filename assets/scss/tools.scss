@@ -1,0 +1,11 @@
+@function transitions($duration, $properties...) {
+    $transition : "";
+    $newTransition : "";
+
+    @each $property in $properties {
+    	$newTransition : $property + " " + $duration + " ease-in-out, ";
+    	$transition : $transition + $newTransition;
+    }
+
+    @return unquote($transition);
+}

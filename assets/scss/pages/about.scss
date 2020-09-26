@@ -140,10 +140,39 @@
                 }
 
                 .brands {
-                    margin-top : 30px;
+                    margin-top            : 30px;
+                    display               : grid;
+                    grid-template-columns : 1fr 1fr;
 
                     @media (min-width : $breakpoint-xsm) {
                         margin-top : 50px;
+                    }
+
+                    .brand {
+                        display    : grid;
+                        text-align : center;
+                        font-size  : 0.75em;
+
+                        &:nth-child(1) {
+                            img {
+                                width : 120px;
+                            }
+                        }
+
+                        div {
+                            display         : flex;
+                            align-items     : center;
+                            justify-content : center;
+
+                            img {
+                                width : 70px;
+                                // height : 20px;
+        
+                                @media (min-width : $breakpoint-xmd) {
+                                    // height : 50px;
+                                }
+                            }
+                        }   
                     }
                 }
 
@@ -193,6 +222,8 @@
                             }
                         }
                     }
+
+                    
                 }
             }
         }

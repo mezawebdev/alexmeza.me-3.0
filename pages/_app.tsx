@@ -27,10 +27,16 @@ function AlexMeza({ Component, pageProps }: AppProps) {
     const [worldLoaded, setWorldLoaded] = useState(true);
     const [appLoaded, setAppLoaded] = useState(false);
     const [transition, setTransition] = useState(false);
+
     const onNavClick = pageData => {
         if (App.showWorld) {
-            setTransition(true);
-            world.moveToNewTarget(pageData.target);
+            // setTransition(true);
+            // world.moveToNewTarget(pageData.target, () => {
+            //     alert("yo");
+            //     setTransition(false);
+            // });
+        } else {
+
         }
     }
 

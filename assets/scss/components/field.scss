@@ -1,12 +1,35 @@
 .field {
+    box-shadow    : 0px 4px 16px rgba(0, 0, 0, 0.5);
+    border        : 1px solid #9696964b;
+    border-radius : 7px;
+
     input,
     textarea {
-        box-sizing : border-box;
-        width      : 100%;
-        background : black;
-        padding    : 10px;
-        color      : white;
-        border     : none;
+        box-sizing      : border-box;
+        width           : 100%;
+        background      : black;
+        padding         : 15px;
+        color           : white;
+        display         : block;
+        border          : none;
+        backdrop-filter : blur(2px);
+        border-radius   : 7px;
+        color           : white;
+        position        : relative;
+        background      : rgba(29, 36, 50, 0.5);
+        // border          : 1px solid #969696;
+        // box-shadow      : 0px 0px 4px rgba(255, 255, 255, 0.9), inset 0px 0px 4px rgba(255, 255, 255, 0.9);
+
+        &::placeholder {
+            color       : white;
+            text-shadow : $text-shadow;
+            filter      : drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.5));
+        }
+
+        &:focus,
+        &:active {
+            outline : none;
+        }
     }
 
     textarea {

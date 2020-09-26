@@ -5,7 +5,7 @@ export default function Tech(props) {
                 <img src={props.image} />
             </div>  
             <div>
-                <span>{props.label}</span>
+                <span className="filter-shadow">{props.label}</span>
             </div>
         </div>
     );

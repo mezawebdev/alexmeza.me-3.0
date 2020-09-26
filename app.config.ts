@@ -1,5 +1,5 @@
 const config = {
-    showPages: false,
+    showPages: true,
     showWorld: true,
     pages:[
         {
@@ -298,7 +298,7 @@ const config = {
             showAxis: false,
             axisSize: 5000,
             showTarget: true,
-            showConsole: true
+            showConsole: false
         },
         objects: {
             showPlanets: true,

@@ -14,20 +14,26 @@ export default function Navigation(props) {
 
     function goToPage(page: any): void {
         toggleMobileMenu();
-        setCurrentPage(page);
+        // setCurrentPage(page);
         router.push(page.path);
         if (props.onNavClick) props.onNavClick(page);
     }
 
-    function toggleMobileMenu() {
+    function toggleMobileMenu(): void {
         setMobileMenuOpened(mobileMenuOpened ? false : true);
     }
 
     useEffect(() => {
-        gsap.to("#navigation", { opacity: 1, y: 0, duration: 0.5, delay: 2 });
-
-        setCurrentPage(App.pages.find(page_ => { return page_.path === window.location.pathname; }));
+        gsap.to("#navigation", { opacity: 1, y: 0, duration: 0.5, delay: 1 });
+        setCurrentPage(app.pages.find(page_ => { return page_.path === window.location.pathname; }) || "/");
     }, []);
+
+    if (process.browser) {
+        router.events.on("routeChangeStart", url => {
+            const newPage = app.pages.find(page => { return page.path === url });
+            setCurrentPage(newPage);
+        });
+    }
 
     return (
         <div id="navigation">
@@ -38,14 +44,16 @@ export default function Navigation(props) {
                     {mobileMenuOpened ? null : <i className="las la-bars"></i>}
                     {mobileMenuOpened ? <i className="las la-times"></i> : null}
                 </button>
-                <Panel classes={`font-family-title text-shadow logo${ currentPage.path !== '/' ? " toggled-logo" : "" }`}>
-                    ALEX MEZA
-                </Panel>
+                <div className={`logo-wrapper${ currentPage.path !== '/' ? " toggled-logo" : "" }`}>
+                    <Panel classes={`font-family-title text-shadow logo${ currentPage.path !== '/' ? " toggled-logo" : "" }`}>
+                        <span className="filter-shadow">ALEX MEZA</span>
+                    </Panel>
+                </div>
                 <div className={`inner${ mobileMenuOpened ? ' mobile-menu-toggled' : '' }`}>
                     {app.pages.map((page, i) => {
                         return (
                             <button 
-                                className={`${ page.path === currentPage.path ? 'active' : '' }`}
+                                className={`filter-shadow ${ page.path === currentPage.path ? 'active' : '' }`}
                                 onClick={() => { goToPage(page); }} 
                                 key={i}>
                                 { page.label }

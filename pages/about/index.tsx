@@ -6,6 +6,7 @@ import Tech from "../../components/Blocks/Tech";
 import App from "../../app.config";
 import AboutBlock from "../../components/Blocks/AboutBlock";
 import InfiniteSlider from "../../components/Blocks/InfiniteSlider";
+import Brand from "../../components/Blocks/Brand";
 import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,26 +40,32 @@ export default function About(props) {
                 <div className="ct">
                     <div className="row-1">
                         <img
-                            className="global-border-radius box-shadow profile" 
+                            className="global-border-radius box-shadow-white filter-shadow profile" 
                             src="/assets/images/about-me.jpg" />
                     </div>
                     <div className="row-2">
                         <AboutBlock 
                             align="right" 
                             bottomPadding={true}>
-                            <div className="section">
+                            <div className="section filter-shadow">
                                 My name is <span className="font-family-medium">Alex Meza,</span> I am a full-stack web developer from San Diego, California.
                                 I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users.
                             </div>
                             <div className="section">
-                                <h4 className="font-family-regular">Brands I've Worked With</h4>
+                                <h4 className="font-family-regular filter-shadow">Brands I've Worked With</h4>
                                 <div className="brands">
-                                    <InfiniteSlider
-                                        slides={App.brands} />
+                                    {App.brands.map((brand, i) => {
+                                        return (
+                                            <Brand 
+                                                key={i} 
+                                                image={brand.image} 
+                                                label={brand.label} />
+                                        );
+                                    })}
                                 </div>
                             </div>
                             <div className="section">
-                                <h4 className="font-family-regular">Tools I Frequent</h4>
+                                <h4 className="font-family-regular filter-shadow">Tools I Frequent</h4>
                                 <div className="list">
                                     {App.technologies.map((tech, i) => {
                                         return <Tech key={i} image={tech.image} label={tech.label} />
