@@ -34,11 +34,15 @@ canvas {
 }
 
 .box-shadow-white {
-    border     : 1px solid #969696;
+    // border     : 1px solid #969696;
     box-shadow : 0px 0px 4px rgba(255, 255, 255, 0.9), inset 0px 0px 4px rgba(255, 255, 255, 0.9);
 }
 
 .filter-shadow {
+    filter : drop-shadow(0px 2px 6px rgba(0, 0, 0, 1));
+}
+
+.filter-shadow-black {
     filter : drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.5));
 }
 

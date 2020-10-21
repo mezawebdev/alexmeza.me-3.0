@@ -11,12 +11,17 @@ $loader-size : 200px;
     display         : flex;
     justify-content : center;
     align-items     : center;
+    text-align      : center;
     opacity         : 1;
-    transition      : opacity 0.25s ease-in-out;
+    transition      : opacity 0.5s ease-in-out;
 
     &.removed {
         opacity        : 0;
         pointer-events : none;
+    }
+
+    &.fadeout {
+        opacity : 0;
     }
 
     .bg {
@@ -58,18 +63,40 @@ $loader-size : 200px;
 
     .content {
         position  : relative;
-        animation : grow 0.5s ease-in-out 1 forwards;
-        opacity   : 0;
+        opacity   : 1;
         z-index   : 2;
-        transform : scale(0.5);
 
         .text {
-            position  : absolute;
-            left      : 50%;
-            top       : 50%;
-            font-size : 2.5em;
-            transform : translate(-50%, -50%);
-            animation : text 1s ease-in-out infinite alternate;
+            font-size : 4em;
+        }
+
+        .loading-bar {
+            margin-top : -5px;
+
+            div {
+                width         : 140px;
+                height        : 8px;
+                border-radius : 7px;
+                border        : 1px solid white;
+                margin-right  : auto;
+                margin-left   : auto;
+                position      : relative;
+
+                span {
+                    width      : 0%;
+                    height     : 100%;
+                    background : white;
+                    display    : block;
+                    position   : absolute;
+                    animation  : loading 3s linear 1 forwards;
+                }
+
+                @keyframes loading {
+                    100% {
+                        width : 100%;
+                    }
+                }
+            }
         }
 
         svg {

@@ -9,8 +9,6 @@ export default function Project() {
     const pid: number = parseInt(router.query.pid);
     const project = app.projects[pid];
 
-    console.log(project);
-
     if (project === undefined) {
         router.push("/work");
     }

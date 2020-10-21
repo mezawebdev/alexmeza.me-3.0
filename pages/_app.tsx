@@ -27,6 +27,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
     const [worldLoaded, setWorldLoaded] = useState(true);
     const [appLoaded, setAppLoaded] = useState(false);
     const [transition, setTransition] = useState(false);
+    const [loadingScreenFadeout, setLoadingScreenFadeout] = useState(false);
 
     const onNavClick = pageData => {
         if (App.showWorld) {
@@ -40,20 +41,39 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         }
     }
 
+    function onLoad() {
+        setTimeout(() => {
+            setLoadingScreenFadeout(true);
+            setTimeout(() => {
+                setAppLoaded(true);
+            }, 500);
+        }, 500);
+    }
+
     useEffect(() => {
         setActivePage(getCurrentPage());
 
         if (App.showWorld) {
             world = new World("canvas");
 
+            window.addEventListener("load", onLoad);
+
+            window.onload = () => {
+                onLoad();
+            }
+
+            setTimeout(() => {
+                onLoad();
+            }, 3500);
+
             window.addEventListener("resize", () => {
                 world.resize();
             });
         }
 
-        window.addEventListener("load", () => {
-            setAppLoaded(true);
-        });
+        // window.addEventListener("load", onLoad);
+
+        // window.onload = window.onload;
     }, []);
 
     return (
@@ -71,7 +91,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 </script>
                 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             </Head>
-            { appLoaded ? null : <LoadingScreenWindow /> }
+            { appLoaded ? null : <LoadingScreenWindow fadeout={loadingScreenFadeout} /> }
             { App.world.debug.showConsole ? <Console /> : null }
             <Navigation onNavClick={onNavClick} />
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }

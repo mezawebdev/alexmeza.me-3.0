@@ -29,6 +29,7 @@ const config = {
     ],
     projects: [
         {
+            id: 1,
             type: "professional",
             title: "",
             description: "",
@@ -38,6 +39,7 @@ const config = {
             technologies: []
         },
         {
+            id: 2,
             type: "professional",
             title: "",
             description: "",
@@ -47,6 +49,7 @@ const config = {
             technologies: []
         },
         {
+            id: 3,
             type: "professional",
             title: "",
             description: "",
@@ -56,6 +59,7 @@ const config = {
             technologies: []
         },
         {
+            id: 4,
             type: "professional",
             title: "",
             description: "",
@@ -65,6 +69,7 @@ const config = {
             technologies: []
         },
         {
+            id: 5,
             type: "personal",
             title: "",
             description: "",
@@ -74,6 +79,7 @@ const config = {
             technologies: []
         },
         {
+            id: 6,
             type: "personal",
             title: "",
             description: "",
@@ -83,6 +89,7 @@ const config = {
             technologies: []
         },
         {
+            id: 7,
             type: "personal",
             title: "",
             description: "",
@@ -92,6 +99,7 @@ const config = {
             technologies: []
         },
         {
+            id: 8,
             type: "personal",
             title: "",
             description: "",
@@ -101,6 +109,7 @@ const config = {
             technologies: []
         },
         {
+            id: 9,
             type: "experimental",
             title: "",
             description: "",
@@ -110,6 +119,7 @@ const config = {
             technologies: []
         },
         {
+            id: 10,
             type: "experimental",
             title: "",
             description: "",
@@ -297,7 +307,7 @@ const config = {
         debug: {
             showAxis: false,
             axisSize: 5000,
-            showTarget: true,
+            showTarget: false,
             showConsole: false
         },
         objects: {

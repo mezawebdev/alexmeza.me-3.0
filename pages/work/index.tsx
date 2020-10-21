@@ -10,20 +10,26 @@ import { ScrollTrigger } from "../../node_modules/gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Work(props) {
-    const professionalProjects = useRef(null);
-    const personalProjects = useRef(null);
-    const experimentalProjects = useRef(null);
+    const professionalProjects = useRef(null),
+        personalProjects = useRef(null),
+        experimentalProjects = useRef(null);
 
     useEffect(() => {
-        let tl = gsap.timeline(),
+        let tl = gsap.timeline({
+                clearProps: "all"
+            }),
             tl2 = gsap.timeline({
                 clearProps: "all"
             }),
-            tl3 = gsap.timeline(),
+            tl3 = gsap.timeline({
+                clearProps: "all"
+            }),
             tl4 = gsap.timeline({
                 clearProps: "all"
             }),
-            tl5 = gsap.timeline(),
+            tl5 = gsap.timeline({
+                clearProps: "all"
+            }),
             positionOffset = 1.1,
             parallaxSpeed = -50;
 
@@ -45,22 +51,8 @@ export default function Work(props) {
                 scrollTrigger: {
                     trigger: current,
                     scrub: 1,
-                    // once: true,
                     start: "0% 90%",
                     end: "50% 100%"
-                },
-                onComplete: () => {
-                    // tl3.to(current, {
-                    //     duration: 0.25,
-                    //     opacity: 1,
-                    //     y: parallaxSpeed * (i + 1),
-                    //     scrollTrigger: {
-                    //         trigger: ".professional",
-                    //         scrub: 1,
-                    //         start: "top 50%",
-                    //         end: "100% 100%"
-                    //     }
-                    // });
                 }
             }, positionOffset + (0.1 * i));
         }
@@ -77,22 +69,8 @@ export default function Work(props) {
                 scrollTrigger: {
                     trigger: current,
                     scrub: 1,
-                    // once: true,
                     start: "0% 80%",
                     end: "50% 100%"
-                },
-                onComplete: () => {
-                    // tl5.to(current, {
-                    //     duration: 0.25,
-                    //     opacity: 1,
-                    //     y: parallaxSpeed * (i + 1),
-                    //     scrollTrigger: {
-                    //         trigger: "#page--work",
-                    //         scrub: 1,
-                    //         start: "50% 0%",
-                    //         end: "100% 100%"
-                    //     }
-                    // });
                 }
             }, positionOffset + (0.1 * i));
         }
@@ -109,22 +87,8 @@ export default function Work(props) {
                 scrollTrigger: {
                     trigger: current,
                     scrub: 1,
-                    // once: true,
                     start: "0% 90%",
                     end: "50% 100%"
-                },
-                onComplete: () => {
-                    // tl5.to(current, {
-                    //     duration: 0.25,
-                    //     opacity: 1,
-                    //     y: parallaxSpeed * (i + 1),
-                    //     scrollTrigger: {
-                    //         trigger: "#page--work",
-                    //         scrub: 1,
-                    //         start: "50% 0%",
-                    //         end: "100% 100%"
-                    //     }
-                    // });
                 }
             }, positionOffset + (0.1 * i));
         }
@@ -143,7 +107,7 @@ export default function Work(props) {
             <Body>
                 <div className="ct">
                     <WorkProjects>
-                        <h4 className="sp-5">PROFESSIONAL</h4>
+                        <h4 className="sp-5 filter-shadow">PROFESSIONAL</h4>
                         <div 
                             ref={professionalProjects}
                             className="professional project-list">
@@ -153,14 +117,15 @@ export default function Work(props) {
                                         <div 
                                             key={i}
                                             className="row">
-                                            <WorkProject 
-                                                thumbnail={project.thumbnail} 
-                                                key={i} />
+                                                <WorkProject 
+                                                    projectId={project.id}
+                                                    thumbnail={project.thumbnail} 
+                                                    key={i} />
                                         </div> : null
                                 );
                             })}
                         </div>
-                        <h4>PERSONAL</h4>
+                        <h4 className="filter-shadow">PERSONAL</h4>
                         <div 
                             ref={personalProjects}
                             className="personal project-list">
@@ -170,14 +135,15 @@ export default function Work(props) {
                                         <div 
                                             key={i}
                                             className="row">
-                                            <WorkProject 
-                                                thumbnail={project.thumbnail} 
-                                                key={i} />
+                                                <WorkProject 
+                                                    projectId={project.id}
+                                                    thumbnail={project.thumbnail} 
+                                                    key={i} />
                                         </div> : null
                                 );
                             })}
                         </div>
-                        <h4>EXPERIMENTAL</h4>
+                        <h4 className="filter-shadow">EXPERIMENTAL</h4>
                         <div 
                             ref={experimentalProjects}
                             className="experimental project-list">
@@ -187,9 +153,10 @@ export default function Work(props) {
                                         <div 
                                             key={i}
                                             className="row">
-                                            <WorkProject 
-                                                thumbnail={project.thumbnail} 
-                                                key={i} />
+                                                <WorkProject 
+                                                    projectId={project.id}
+                                                    thumbnail={project.thumbnail} 
+                                                    key={i} />
                                         </div> : null
                                 );
                             })}

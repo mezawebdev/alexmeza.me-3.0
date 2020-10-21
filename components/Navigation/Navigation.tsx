@@ -30,7 +30,7 @@ export default function Navigation(props) {
 
     if (process.browser) {
         router.events.on("routeChangeStart", url => {
-            const newPage = app.pages.find(page => { return page.path === url });
+            const newPage = app.pages.find(page => { return url.includes(page.path); });
             setCurrentPage(newPage);
         });
     }

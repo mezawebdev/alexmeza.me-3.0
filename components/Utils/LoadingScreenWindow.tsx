@@ -1,17 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import utils from "../../assets/utils";
-
-class Star {
-    x: number;
-    y: number;
-    r: number;
-
-    constructor(x: number, y: number, r: number) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
-    }
-}
 
 export default function LoadingScreen(props) {
     const [containerWidth, setContainerWidth] = useState(0);
@@ -23,33 +10,13 @@ export default function LoadingScreen(props) {
     const canvas = useRef();
     let onResizeEvent;
 
-    useEffect(() => {
-        setContainerWidth(window.innerWidth);
-        setContainerHeight(window.innerHeight);
-
-        onResizeEvent = window.addEventListener("resize", () => {
-            setContainerWidth(window.innerWidth);
-            setContainerHeight(window.innerHeight);
-        });
-
-        let arr = [];
-
-        // for (let i = 0; i < 100; i++) {
-        //     arr.push(new Star(utils.minmaxInt(0, window.innerWidth), utils.minmaxInt(0, window.innerHeight), utils.minmaxInt(0.2, 2)));
-        //     setStars(arr);
-        // }
-
-        // On component unmount
-        return () => {
-            window.removeEventListener("resize", onResizeEvent);
-        }
-    }, []);
-
     return (
-        <div id="loading-screen">
+        <div
+            className={`${ props.fadeout ? "fadeout" : "" }`} 
+            id="loading-screen">
             <div className="bg bg-1"></div>
             <div className="bg bg-2"></div>
-            <div
+            {/* <div
                 style={{ width: containerWidth, height: containerHeight }} 
                 className="stars">
                 {stars.map((star, i) => {
@@ -67,7 +34,7 @@ export default function LoadingScreen(props) {
                         </span>
                     );
                 })}
-            </div>
+            </div> */}
             <div className="content">
                 <div className="text">
                     <span>L</span>
@@ -78,7 +45,12 @@ export default function LoadingScreen(props) {
                     <span>N</span>
                     <span>G</span>
                 </div>
-                <svg
+                <div className="loading-bar">
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                {/* <svg
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox={`0 0 ${ containerWidth } ${ containerHeight }`}
                     height={containerHeight}
@@ -121,7 +93,7 @@ export default function LoadingScreen(props) {
                         stroke="white"
                         fillOpacity="0"
                         strokeDasharray="100" />
-                </svg>
+                </svg> */}
             </div>
         </div>
     );

@@ -24,10 +24,20 @@
         }
 
         .row {
-            width      : 100%;
-            box-sizing : border-box;
-            display    : flex;
-            margin-top : -20px;
+            width          : 100%;
+            box-sizing     : border-box;
+            display        : flex;
+            margin-top     : -20px;
+            pointer-events : none;
+            transition     : 0.15s transform ease-in-out;
+
+            &:hover {
+                transform : scale(1.015);
+            }
+
+            &:active {
+                transform : scale(0.995);
+            }
 
             &:first-child {
                 margin-top : 0px;
@@ -54,7 +64,13 @@
                 width               : 55%;
                 background-size     : cover;
                 background-position : 50% 0%;
+                cursor              : pointer;
                 opacity             : 0;
+                pointer-events      : all;
+
+                &:hover {
+                    transform : scale(1.5);
+                }
 
                 @media (min-width : $breakpoint-xsm) {
                     height : 200px;
