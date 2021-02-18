@@ -31,18 +31,21 @@ const config = {
         {
             id: 1,
             type: "professional",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: []
         },
         {
             id: 2,
             type: "professional",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -51,8 +54,8 @@ const config = {
         {
             id: 3,
             type: "professional",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -61,8 +64,8 @@ const config = {
         {
             id: 4,
             type: "professional",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -71,8 +74,8 @@ const config = {
         {
             id: 5,
             type: "personal",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -81,8 +84,8 @@ const config = {
         {
             id: 6,
             type: "personal",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -91,8 +94,8 @@ const config = {
         {
             id: 7,
             type: "personal",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -101,8 +104,8 @@ const config = {
         {
             id: 8,
             type: "personal",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -111,8 +114,8 @@ const config = {
         {
             id: 9,
             type: "experimental",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -121,8 +124,8 @@ const config = {
         {
             id: 10,
             type: "experimental",
-            title: "",
-            description: "",
+            title: "Awesome Project",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             misc: "",
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
@@ -307,7 +310,7 @@ const config = {
         debug: {
             showAxis: false,
             axisSize: 5000,
-            showTarget: false,
+            showTarget: true,
             showConsole: false
         },
         objects: {

@@ -20,6 +20,11 @@ body {
     &.transition {
         opacity : 0;
     }
+
+    &.playing-game {
+        opacity        : 0;
+        pointer-events : none;
+    }
 }
 
 canvas {

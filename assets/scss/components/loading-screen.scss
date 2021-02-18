@@ -3,17 +3,25 @@ $loader-size : 200px;
 #loading-screen {
     width           : 100vw;
     height          : 100vh;
-    background      : rgb(10, 10, 10);
+    background      : rgb(25, 25, 25);
     z-index         : 10000;
     position        : fixed;
     top             : 0px;
     left            : 0px;
     display         : flex;
+    padding         : 25px;
     justify-content : center;
     align-items     : center;
     text-align      : center;
+    box-sizing      : border-box;
     opacity         : 1;
     transition      : opacity 0.5s ease-in-out;
+
+    @media (min-width : $breakpoint-md) {
+        text-align      : left;
+        justify-content : flex-start;
+        align-items     : flex-end;
+    }
 
     &.removed {
         opacity        : 0;
@@ -32,7 +40,7 @@ $loader-size : 200px;
         left     : 0px;
 
         &.bg-1 {
-            background-image    : url("/assets/images/loader-bg.jpg");
+            // background-image    : url("/assets/images/loader-bg.jpg");
             background-size     : cover;
             background-position : 50% 50%;
             filter              : saturate(0.6);
@@ -67,7 +75,7 @@ $loader-size : 200px;
         z-index   : 2;
 
         .text {
-            font-size : 4em;
+            font-size : 1.5em;
         }
 
         .loading-bar {
@@ -77,18 +85,21 @@ $loader-size : 200px;
                 width         : 140px;
                 height        : 8px;
                 border-radius : 7px;
-                border        : 1px solid white;
-                margin-right  : auto;
-                margin-left   : auto;
-                position      : relative;
+                // border        : 1px solid white;
+                margin-right : auto;
+                margin-left  : auto;
+                position     : relative;
+                box-shadow   : 0px 0px 10px rgba(255, 255, 255, 0.1);
+                background   :rgb(22, 22, 22);
 
                 span {
-                    width      : 0%;
-                    height     : 100%;
-                    background : white;
-                    display    : block;
-                    position   : absolute;
-                    animation  : loading 3s linear 1 forwards;
+                    width         : 0%;
+                    height        : 100%;
+                    background    : white;
+                    display       : block;
+                    border-radius : 7px;
+                    position      : absolute;
+                    animation     : loading 3s linear 1 forwards;
                 }
 
                 @keyframes loading {

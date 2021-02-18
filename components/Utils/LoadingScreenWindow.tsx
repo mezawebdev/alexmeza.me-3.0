@@ -1,13 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function LoadingScreen(props) {
-    const [containerWidth, setContainerWidth] = useState(0);
-    const [containerHeight, setContainerHeight] = useState(0);
-    const [stars, setStars] = useState([]);
-    const [width, setWidth] = useState(250);
-    const [height, setHeight] = useState(250);
-    const starFadeInOffset = 0.01;
-    const canvas = useRef();
+    const [containerWidth, setContainerWidth] = useState(0),
+        [containerHeight, setContainerHeight] = useState(0),
+        [stars, setStars] = useState([]),
+        [width, setWidth] = useState(250),
+        [height, setHeight] = useState(250),
+        starFadeInOffset = 0.01,
+        canvas = useRef();
+
     let onResizeEvent;
 
     return (
@@ -37,13 +38,7 @@ export default function LoadingScreen(props) {
             </div> */}
             <div className="content">
                 <div className="text">
-                    <span>L</span>
-                    <span>O</span>
-                    <span>A</span>
-                    <span>D</span>
-                    <span>I</span>
-                    <span>N</span>
-                    <span>G</span>
+                    WORKING
                 </div>
                 <div className="loading-bar">
                     <div>

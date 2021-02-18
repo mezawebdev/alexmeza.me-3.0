@@ -9,15 +9,17 @@ import Effects from "./Effects";
 import Stars from "./Stars";
 import AsteroidBelt from './AsteroidBelt';
 import Target from './Target';
+import Game from "./Game/Game";
 
 const App: any = config;
 
 class World {
+    mode: string;
     canvasElId: string;
     canvas: HTMLCanvasElement;
     engine: BABYLON.Engine;
     scene: BABYLON.Scene;
-    camera: BABYLON.ArcRotateCamera;
+    camera: any;
     light: BABYLON.HemisphericLight;
     spaceBox: SpaceBox;
     effects: Effects;
@@ -30,19 +32,23 @@ class World {
     stars: Stars;
     target: Target;
     asteroidBelt: AsteroidBelt;
+    playingGame: boolean;
+    game: Game;
     
     constructor(canvasElId: string) {
+        this.mode = Utils.isMobile() ? "mobile" : "desktop";
         this.canvasElId = canvasElId;
         this.canvas = document.getElementById(this.canvasElId) as HTMLCanvasElement;
         this.engine = new BABYLON.Engine(this.canvas, true, { stencil: true });
         this.scene = new BABYLON.Scene(this.engine);
         this.camera = new BABYLON.ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
         this.camera.setTarget(BABYLON.Vector3.Zero());
-        this.camera.attachControl(this.canvas, true);
+        // this.camera.attachControl(this.canvas, true);
         this.camera.maxZ = 17000;
         this.scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
         this.planets = [];
         this.lights = [];
+        this.playingGame = false;
         this.createWorld();
 
         this.engine.runRenderLoop(() => {
@@ -57,6 +63,10 @@ class World {
         
         this.scene.registerAfterRender(() => {
             this.rotatePlanets();
+            
+            if (this.playingGame) {
+                this.game.controllers.update();
+            }
         });
     }
 
@@ -155,7 +165,7 @@ class World {
             planet.rotationAxis.pivot.rotate(new BABYLON.Vector3(0, 1, 0), planet.rotation.angle, BABYLON.Space.WORLD);
         });
 
-        if (App.world.camera.animate) {
+        if (App.world.camera.animate && !this.playingGame) {
             this.camera.alpha -= 0.001275;
         }
 
@@ -208,14 +218,22 @@ class World {
             // @ts-ignore
             window.showMessage(`going to planet: ${ newTargetPlanet.key }`);
 
-            console.log("yo2!");
             await runningAnim.waitAsync();
             await runningAnim.waitAsync();
-            console.log("yo!");
+
             cb();
         } else {
             return;
         }
+    }
+
+    public startGame(): void {
+        // this.camera = new BABYLON.UniversalCamera("GameCamera", new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
+        this.target.newUnlockedTarget();
+        this.camera.setTarget(this.target.mesh);
+        this.game = new Game(this);
+        this.playingGame = true;
+        console.log(this);
     }
 }
 

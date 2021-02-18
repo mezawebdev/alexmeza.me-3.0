@@ -1,0 +1,43 @@
+.project-card {
+    width           : 100%;
+    display         : flex;
+    justify-content : center;
+
+    * {
+        box-sizing : border-box;
+    }
+
+    .space-ui-panel {
+        min-height : 300px;
+        width      : 90%;
+
+        hr {
+            margin-bottom : 15px;
+            width         : 50px;
+        }
+    
+        .title {
+            font-size  : 1.5em;
+            margin-top : 20px;
+            text-align : center;
+        }
+    
+        .slideshow {
+            width  : 100%;
+            height : 250px;
+            border : 1px solid red;
+        }
+    
+        .general-info {
+            margin-top : 15px;
+        }
+
+        .images {
+            img {
+                margin  : 0 auto;
+                display : block;
+                width   : 80%;
+            }
+        }
+    }
+}

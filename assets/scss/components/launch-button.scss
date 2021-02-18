@@ -1,0 +1,40 @@
+.launch-button {
+    position        : fixed;
+    bottom          : 25px;
+    left            : 25px;
+    background      : red;
+    width           : 50px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    height          : 50px;
+    color           : white;
+    line-height     : 1;
+    border-radius   : 1000px;
+    backdrop-filter : blur(2px);
+    background      : rgba(29, 36, 50, 0.5);
+    box-shadow      : 0px 4px 16px rgba(0, 0, 0, 0.5);
+    border          : 1px solid #969696;
+    font-size       : 0.8em;
+    z-index         : 10;
+
+    &:before {
+        width          : 100%;
+        position       : absolute;
+        left           : 0px;
+        top            : 0px;
+        border-radius  : 1000px;
+        height         : 100%;
+        pointer-events : none;
+        z-index        : 10;
+        content        : '';
+        box-shadow     : 
+            0px 0px 4px rgba(255, 255, 255, 0.9), 
+            inset 0px 0px 4px rgba(255, 255, 255, 0.9);
+    }
+
+    img {
+        width     : 15px;
+        filter    : invert(1);
+    }
+}
