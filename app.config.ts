@@ -33,103 +33,123 @@ const config = {
             type: "professional",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [
                 "/assets/images/projects/sunsick-studio-1.png",
                 "/assets/images/projects/sunsick-studio-1.png"
             ],
-            technologies: []
+            technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Vue.js", "Wordpress"],
+            githubUrl: "http://myapp.com",
+            appUrl: "http://myapp.com"
         },
         {
             id: 2,
             type: "professional",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 3,
             type: "professional",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 4,
             type: "professional",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 5,
             type: "personal",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 6,
             type: "personal",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 7,
             type: "personal",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 8,
             type: "personal",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 9,
             type: "experimental",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         },
         {
             id: 10,
             type: "experimental",
             title: "Awesome Project",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            misc: "",
+            year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
             images: [],
-            technologies: []
+            technologies: [],
+            githubUrl: "",
+            appUrl: ""
         }
     ],
     technologies: [

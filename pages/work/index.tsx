@@ -15,21 +15,11 @@ export default function Work(props) {
         experimentalProjects = useRef(null);
 
     useEffect(() => {
-        let tl = gsap.timeline({
-                clearProps: "all"
-            }),
-            tl2 = gsap.timeline({
-                clearProps: "all"
-            }),
-            tl3 = gsap.timeline({
-                clearProps: "all"
-            }),
-            tl4 = gsap.timeline({
-                clearProps: "all"
-            }),
-            tl5 = gsap.timeline({
-                clearProps: "all"
-            }),
+        let tl = gsap.timeline({ clearProps: "all" }),
+            tl2 = gsap.timeline({ clearProps: "all" }),
+            tl3 = gsap.timeline({ clearProps: "all" }),
+            tl4 = gsap.timeline({ clearProps: "all" }),
+            tl5 = gsap.timeline({ clearProps: "all" }),
             positionOffset = 1.1,
             parallaxSpeed = -50;
 

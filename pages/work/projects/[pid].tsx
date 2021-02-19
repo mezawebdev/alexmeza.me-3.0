@@ -1,26 +1,30 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
 import App from "../../../app.config";
 import Header from "../../../components/Layout/Header";
 import Body from "../../../components/Layout/Body";
-import Panel from "../../../components/Layout/SpaceUI/Panel";
 import ProjectCard from "../../../components/Blocks/ProjectCard";
-import dynamic from 'next/dynamic';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const app: any = App,
-    Swiper = dynamic(() => import("react-id-swiper"), { ssr: false });
+const app: any = App;
 
 export default function Projects(props) {
     const router = useRouter(),
-        pid: number = parseInt(router.query.pid.toString()),
-        params = {
+        pid: number|any = parseInt(router.query.pid.toString());
+    
+    if (isNaN(pid)) {
+        router.push("/work"); 
+        return null;
+    }
+
+    const params = {
             slidesPerView: 1,
             spaceBetween: -120,
             centeredSlides: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
-            }
+            },
+            initialSlide: pid - 1
         };
 
     return (
@@ -43,9 +47,9 @@ export default function Projects(props) {
                 <Swiper {...params}>
                     {app.projects.map((project, i) => { 
                         return (
-                            <div key={i}>
+                            <SwiperSlide key={i}>
                                 <ProjectCard {...project} />
-                            </div>
+                            </SwiperSlide>
                         );
                     })}
                 </Swiper>

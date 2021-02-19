@@ -21,6 +21,10 @@
         height : 44px;
     }   
 
+    a {
+        color : white;
+    }
+
     &.hide {
         opacity : 0 !important;
     }
@@ -127,14 +131,20 @@
             border                : 1px solid rgb(150, 150, 150);
             background            : rgba(29, 36, 50, 0.5);
             box-shadow            : 0px 4px 16px rgba(0, 0, 0, 0.5);
-            display               : none;
             top                   : 50px;
+            opacity               : 0;
+            transform             : translate(0, -10px);
+            display               : grid;
+            pointer-events        : none;
+            transition            : opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 
             @media (min-width : $breakpoint-md) {
-                margin    : 0;
-                top       : 0px;
-                display   : grid;
-                max-width : 330px;
+                margin         : 0;
+                top            : 0px;
+                max-width      : 330px;
+                pointer-events : all;
+                opacity        : 1;
+                transform      : translate(0, 0);
             }
 
             @media (min-width : $breakpoint-xmd) {
@@ -142,7 +152,9 @@
             }
 
             &.mobile-menu-toggled {
-                display : grid;
+                pointer-events : all;
+                opacity        : 1;
+                transform      : translate(0, 0);
             }
 
             &:before {

@@ -92,10 +92,10 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
                     crossOrigin="anonymous">
                 </script>
-                <script 
+                {/* <script 
                     type="text/javascript" 
                     src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
-                </script>
+                </script> */}
             </Head>
             { appLoaded ? null : <LoadingScreenWindow fadeout={loadingScreenFadeout} /> }
             {/* { App.world.debug.showConsole ? <Console /> : null } */}

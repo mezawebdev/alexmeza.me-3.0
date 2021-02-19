@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useRouter } from 'next/router';
 import Panel from "../Layout/SpaceUI/Panel";
+import Link from 'next/link';
 
 const app: any = App;
 
@@ -25,9 +26,13 @@ export default function Navigation(props) {
                     {props.mobileMenuOpened ? <i className="las la-times"></i> : <i className="las la-bars"></i>}
                 </button>
                 <div className={`logo-wrapper${ props.currentPage.path !== '/' ? " toggled-logo" : "" }`}>
-                    <Panel classes={`font-family-title text-shadow logo${ props.currentPage.path !== '/' ? " toggled-logo" : "" }`}>
-                        <span className="filter-shadow">ALEX MEZA</span>
-                    </Panel>
+                    <Link href="/">
+                        <a onClick={() => { props.goToPage(app.pages[0]); }}>
+                            <Panel classes={`font-family-title text-shadow logo${ props.currentPage.path !== '/' ? " toggled-logo" : "" }`}>
+                                <span className="filter-shadow">ALEX MEZA</span>
+                            </Panel>
+                        </a>
+                    </Link>
                 </div>
                 <div className={`inner${ props.mobileMenuOpened ? ' mobile-menu-toggled' : '' }`}>
                     {app.pages.map((page, i) => {
