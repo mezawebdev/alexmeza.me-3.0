@@ -9,7 +9,7 @@ const app: any = App;
 
 export default function Projects(props) {
     const router = useRouter(),
-        pid: number|any = parseInt(router.query.pid.toString());
+        pid: number|any = parseInt(router.query.id.toString());
     
     if (isNaN(pid)) {
         router.push("/work"); 
@@ -17,15 +17,16 @@ export default function Projects(props) {
     }
 
     const params = {
-            slidesPerView: 1,
-            spaceBetween: -120,
-            centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-            initialSlide: pid - 1
-        };
+        slidesPerView: 1,
+        spaceBetween: -120,
+        centeredSlides: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        initialSlide: pid - 1 <= app.projects.length - 1 ? pid - 1 : 0,
+        onSlideChange(e) { router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true }) }
+    };
 
     return (
         <div 

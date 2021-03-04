@@ -35,20 +35,11 @@
         align-items     : center;
         justify-content : space-between;
 
-        @media (min-width : $breakpoint-md) {
-            // display         : flex;
-            // justify-content : flex-end;
-        }
-
         &.toggled-logo {
             @media (min-width : $breakpoint-md) {
                 // justify-content: space-between;
             }
         }
-
-        // &.toggled-logo {
-        //     justify-content : 
-        // }
 
         .logo-wrapper {
             opacity        : 0;

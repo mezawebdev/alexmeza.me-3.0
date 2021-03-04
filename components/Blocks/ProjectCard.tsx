@@ -42,10 +42,12 @@ export default function ProjectCard(props) {
                 <div className="technology section">
                     <p className="headline">Technologies Used</p>
                     <div className="grid">
-                        {props.technologies.map(tech => {
+                        {props.technologies.map((tech, i) => {
                             const techData = app.technologies.find(t => { return t.label === tech });
                             return (
-                                <div className="tech">
+                                <div
+                                    key={i} 
+                                    className="tech">
                                     <img src={techData.image} />
                                     <span>{tech}</span>
                                 </div>

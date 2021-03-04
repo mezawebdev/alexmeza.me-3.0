@@ -330,7 +330,7 @@ const config = {
         debug: {
             showAxis: false,
             axisSize: 5000,
-            showTarget: true,
+            showTarget: false,
             showConsole: false
         },
         objects: {
