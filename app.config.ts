@@ -41,7 +41,8 @@ const config = {
             ],
             technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Vue.js", "Wordpress"],
             githubUrl: "http://myapp.com",
-            appUrl: "http://myapp.com"
+            appUrl: "http://myapp.com",
+            codebaseSrc: "/test"
         },
         {
             id: 2,
@@ -50,10 +51,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 3,
@@ -62,10 +67,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 4,
@@ -74,10 +83,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 5,
@@ -86,10 +99,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 6,
@@ -98,10 +115,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 7,
@@ -110,10 +131,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 8,
@@ -122,10 +147,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 9,
@@ -134,10 +163,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         },
         {
             id: 10,
@@ -146,10 +179,14 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [],
+            images: [
+                "/assets/images/projects/sunsick-studio-1.png",
+                "/assets/images/projects/sunsick-studio-1.png"
+            ],
             technologies: [],
             githubUrl: "",
-            appUrl: ""
+            appUrl: "",
+            codebaseSrc: ""
         }
     ],
     technologies: [

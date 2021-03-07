@@ -87,15 +87,20 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <link 
                     rel="stylesheet" 
                     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+                {/* <script
+                    src="https://code.jquery.com/jquery-3.5.1.min.js"
+                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                    crossOrigin="anonymous">
+                </script> */}
                 <script
                     src="https://code.jquery.com/jquery-3.5.1.min.js"
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
                     crossOrigin="anonymous">
                 </script>
-                {/* <script 
-                    type="text/javascript" 
-                    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
-                </script> */}
+                <script
+                    src="/assets/plugins/jquery-file-tree/jQueryFileTree.min.js"
+                    type="text/javascript">
+                </script>
             </Head>
             { appLoaded ? null : <LoadingScreenWindow fadeout={loadingScreenFadeout} /> }
             {/* { App.world.debug.showConsole ? <Console /> : null } */}

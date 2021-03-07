@@ -1,9 +1,11 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 import App from "../../../app.config";
 import Header from "../../../components/Layout/Header";
 import Body from "../../../components/Layout/Body";
 import ProjectCard from "../../../components/Blocks/ProjectCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Head from 'next/head';
 
 const app: any = App;
 
@@ -16,6 +18,8 @@ export default function Projects(props) {
         return null;
     }
 
+    const [activeSlide, setActiveSlide] = useState(pid <= app.projects.length - 1 ? pid : 0);
+
     const params = {
         slidesPerView: 1,
         spaceBetween: -120,
@@ -24,14 +28,32 @@ export default function Projects(props) {
             el: '.swiper-pagination',
             clickable: true
         },
-        initialSlide: pid - 1 <= app.projects.length - 1 ? pid - 1 : 0,
-        onSlideChange(e) { router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true }) }
+        initialSlide: activeSlide,
+        onSlideChange(e) { 
+            router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true });
+            setActiveSlide(e.realIndex);
+        }
     };
 
     return (
         <div 
             className="subpage"
             id="page--project">
+            <Head>
+                <link 
+                    rel="stylesheet" 
+                    type="text/css" 
+                    href="/assets/plugins/jquery-file-tree/jQueryFileTree.min.css" />
+                {/* <script
+                    src="https://code.jquery.com/jquery-3.5.1.min.js"
+                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                    crossOrigin="anonymous">
+                </script>
+                <script
+                    src="/assets/plugins/jquery-file-tree/jQueryFileTree.min.js"
+                    type="text/javascript">
+                </script> */}
+            </Head>
             <Header 
                 animate={true}
                 align="left">
@@ -49,7 +71,9 @@ export default function Projects(props) {
                     {app.projects.map((project, i) => { 
                         return (
                             <SwiperSlide key={i}>
-                                <ProjectCard {...project} />
+                                <ProjectCard 
+                                    active={activeSlide === i}
+                                    {...project} />
                             </SwiperSlide>
                         );
                     })}

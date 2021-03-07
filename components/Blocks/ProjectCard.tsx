@@ -1,34 +1,48 @@
 import Panel from "../Layout/SpaceUI/Panel";
 import App from "../../app.config";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useRef } from "react";
+import FileBrowser from "./FileBrowser";
 
 export default function ProjectCard(props) {
-    const app: any = App,
+    const app: any   = App,
+        fileBrowser = useRef(),
         sliderParams = {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        centeredSlides: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        }
-    };
+            slidesPerView: 1,
+            spaceBetween: 15,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        };
+
+    useEffect(() => {
+        // @ts-ignore
+        // $(fileBrowser.current).fileTree({ root: "/", script: "/api/get-files" }, file => {
+		// 	console.log(file);
+		// });
+    }, [])
 
     return (
-        <div className="project-card">
+        <div className={`project-card${ props.active ? " active" : "" }`}>
             <Panel>
                 <div className="title">{props.title}</div>  
                 <hr />
                 <div className="images">
-                    <Swiper {...sliderParams}>
-                        {props.images.map((image, i) => { 
-                            return (
-                                <SwiperSlide key={i}>
-                                    <img src={image} />
-                                </SwiperSlide>
-                            );
-                        })}
-                    </Swiper>
+                    {props.active ? (
+                        <Swiper {...sliderParams}>
+                            {props.images.map((image, i) => { 
+                                return (
+                                    <SwiperSlide key={i}>
+                                        <img src={image} />
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
+                    ) : (
+                        <img src="/assets/images/projects/mockup-placeholder.png" />
+                    )}
                 </div>
                 <div className="general-info">{props.description}</div>
                 <div className="options">
@@ -55,6 +69,18 @@ export default function ProjectCard(props) {
                         })}
                     </div>
                 </div>
+                {typeof props.codebaseSrc === "string" ? (
+                    <div className="section source-code">
+                        <p className="headline">Source Code</p>
+                        <div className="code">
+                            {props.active ? <FileBrowser dir={props.codebaseSrc} /> : null}
+                        </div>
+                    </div>
+                ) : (
+                    <div className="section source-code">
+                        <p>No Source Code To Display</p>
+                    </div>
+                )}
             </Panel>
         </div>
     );

@@ -1,0 +1,22 @@
+.file-browser {
+    padding         : 10px;
+    background      : linear-gradient(70deg, rgba(82, 101, 138, 0.5), rgba(131, 146, 177, 0.5), rgba(82, 101, 138, 0.5));
+    border-radius   : 7px;
+    backdrop-filter : blur(2px);
+    border          : 1px solid rgb(189, 189, 189);
+    
+    
+
+    li {
+        margin-bottom : 5px !important;
+        display       : block;
+    
+        &:last-child {
+            margin-bottom : 0px !important;
+        }
+
+        a {
+            color : white !important;
+        }
+    }
+}

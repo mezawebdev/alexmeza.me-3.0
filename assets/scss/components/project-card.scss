@@ -2,6 +2,12 @@
     width           : 100%;
     display         : flex;
     justify-content : center;
+    filter          : blur(5px);
+    transition      : filter 0.5s ease-in-out;
+
+    &.active {
+        filter : none;
+    }
 
     * {
         box-sizing : border-box;
@@ -32,7 +38,6 @@
         .slideshow {
             width  : 100%;
             height : 250px;
-            border : 1px solid red;
         }
     
         .general-info {
@@ -40,6 +45,8 @@
         }
 
         .images {
+            min-height : 125px;
+
             img {
                 margin  : 0 auto;
                 display : block;

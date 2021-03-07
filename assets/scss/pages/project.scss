@@ -5,7 +5,7 @@
                 transform        : scale(0.8);
                 transform-origin : 50% 50%;
                 z-index          : 0;
-                transition       : transform 0.25s ease-in-out;
+                transition       : transform 0.5s ease-in-out;
 
                 &.swiper-slide-active {
                     transform : scale(1);
