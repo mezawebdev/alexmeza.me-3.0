@@ -60,11 +60,12 @@ function AlexMeza({ Component, pageProps }: AppProps) {
 
         if (App.showWorld) {
             world = new World("canvas");
-            window.addEventListener("load", onLoad);
-            window.onload = onLoad;
-            setTimeout(() => { onLoad() }, 3500);
             window.addEventListener("resize", () => { world.resize() });
         }
+
+        window.addEventListener("load", onLoad);
+        // window.onload = onLoad;
+        // setTimeout(() => { onLoad() }, 3500);
     }, []);
 
     return (
@@ -102,7 +103,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     type="text/javascript">
                 </script>
             </Head>
-            { appLoaded ? null : <LoadingScreenWindow fadeout={loadingScreenFadeout} /> }
+            { !appLoaded && App.showLoadingScreen ? <LoadingScreenWindow fadeout={loadingScreenFadeout} /> : null }
             {/* { App.world.debug.showConsole ? <Console /> : null } */}
             <Navigation 
                 setCurrentPage={setCurrentPage}

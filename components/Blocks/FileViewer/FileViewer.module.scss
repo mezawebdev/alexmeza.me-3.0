@@ -1,0 +1,75 @@
+.file-viewer {
+    position        : fixed;
+    width           : 100vw;
+    height          : 100vh;
+    top             : 0px;
+    left            : 0px;
+    z-index         : 100;
+    padding         : 25px;
+    border-radius   : 7px;
+    backdrop-filter : blur(2px);
+    background      : rgba(29, 36, 50, 0.99);
+    box-shadow      : 0px 4px 16px rgba(0, 0, 0, 0.5);
+    padding         : 10px;
+    opacity         : 1;
+    // border          : 1px solid white;
+    box-sizing      : border-box;
+
+    &:before {
+        width          : 100%;
+        position       : absolute;
+        left           : 0px;
+        top            : 0px;
+        height         : 100%;
+        pointer-events : none;
+        z-index        : 10;
+        content        : '';
+        // box-shadow     : 
+        //     0px 0px 4px rgba(255, 255, 255, 0.9), 
+        //     inset 0px 0px 4px rgba(255, 255, 255, 0.9);
+    }
+
+    h4 {
+        font-size     : 1.2em;
+        display       : flex;
+        align-items   : center;
+        height        : 50px;
+        padding-right : 65px;
+        font-weight   : bold;
+    }
+
+    .close-button {
+        width           : 50px;
+        height          : 50px;
+        position        : absolute;
+        right           : 10px;
+        border-radius   : 25px;
+        border          : 1px solid white;
+        background      : none;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+
+        &:after,
+        &:before {
+            content    : "";
+            width      : 25px;
+            height     : 1px;
+            background : white;
+            display    : block;
+            position   : absolute;
+        }
+
+        &:before {
+            transform : rotate(-45deg);
+        }
+
+        &:after {
+            transform : rotate(45deg);
+        }
+    }
+
+    .fileContentsWrapper {
+        margin-top : 25px;
+    }
+}

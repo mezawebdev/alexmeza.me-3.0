@@ -17,13 +17,6 @@ export default function ProjectCard(props) {
             }
         };
 
-    useEffect(() => {
-        // @ts-ignore
-        // $(fileBrowser.current).fileTree({ root: "/", script: "/api/get-files" }, file => {
-		// 	console.log(file);
-		// });
-    }, [])
-
     return (
         <div className={`project-card${ props.active ? " active" : "" }`}>
             <Panel>
@@ -73,7 +66,7 @@ export default function ProjectCard(props) {
                     <div className="section source-code">
                         <p className="headline">Source Code</p>
                         <div className="code">
-                            {props.active ? <FileBrowser dir={props.codebaseSrc} /> : null}
+                            {props.active ? <FileBrowser handlers={props.handlers} dir={props.codebaseSrc} /> : null}
                         </div>
                     </div>
                 ) : (

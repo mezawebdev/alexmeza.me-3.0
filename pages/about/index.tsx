@@ -5,7 +5,6 @@ import Body from "../../components/Layout/Body";
 import Tech from "../../components/Blocks/Tech";
 import App from "../../app.config";
 import AboutBlock from "../../components/Blocks/AboutBlock";
-import InfiniteSlider from "../../components/Blocks/InfiniteSlider";
 import Brand from "../../components/Blocks/Brand";
 import { useEffect } from "react";
 

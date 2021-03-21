@@ -6,6 +6,8 @@ import Body from "../../../components/Layout/Body";
 import ProjectCard from "../../../components/Blocks/ProjectCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Head from 'next/head';
+import axios from "axios";
+import FileViewer from "../../../components/Blocks/FileViewer/FileViewer"
 
 const app: any = App;
 
@@ -18,22 +20,39 @@ export default function Projects(props) {
         return null;
     }
 
-    const [activeSlide, setActiveSlide] = useState(pid <= app.projects.length - 1 ? pid : 0);
-
-    const params = {
-        slidesPerView: 1,
-        spaceBetween: -120,
-        centeredSlides: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
+    const [activeSlide, setActiveSlide] = useState(pid <= app.projects.length - 1 ? pid : 0),
+        [viewingFile, setViewingFile] = useState(false),
+        [currentFileContents, setCurrentFileContents] = useState(""),
+        params = {
+            slidesPerView: 1,
+            spaceBetween: -120,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            initialSlide: activeSlide,
+            onSlideChange(e) { 
+                router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true });
+                setActiveSlide(e.realIndex);
+            }
         },
-        initialSlide: activeSlide,
-        onSlideChange(e) { 
-            router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true });
-            setActiveSlide(e.realIndex);
-        }
-    };
+        handlers = {
+            async openFile(filePath: string): Promise<any> {
+                try {
+                    setViewingFile(true);
+                    const req = await axios.get("/api/get-file?path=" + filePath);
+                    setCurrentFileContents(req.data);
+                    window.document.body.style.overflowY = "hidden";
+                } catch(e) {
+                    console.log(e);
+                }
+            },
+            closeFile: () => {
+                setViewingFile(false);
+                window.document.body.style.overflowY = "scroll";
+            }
+        };
 
     return (
         <div 
@@ -44,15 +63,6 @@ export default function Projects(props) {
                     rel="stylesheet" 
                     type="text/css" 
                     href="/assets/plugins/jquery-file-tree/jQueryFileTree.min.css" />
-                {/* <script
-                    src="https://code.jquery.com/jquery-3.5.1.min.js"
-                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-                    crossOrigin="anonymous">
-                </script>
-                <script
-                    src="/assets/plugins/jquery-file-tree/jQueryFileTree.min.js"
-                    type="text/javascript">
-                </script> */}
             </Head>
             <Header 
                 animate={true}
@@ -72,6 +82,7 @@ export default function Projects(props) {
                         return (
                             <SwiperSlide key={i}>
                                 <ProjectCard 
+                                    handlers={handlers}
                                     active={activeSlide === i}
                                     {...project} />
                             </SwiperSlide>
@@ -79,6 +90,7 @@ export default function Projects(props) {
                     })}
                 </Swiper>
             </Body>
+            {viewingFile ? <FileViewer handlers={handlers} contents={currentFileContents} /> : null}
         </div>
     )
 }
