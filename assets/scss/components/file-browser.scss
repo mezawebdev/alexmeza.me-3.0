@@ -4,8 +4,14 @@
     border-radius   : 7px;
     backdrop-filter : blur(2px);
     border          : 1px solid rgb(189, 189, 189);
-    
-    
+    overflow        : scroll;
+    min-height      : 75px;
+
+    &.flex {
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+    }
 
     li {
         margin-bottom : 5px !important;

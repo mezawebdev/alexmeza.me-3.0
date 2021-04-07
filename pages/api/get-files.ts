@@ -6,11 +6,22 @@ export default (_: NextApiRequest, res: NextApiResponse) => {
     var dir = appRoot.path + "/file-browser" + _.body.dir, 
 		r = '<ul class="jqueryFileTree" style="display: none;">';
 
+		if (_.body.dir) {
+			let dirSplit = dir.split(appRoot.path);
+
+			if (dirSplit.length > 2) {
+				dir = dirSplit[dirSplit.length - 1];
+				dir = appRoot.path + dir;
+			}
+		}
+
    	try {
        	r = '<ul class="jqueryFileTree" style="display: none;">';
-
+		// console.log({dir});
 		var dirDecoded = decodeURIComponent(dir),
 			files = fs.readdirSync(dirDecoded);
+
+		// console.log({dirDecoded});
 
 		files.forEach(function(f){
 			var ff = dirDecoded + "/" + decodeURIComponent(f),

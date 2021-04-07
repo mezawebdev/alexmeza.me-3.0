@@ -1,26 +1,36 @@
-import { useEffect, useRef } from "react";
-import axios from "axios";
-
+import { useEffect, useRef, useState } from "react";
 interface Props {
-    dir: string,
-    handlers: any
+    dir: string;
+    handlers: any;
 }
 
 export default function FileBrowser(props: Props) {
-    const el = useRef();
+    const el = useRef(),
+        [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        // @ts-ignore
-        $(el.current).fileTree({ root: props.dir, script: "/api/get-files" }, file => {
-            props.handlers.openFile(file);
-		});
+        setTimeout(() => {
+            // @ts-ignore
+            $(el.current).fileTree({ 
+                root: props.dir, 
+                script: "/api/get-files",
+                preventLinkAction: true,
+                multiFolder: true,
+                loadMessage: '<i class="fas fa-spinner"></i>'
+            }, file => { props.handlers.openFile(file) });
+
+            setLoaded(true);
+        }, 500);
     }, []);
 
     return (
-        <div 
-            ref={el}
-            className="file-browser">
+        <div className={`file-browser${ !loaded ? ' flex' : '' }`}>
+            <div 
+                ref={el}
+                className="files">
 
+            </div>
+            {!loaded ? <i className="las la-spinner"></i> : null}
         </div>
     );
 }

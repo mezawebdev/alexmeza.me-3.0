@@ -102,6 +102,9 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     src="/assets/plugins/jquery-file-tree/jQueryFileTree.min.js"
                     type="text/javascript">
                 </script>
+                <link 
+                    rel="stylesheet"
+                    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"></link>
             </Head>
             { !appLoaded && App.showLoadingScreen ? <LoadingScreenWindow fadeout={loadingScreenFadeout} /> : null }
             {/* { App.world.debug.showConsole ? <Console /> : null } */}

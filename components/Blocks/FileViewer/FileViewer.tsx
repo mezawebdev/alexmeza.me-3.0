@@ -1,7 +1,9 @@
 import styles from "./FileViewer.module.scss";
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 interface Props {
     contents: string;
+    header: string;
     handlers: any;
 }
 
@@ -12,9 +14,13 @@ export default function FileViewer(props: Props) {
                 onClick={props.handlers.closeFile}
                 className={styles["close-button"]}>
             </button>
-            <h4>FileName.html</h4>
+            <h4>{props.header}</h4>
             <div className={styles.fileContentsWrapper}>
-                <pre>{props.contents}</pre>
+                <SyntaxHighlighter 
+                    useInlineStyles={false}
+                    language="javascript">
+                    {props.contents}
+                </SyntaxHighlighter>
             </div>
         </div>
     );

@@ -6,7 +6,6 @@ import FileBrowser from "./FileBrowser";
 
 export default function ProjectCard(props) {
     const app: any   = App,
-        fileBrowser = useRef(),
         sliderParams = {
             slidesPerView: 1,
             spaceBetween: 15,
@@ -62,7 +61,7 @@ export default function ProjectCard(props) {
                         })}
                     </div>
                 </div>
-                {typeof props.codebaseSrc === "string" ? (
+                {props.codebaseSrc.length > 0 ? (
                     <div className="section source-code">
                         <p className="headline">Source Code</p>
                         <div className="code">

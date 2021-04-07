@@ -24,6 +24,7 @@
     "react-id-swiper": "^4.0.0",
     "react-joystick": "^1.0.3",
     "react-redux": "^7.2.1",
+    "react-syntax-highlighter": "^15.4.3",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",

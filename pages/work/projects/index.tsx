@@ -22,6 +22,7 @@ export default function Projects(props) {
 
     const [activeSlide, setActiveSlide] = useState(pid <= app.projects.length - 1 ? pid : 0),
         [viewingFile, setViewingFile] = useState(false),
+        [currentFileName, setCurrentFileName] = useState(""),
         [currentFileContents, setCurrentFileContents] = useState(""),
         params = {
             slidesPerView: 1,
@@ -32,16 +33,24 @@ export default function Projects(props) {
                 clickable: true
             },
             initialSlide: activeSlide,
-            onSlideChange(e) { 
+            onSlideChange(e) {
                 router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true });
                 setActiveSlide(e.realIndex);
+            },
+            onSlideChangeTransitionStart(e) {
+                const doc = document.documentElement,
+                    top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+                
+                if (window.innerWidth < 962 && top > 275) $("html, body").animate({ scrollTop: 0 }, "slow");
             }
         },
         handlers = {
             async openFile(filePath: string): Promise<any> {
                 try {
+                    let filePathSplit = filePath.split("/");
                     setViewingFile(true);
                     const req = await axios.get("/api/get-file?path=" + filePath);
+                    setCurrentFileName(filePathSplit[filePathSplit.length - 1]);
                     setCurrentFileContents(req.data);
                     window.document.body.style.overflowY = "hidden";
                 } catch(e) {
@@ -50,6 +59,7 @@ export default function Projects(props) {
             },
             closeFile: () => {
                 setViewingFile(false);
+                setCurrentFileContents("");
                 window.document.body.style.overflowY = "scroll";
             }
         };
@@ -90,7 +100,7 @@ export default function Projects(props) {
                     })}
                 </Swiper>
             </Body>
-            {viewingFile ? <FileViewer handlers={handlers} contents={currentFileContents} /> : null}
+            {viewingFile ? <FileViewer handlers={handlers} contents={currentFileContents} header={currentFileName} /> : null}
         </div>
     )
 }
