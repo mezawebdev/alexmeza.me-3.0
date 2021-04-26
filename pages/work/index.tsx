@@ -106,6 +106,7 @@ export default function Work(props) {
                                     project.type === "professional" ?
                                         <div 
                                             key={i}
+                                            id={`project-${ project.id }`}
                                             className="row">
                                                 <WorkProject 
                                                     projectId={project.id}
@@ -124,6 +125,7 @@ export default function Work(props) {
                                     project.type === "personal" ?
                                         <div 
                                             key={i}
+                                            id={`project-${ project.id }`}
                                             className="row">
                                                 <WorkProject 
                                                     projectId={project.id}
@@ -142,6 +144,7 @@ export default function Work(props) {
                                     project.type === "experimental" ?
                                         <div 
                                             key={i}
+                                            id={`project-${ project.id }`}
                                             className="row">
                                                 <WorkProject 
                                                     projectId={project.id}

@@ -4,6 +4,7 @@
     justify-content : center;
     filter          : blur(5px);
     transition      : filter 0.5s ease-in-out;
+    max-width       : 700px;
 
     &.active {
         filter : none;
@@ -16,6 +17,10 @@
     .space-ui-panel {
         min-height : 300px;
         width      : 90%;
+
+        @media (min-width : $breakpoint-md) {
+            padding : 25px;
+        }
 
         hr {
             margin-bottom : 30px;
@@ -33,6 +38,10 @@
             margin-top  : 20px;
             font-weight : bold;
             text-align  : center;
+
+            @media (min-width : $breakpoint-md) {
+                margin-top : 0px;
+            }
         }
     
         .slideshow {
@@ -46,11 +55,32 @@
 
         .images {
             min-height : 125px;
+            position   : relative;
 
             img {
                 margin  : 0 auto;
                 display : block;
                 width   : 80%;
+            }
+
+            button {
+                background : none;
+                border     : none;
+            }
+
+            .swiper-navigation {
+                width           : 100%;
+                position        : absolute;
+                top             : 50%;
+                transform       : translateY(-50%);
+                display         : flex;
+                z-index         : 5;
+                color           : white;
+                justify-content : space-between;
+
+                button {
+                    color : white;
+                }
             }
         }
 
@@ -58,6 +88,7 @@
             margin-top : 20px;
 
             a {
+                line-height     : 2.7;
                 padding         : 10px;
                 text-decoration : none;
                 border-radius   : 7px;

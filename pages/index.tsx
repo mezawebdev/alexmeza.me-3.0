@@ -46,7 +46,6 @@ export default function Home() {
             <main>
                 <div className="content">
                     <div className="centered">
-                        {/* <Panel> */}
                         <div className="title">
                             <h1 className="text-shadow filter-shadow">
                                 <span className="sp-1">A</span>
@@ -59,9 +58,19 @@ export default function Home() {
                                 <span className="sp-7">Z</span>
                                 <span className="sp-8">A</span>
                             </h1>
-                            <h2 className="sp-9 filter-shadow">WEB DEVELOPER</h2>
+                            <h2 className="sp-9 filter-shadow">FULL-STACK WEB DEVELOPER</h2>
+                            <div className="social-media">
+                                <a href="https://www.linkedin.com/in/alex-meza-6419b4117">
+                                    <i className="lab la-linkedin"></i>
+                                </a>
+                                <a href="">
+                                    <i className="lab la-codepen"></i>
+                                </a>
+                                <a href="">
+                                    <i className="lab la-github"></i>
+                                </a>
+                            </div>
                         </div>
-                        {/* </Panel> */}
                     </div>
                 </div>
             </main>

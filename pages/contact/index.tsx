@@ -2,11 +2,21 @@ import Header from "../../components/Layout/Header";
 import Body from "../../components/Layout/Body";
 import Fields from "../../components/Blocks/Fields";
 import Field from "../../components/Blocks/Field";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import Panel from "../../components/Layout/SpaceUI/Panel";
 
 export default function Contact(props) {
+    const [name, setName] = useState(""),
+        [email, setEmail] = useState(""),
+        [message, setMessage] = useState(""),
+        [submitted, setSubmitted] = useState(false),
+        handlers = {
+            submit() {
+                setSubmitted(true);
+            }
+        };
+
     useEffect(() => {
         let tl = gsap.timeline(),
             tl2 = gsap.timeline();
@@ -45,23 +55,30 @@ export default function Contact(props) {
                     <div className="contact-form row-2 row text-shadow">
                         <Panel>
                             <p>Let's grow together.</p>
-
                             <Fields>
-                                <Field 
-                                    placeholder="Full Name"
-                                    type="text">
-                                </Field>
-                                <Field 
-                                    placeholder="Email"
-                                    type="text">
-                                </Field>
-                                <Field 
-                                    placeholder="Message"
-                                    type="textarea">
-                                </Field>
-                                <Field type="button">
-                                    Send
-                                </Field>
+                                <form onSubmit={() => handlers.submit()}>
+                                    <Field 
+                                        handler={e => setName(e.target.value)}
+                                        placeholder="Full Name"
+                                        type="text">
+                                    </Field>
+                                    <Field 
+                                        handler={e => setEmail(e.target.value)}
+                                        placeholder="Email"
+                                        type="email">
+                                    </Field>
+                                    <Field 
+                                        handler={e => setMessage(e.target.value)}
+                                        placeholder="Message"
+                                        type="textarea">
+                                    </Field>
+                                    <Field 
+                                        disabled={submitted}
+                                        handler={() => {}}
+                                        type="button">
+                                        Send
+                                    </Field>
+                                </form>
                             </Fields>
                         </Panel>
                     </div>

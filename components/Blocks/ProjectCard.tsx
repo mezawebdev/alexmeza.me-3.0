@@ -1,18 +1,17 @@
 import Panel from "../Layout/SpaceUI/Panel";
 import App from "../../app.config";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useRef } from "react";
 import FileBrowser from "./FileBrowser";
 
 export default function ProjectCard(props) {
-    const app: any   = App,
+    const app: any = App,
         sliderParams = {
             slidesPerView: 1,
             spaceBetween: 15,
             centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
+            navigation: {
+                nextEl: ".swiper-next",
+                prevEl: ".swiper-prev"
             }
         };
 
@@ -22,19 +21,25 @@ export default function ProjectCard(props) {
                 <div className="title">{props.title}</div>  
                 <hr />
                 <div className="images">
-                    {props.active ? (
-                        <Swiper {...sliderParams}>
-                            {props.images.map((image, i) => { 
-                                return (
-                                    <SwiperSlide key={i}>
+                    <Swiper {...sliderParams}>
+                        {props.images.map((image, i) => { 
+                            return (
+                                <SwiperSlide key={i}>
+                                    <button onClick={() => props.handlers.openSpotlight(props.images, i)}>
                                         <img src={image} />
-                                    </SwiperSlide>
-                                );
-                            })}
-                        </Swiper>
-                    ) : (
-                        <img src="/assets/images/projects/mockup-placeholder.png" />
-                    )}
+                                    </button>
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
+                    <div className="swiper-navigation">
+                        <button className="swiper-prev">
+                            <i className="las la-angle-left"></i>
+                        </button>
+                        <button className="swiper-next">
+                            <i className="las la-angle-right"></i>
+                        </button>
+                    </div>
                 </div>
                 <div className="general-info">{props.description}</div>
                 <div className="options">

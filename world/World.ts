@@ -43,7 +43,7 @@ class World {
         this.scene = new BABYLON.Scene(this.engine);
         this.camera = new BABYLON.ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
         this.camera.setTarget(BABYLON.Vector3.Zero());
-        // this.camera.attachControl(this.canvas, true);
+        this.camera.attachControl(this.canvas, true);
         this.camera.maxZ = 17000;
         this.scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
         this.planets = [];

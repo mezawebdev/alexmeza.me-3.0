@@ -54,73 +54,42 @@
 
                     h2 {
                         margin      : 0;
-                        margin-top  : 10px;
-                        font-size   : 1.3em;
+                        margin-top  : 15px;
+                        font-size   : 1.1em;
                         font-weight : 100;
                         opacity     : 0;
                         transform   : translateY(-20px);
                         display     : inline-block;
 
+                        @media (min-width : $breakpoint-xsm) {
+                            font-size : 1.3em;
+                        }
+
                         @media (min-width : $breakpoint-md) {
-                            font-size : 2.5em;
+                            font-size  : 2.2em;
+                            margin-top : 25px;
+                        }
+                    }
+
+                    .social-media {
+                        a {
+                            color     : white;
+                            font-size : 1.8em;
+
+                            @media (min-width : $breakpoint-md) {
+                                font-size : 2.5em;
+                            }
+
+                            &:nth-child(2) {
+                                margin : 0px 8px;
+
+                                @media (min-width : $breakpoint-md) {
+                                    margin : 0px 10px;
+                                }
+                            }
                         }
                     }
                 }
-
-                // .menu {
-                //     width                 : 100%;
-                //     left                  : 0px;
-                //     height                : 50px;
-                //     position              : absolute;
-                //     top                   : 0px;
-                //     display               : grid;
-                //     border-radius         : 5px;
-                //     margin                : 15px auto 0px auto;
-                //     grid-template-columns : 1fr 0.8fr 0.8fr 1.2fr;
-                //     background            : linear-gradient(115deg, rgba(40, 40, 40, 0.5) 50%, rgba(55, 55, 55, 0.5) 75%, rgba(40, 40, 40, 0.5) 95%);
-                //     box-shadow            : 0px 4px 10px rgba(0, 0, 0, 1);
-                //     max-width             : 300px;
-                //     left                  : 0;
-                //     right                 : 0;
-                //     opacity               : 0;
-                //     transform             : translateY(-20px);
-                    
-                //     @media (min-width : $breakpoint-md) {
-                //         grid-template-rows    : 1fr;
-                //         grid-template-columns : 1fr 1fr 1fr 1fr;
-                //         height                : 50px;
-                //         width                 : 400px;
-                //     }
-
-                //     button {
-                //         background    : none;
-                //         border        : none;
-                //         border-radius : none;
-                //         font-size     : 0.85em;
-                //         color         : white;
-                //         transition    : background 0.25s ease-in-out;
-
-                //         &:hover {
-                //             background : rgb(206, 106, 106);
-                //         }
-
-                //         &:first-child {
-                //             border-top-left-radius : 5px;
-                //             border-bottom-left-radius : 5px;
-                //         }
-
-                //         &:last-child {
-                //             border-top-right-radius    : 5px;
-                //             border-bottom-right-radius : 5px;
-                //         }
-
-                //         @media (min-width : $breakpoint-md) {
-                //             display         : flex;
-                //             justify-content : center;
-                //             align-items     : center;
-                //         }
-                //     }
-                // }
             }
         }
     }

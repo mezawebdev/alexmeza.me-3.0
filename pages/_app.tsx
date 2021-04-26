@@ -12,6 +12,7 @@ import { PageTransition } from 'next-page-transitions';
 import LoadingScreenWindow from "../components/Utils/LoadingScreenWindow";
 import LaunchButton from "../components/Navigation/LaunchButton";
 import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.scss';
 
 let world: World,
     App: any = config;
@@ -73,7 +74,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             id="alex-meza"
             onClick={() => onBodyClick()}> 
             <Head>
-                <title>ALEX MEZA | Web Developer</title>
+                <title>ALEX MEZA | Full-Stack Web Developer</title>
                 <meta 
                     name="viewport" 
                     content="width=device-width, initial-scale=1.0">
@@ -115,9 +116,9 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 mobileMenuOpened={mobileMenuOpened}
                 setMobileMenuOpened={setMobileMenuOpened}
                 hide={playingGame} />
-            <LaunchButton 
+            {/* <LaunchButton 
                 playingGame={playingGame}
-                setPlayingGame={setPlayingGame} />
+                setPlayingGame={setPlayingGame} /> */}
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
             { App.showPages && worldLoaded && appLoaded ? 
                 <div className={`pages-wrapper${ transition ? " transition" : "" }`}>   

@@ -1,13 +1,18 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Link from "next/link";
 import App from "../../../app.config";
 import Header from "../../../components/Layout/Header";
 import Body from "../../../components/Layout/Body";
 import ProjectCard from "../../../components/Blocks/ProjectCard";
+import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Head from 'next/head';
 import axios from "axios";
+import Spotlight from "../../../components/Blocks/Spotlight";
 import FileViewer from "../../../components/Blocks/FileViewer/FileViewer"
+
+SwiperCore.use([Navigation]);
 
 const app: any = App;
 
@@ -24,13 +29,26 @@ export default function Projects(props) {
         [viewingFile, setViewingFile] = useState(false),
         [currentFileName, setCurrentFileName] = useState(""),
         [currentFileContents, setCurrentFileContents] = useState(""),
+        [showSpotlight, setShowSpotlight] = useState(false),
+        [spotlightData, setSpotlightData] = useState({ images: [], index: 0 }),
         params = {
-            slidesPerView: 1,
             spaceBetween: -120,
+            slidesPerView: 1,
             centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
+            centerInsufficientSlides: true,
+            breakpoints: {
+                500: {
+                    spaceBetween: -170
+                },
+                680: {
+                    spaceBetween: -250,
+                    slidesPerView: "auto"
+                }
+
+            },
+            navigation: {
+                nextEl: ".nav-next",
+                prevEl: ".nav-prev"
             },
             initialSlide: activeSlide,
             onSlideChange(e) {
@@ -42,6 +60,12 @@ export default function Projects(props) {
                     top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
                 
                 if (window.innerWidth < 962 && top > 275) $("html, body").animate({ scrollTop: 0 }, "slow");
+            },
+            onResize(e) {
+                console.log(e);
+                console.log("move!");
+                e.updateSize();
+                e.update();
             }
         },
         handlers = {
@@ -61,6 +85,14 @@ export default function Projects(props) {
                 setViewingFile(false);
                 setCurrentFileContents("");
                 window.document.body.style.overflowY = "scroll";
+            },
+            openSpotlight(images: Array<string>, index: number): void {
+                setSpotlightData({ images, index })
+                setShowSpotlight(true);
+            },
+            closeSpotlight(): void {
+                setShowSpotlight(false);
+                setSpotlightData({ images: [], index: 0 });
             }
         };
 
@@ -74,6 +106,7 @@ export default function Projects(props) {
                     type="text/css" 
                     href="/assets/plugins/jquery-file-tree/jQueryFileTree.min.css" />
             </Head>
+            {showSpotlight ? <Spotlight images={spotlightData.images} index={spotlightData.index} close={handlers.closeSpotlight} /> : null}
             <Header 
                 animate={true}
                 align="left">
@@ -86,6 +119,13 @@ export default function Projects(props) {
                 <span className="sp sp-7">T</span>
                 <span className="sp sp-7">S</span>
             </Header>
+            <div className="back-link">
+                <div className="ct">
+                    <Link href={`/work#project-${ pid === 0 ? 0 : pid - 1 }`}>
+                        <a><i className="las la-arrow-left"></i>&nbsp;Back to work list</a>
+                    </Link>
+                </div>
+            </div>
             <Body>
                 <Swiper {...params}>
                     {app.projects.map((project, i) => { 
@@ -99,6 +139,14 @@ export default function Projects(props) {
                         );
                     })}
                 </Swiper>
+                <div className="navigation">
+                    <button className="nav-prev">
+                        <i className="las la-angle-left"></i>
+                    </button>
+                    <button className="nav-next">
+                        <i className="las la-angle-right"></i>
+                    </button>
+                </div>
             </Body>
             {viewingFile ? <FileViewer handlers={handlers} contents={currentFileContents} header={currentFileName} /> : null}
         </div>
