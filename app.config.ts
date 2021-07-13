@@ -1,6 +1,6 @@
 const config = {
     showPages: true,
-    showWorld: false,
+    showWorld: true,
     showLoadingScreen: false,
     pages:[
         {
@@ -260,6 +260,10 @@ const config = {
         {
             label: "Sunsick Studio",
             image: "/assets/images/brands/sunsick.png"
+        },
+        {
+            label: "F",
+            image: "/assets/images/brands/sunsick.png"
         }
     ],
     world: {
@@ -384,7 +388,7 @@ const config = {
                 }
             },
             stars: {
-                enabled: true,
+                enabled: false,
                 texture: "/assets/textures/particle.png",
                 emitRate: 5000,
                 minSize: 5,
@@ -445,11 +449,7 @@ const config = {
                         get z() { return getPlanetPosition(config.world.objects.planets[0], 1); },
                     },
                     rotation: {
-                        axis: {
-                            x: 0,
-                            y: 0,
-                            z: 0
-                        },
+                        axis: { x: 0, y: 0, z: 0 },
                         get angle() { return 0.008 * config.world.speed },
                         speed: 0.005
                     },
@@ -463,13 +463,13 @@ const config = {
                     },
                     target: {
                         get x() { return config.world.objects.planets[0].initialPosition.x },
-                        get y() { return config.world.objects.planets[0].initialPosition.y + 5 },
+                        get y() { return config.world.objects.planets[0].initialPosition.y + 8 },
                         get z() { return config.world.objects.planets[0].initialPosition.z }
                     },
                     cameraPlacement: {
-                        x: 250,
-                        y: 5,
-                        z: 250
+                        alpha: -2.2,
+                        beta: 1.3,
+                        radius: 17
                     }
                 },
                 //  Venus
@@ -518,7 +518,10 @@ const config = {
                     cameraPlacement: {
                         x: 365,
                         y: 12,
-                        z: 365
+                        z: 365,
+                        alpha: 0.9,
+                        beta: 1.5,
+                        radius: 17
                     }
                 },
                 // Earth
@@ -565,8 +568,11 @@ const config = {
                     },
                     cameraPlacement: {
                         x: 460,
-                        y: 14,
-                        z: 465
+                        y: 13.5,
+                        z: 465,
+                        alpha: 0.9,
+                        beta: 1.45,
+                        radius: 17
                     }
                 },
                 // Mars
@@ -613,9 +619,9 @@ const config = {
                         get z() { return config.world.objects.planets[3].initialPosition.z }
                     },
                     cameraPlacement: {
-                        x: 555,
-                        y: 9,
-                        z: 555
+                        alpha: 0.9,
+                        beta: 1.3,
+                        radius: 10
                     }
                 },
                 // Jupiter
@@ -673,7 +679,10 @@ const config = {
                     cameraPlacement: {
                         x: 470,
                         y: 11,
-                        z: 430
+                        z: 430,
+                        alpha: 0.9,
+                        beta: 1.5,
+                        radius: 17
                     }
                 },
                 // Saturn
@@ -725,14 +734,14 @@ const config = {
                     ],
                     ring: true,
                     target: {
-                        get x() { return config.world.objects.planets[5].initialPosition.x - 70 },
-                        get y() { return config.world.objects.planets[5].initialPosition.y + 70 },
-                        get z() { return config.world.objects.planets[5].initialPosition.z }
+                        get x() { return config.world.objects.planets[5].initialPosition.x - 100 },
+                        get y() { return config.world.objects.planets[5].initialPosition.y + 300 },
+                        get z() { return config.world.objects.planets[5].initialPosition.z - 100 }
                     },
                     cameraPlacement: {
-                        x: 915,
-                        y: 11,
-                        z: 915
+                        alpha: 1,
+                        beta: 1,
+                        radius: 17
                     }
                 },
                 // Uranus
@@ -791,7 +800,10 @@ const config = {
                     cameraPlacement: {
                         x: 1250,
                         y: 11,
-                        z: 1250
+                        z: 1250,
+                        alpha: 0.9,
+                        beta: 1.5,
+                        radius: 17
                     }
                 },
                 // Neptune
@@ -841,7 +853,10 @@ const config = {
                     cameraPlacement: {
                         x: 1400,
                         y: 11,
-                        z: 1400
+                        z: 1400,
+                        alpha: 0.9,
+                        beta: 1.5,
+                        radius: 17
                     }
                 }
             ]

@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function WorkProject(props) {
-    console.log(props);
     return (
         <Link 
             href={`/work/projects?id=${ props.projectId - 1 }`}

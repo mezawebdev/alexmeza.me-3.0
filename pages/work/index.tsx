@@ -95,7 +95,7 @@ export default function Work(props) {
                 <span className="sp sp-4">K</span>
             </Header>
             <Body>
-                <div className="ct">
+                <div className="ct-2">
                     <WorkProjects>
                         <h4 className="sp-5 filter-shadow">PROFESSIONAL</h4>
                         <div 

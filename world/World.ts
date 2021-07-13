@@ -16,6 +16,7 @@ const App: any = config;
 class World {
     mode: string;
     canvasElId: string;
+    initialPagePath: string;
     canvas: HTMLCanvasElement;
     engine: BABYLON.Engine;
     scene: BABYLON.Scene;
@@ -35,39 +36,32 @@ class World {
     playingGame: boolean;
     game: Game;
     
-    constructor(canvasElId: string) {
+    constructor(canvasElId: string, initialPagePath: string) {
         this.mode = Utils.isMobile() ? "mobile" : "desktop";
         this.canvasElId = canvasElId;
+        this.initialPagePath = initialPagePath;
         this.canvas = document.getElementById(this.canvasElId) as HTMLCanvasElement;
         this.engine = new BABYLON.Engine(this.canvas, true, { stencil: true });
         this.scene = new BABYLON.Scene(this.engine);
         this.camera = new BABYLON.ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
         this.camera.setTarget(BABYLON.Vector3.Zero());
-        this.camera.attachControl(this.canvas, true);
+        // this.camera.attachControl(this.canvas, true);
         this.camera.maxZ = 17000;
         this.scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
         this.planets = [];
         this.lights = [];
         this.playingGame = false;
         this.createWorld();
-
-        this.engine.runRenderLoop(() => {
-            this.scene.render();
-        });
-
+        this.engine.runRenderLoop(() => this.scene.render());
         this.resize();
-
-        if (App.world.debug.showAxis) {
-            Utils.showWorldAxis(App.world.debug.axisSize, this.scene);
-        }
-        
+        if (App.world.debug.showAxis) Utils.showWorldAxis(App.world.debug.axisSize, this.scene);
         this.scene.registerAfterRender(() => {
             this.rotatePlanets();
-            
-            if (this.playingGame) {
-                this.game.controllers.update();
-            }
+            if (this.playingGame) this.game.controllers.update();
         });
+
+        // @ts-ignore
+        window.moveToNewTarget = (target, callback) => { this.moveToNewTarget(target, callback) };
     }
 
     public resize(): void {
@@ -116,12 +110,37 @@ class World {
         }
 
         if (App.world.camera.initialPlanetFollow !== "none") {
-            const planetToFollow = this.planets.find(planet => { return planet.key === App.world.camera.initialPlanetFollow; });
+            let planetToFollowKey;
+
+            switch (this.initialPagePath) {
+                case "/":
+                    planetToFollowKey = "earth";
+                break;
+                case "/about":
+                    planetToFollowKey = "venus";
+                break;
+                case "/work":
+                    planetToFollowKey = "mars";
+                break;
+                case "/contact":
+                    planetToFollowKey = "mercury";
+                break;
+            }
+
+            const planetToFollow = this.planets.find(planet => { return planet.key === planetToFollowKey });
 
             if (planetToFollow !== undefined) {
                 this.target = new Target(this, planetToFollow);
                 this.camera.setTarget(this.target.mesh);
-                this.camera.position = new BABYLON.Vector3(planetToFollow.cameraPlacement.x, planetToFollow.cameraPlacement.y, planetToFollow.cameraPlacement.z)
+                // this.camera.position = new BABYLON.Vector3(
+                //     planetToFollow.cameraPlacement.x, 
+                //     planetToFollow.cameraPlacement.y, 
+                //     planetToFollow.cameraPlacement.z
+                // );
+                // console.log(this.camera.position);
+                this.camera.alpha = planetToFollow.cameraPlacement.alpha;
+                this.camera.beta = planetToFollow.cameraPlacement.beta;
+                this.camera.radius = planetToFollow.cameraPlacement.radius;
             }
         }
 
@@ -140,35 +159,21 @@ class World {
 
         if (App.world.spacebox.enabled) {
             this.spaceBox = new SpaceBox("light-blue", this.scene);
-
-            this.scene.registerAfterRender(() => {
-                this.spaceBox.rotate();
-            });
+            this.scene.registerAfterRender(() => this.spaceBox.rotate());
         }
 
-        if (App.world.effects.enabled) {
-            this.effects = new Effects(this.scene, this);
-        }
-
-        if (App.world.objects.stars.enabled) {
-            this.stars = new Stars(this.scene);
-        }
-        
-        if (App.world.objects.asteroidBelt.enabled) {
-            this.asteroidBelt = new AsteroidBelt(this.scene);
-        }
+        if (App.world.effects.enabled) this.effects = new Effects(this.scene, this);
+        if (App.world.objects.stars.enabled) this.stars = new Stars(this.scene);
+        if (App.world.objects.asteroidBelt.enabled) this.asteroidBelt = new AsteroidBelt(this.scene);
     }
 
     public rotatePlanets(): void {
         this.planets.forEach(planet => {
             planet.mesh.rotation.y += planet.rotation.speed;
-            planet.rotationAxis.pivot.rotate(new BABYLON.Vector3(0, 1, 0), planet.rotation.angle, BABYLON.Space.WORLD);
+            // planet.rotationAxis.pivot.rotate(new BABYLON.Vector3(0, 1, 0), planet.rotation.angle, BABYLON.Space.WORLD);
         });
 
-        if (App.world.camera.animate && !this.playingGame) {
-            this.camera.alpha -= 0.001275;
-        }
-
+        // if (App.world.camera.animate && !this.playingGame) this.camera.alpha -= 0.001275;
         this.sun.mesh.rotation.y += this.sun.rotation.speed;
         this.sun.mesh.rotation.z += this.sun.rotation.speed;
     }
@@ -178,48 +183,102 @@ class World {
     }
 
     public async moveToNewTarget(targetKey: string, cb: any = function(){}) {
-        let animationX = new BABYLON.Animation("newTargetX", "position.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
-            animationZ = new BABYLON.Animation("newTargetZ", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+        let targetAnimation = {
+                x:  new BABYLON.Animation("newTargetX", "position.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+                y: new BABYLON.Animation("newTargetY", "position.y", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+                z: new BABYLON.Animation("newTargetZ", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT)
+            },
+            cameraAnimation = {
+                alpha: new BABYLON.Animation("alpha", "alpha", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+                beta: new BABYLON.Animation("beta", "beta", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
+                radius: new BABYLON.Animation("radius", "radius", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT)
+            }, 
             newTargetPlanet: Planet = this.getPlanetByKey(targetKey),
             easingFunction = new BABYLON.PowerEase();
+        
+        easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+        targetAnimation.x.setEasingFunction(easingFunction);
+        targetAnimation.y.setEasingFunction(easingFunction);
+        targetAnimation.z.setEasingFunction(easingFunction);
+        cameraAnimation.alpha.setEasingFunction(easingFunction);
+        cameraAnimation.beta.setEasingFunction(easingFunction);
+        cameraAnimation.radius.setEasingFunction(easingFunction);
 
         if (newTargetPlanet) {
-            animationX.setKeys([
+            cameraAnimation.alpha.setKeys([
+                {
+                    frame: 0,
+                    value: this.camera.alpha
+                },
+                {
+                    frame: 100,
+                    value: newTargetPlanet.cameraPlacement.alpha
+                }
+            ]);
+
+            cameraAnimation.beta.setKeys([
+                {
+                    frame: 0,
+                    value: this.camera.beta
+                },
+                {
+                    frame: 100,
+                    value: newTargetPlanet.cameraPlacement.beta
+                }
+            ]);
+
+            cameraAnimation.radius.setKeys([
+                {
+                    frame: 0,
+                    value: this.camera.radius
+                },
+                {
+                    frame: 100,
+                    value: newTargetPlanet.cameraPlacement.radius
+                }
+            ]);
+
+            targetAnimation.x.setKeys([
                 {
                     frame: 0,
                     value: this.target.mesh.position.x
-                }, {
+                }, 
+                {
                     frame: 100,
-                    value: newTargetPlanet.mesh.position.x
+                    value: newTargetPlanet.target.x
                 }
             ]);
 
-            animationZ.setKeys([
+            targetAnimation.y.setKeys([
+                {
+                    frame: 0,
+                    value: this.target.mesh.position.y
+                }, 
+                {
+                    frame: 100,
+                    value: newTargetPlanet.target.y
+                }
+            ]);
+
+            targetAnimation.z.setKeys([
                 {
                     frame: 0,
                     value: this.target.mesh.position.z
-                }, {
+                }, 
+                {
                     frame: 100,
-                    value: newTargetPlanet.mesh.position.z
+                    value: newTargetPlanet.target.z
                 }
             ]);
 
-            easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+            this.target.mesh.animations = [targetAnimation.x, targetAnimation.y, targetAnimation.z];
+            this.camera.animations = [cameraAnimation.alpha, cameraAnimation.beta, cameraAnimation.radius];
 
-            animationX.setEasingFunction(easingFunction);
-            animationZ.setEasingFunction(easingFunction);
+            let anim1 = this.scene.beginAnimation(this.target.mesh, 0, 100, false, 2),
+                anim2 = this.scene.beginAnimation(this.camera, 0, 100, false, 2);
 
-            this.target.mesh.animations = [animationX, animationZ];
-
-            let runningAnim = this.scene.beginAnimation(this.target.mesh, 0, 100, false, 2);
-
-            this.target.mesh.parent = newTargetPlanet.rotationAxis.pivot;
-
-            // @ts-ignore
-            window.showMessage(`going to planet: ${ newTargetPlanet.key }`);
-
-            await runningAnim.waitAsync();
-            await runningAnim.waitAsync();
+            await anim1.waitAsync();
+            // await anim2.waitAsync();
 
             cb();
         } else {

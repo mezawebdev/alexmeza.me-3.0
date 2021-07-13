@@ -1,6 +1,5 @@
 import * as BABYLON from "babylonjs";
 import RotationAxis from "./RotationAxis";
-import { CellMaterial } from "babylonjs-materials";
 
 interface rotation {
     axis: {
@@ -26,7 +25,10 @@ interface target {
 interface cameraPlacement {
     x: number,
     y: number,
-    z: number
+    z: number,
+    alpha: number,
+    beta: number;
+    radius: number;
 }
 
 export default class Planet {
@@ -81,9 +83,7 @@ export default class Planet {
     }
 
     public create(): void {
-        this.mesh = BABYLON.MeshBuilder.CreateSphere(this.key, {
-            diameter: this.diameter
-        }, this.scene);
+        this.mesh = BABYLON.MeshBuilder.CreateSphere(this.key, { diameter: this.diameter }, this.scene);
 
         this.mesh.position.x = this.x;
         this.mesh.position.y = this.y;
@@ -119,14 +119,8 @@ export default class Planet {
             }, this.scene);
         }
 
-        if (this.layers.length > 0) {
-            this.applyLayers();
-        }
-
-        if (this.effects.highlight) {
-            this.applyHighlight();
-        }
-
+        if (this.layers.length > 0) this.applyLayers();
+        if (this.effects.highlight) this.applyHighlight();
         this.mesh.parent = this.rotationAxis.pivot;
     }
 
@@ -136,12 +130,7 @@ export default class Planet {
         this.layers.forEach((layer, i) => {
             switch (layer.type) {
                 case "texture":
-                    this.layerMeshes.push(
-                        BABYLON.MeshBuilder.CreateSphere(`${ this.key }-layer-${ i }`, {
-                            diameter: this.diameter + (0.4 * (i + 1))
-                        }, this.scene)
-                    );
-
+                    this.layerMeshes.push(BABYLON.MeshBuilder.CreateSphere(`${ this.key }-layer-${ i }`, { diameter: this.diameter + (0.4 * (i + 1)) }, this.scene));
                     this.layerMeshes[this.layerMeshes.length - 1].position.x = this.x;
                     this.layerMeshes[this.layerMeshes.length - 1].position.y = this.y;
                     this.layerMeshes[this.layerMeshes.length - 1].position.z = this.z;

@@ -120,7 +120,7 @@ export default function Projects(props) {
                 <span className="sp sp-7">S</span>
             </Header>
             <div className="back-link">
-                <div className="ct">
+                <div className="ct-2">
                     <Link href={`/work#project-${ pid === 0 ? 0 : pid - 1 }`}>
                         <a><i className="las la-arrow-left"></i>&nbsp;Back to work list</a>
                     </Link>

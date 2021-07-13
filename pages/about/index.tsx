@@ -36,7 +36,7 @@ export default function About(props) {
                 <span className="sp-5 sp">T</span>
             </Header>
             <Body>
-                <div className="ct">
+                <div className="ct-2">
                     <div className="row-1">
                         <img
                             className="global-border-radius box-shadow-white filter-shadow profile" 

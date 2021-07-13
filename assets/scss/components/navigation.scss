@@ -130,6 +130,11 @@
             pointer-events        : none;
             transition            : opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 
+            @media (min-width : 480px) {
+                top          : 60px;
+                margin-right : 0px;
+            }
+
             @media (min-width : $breakpoint-md) {
                 margin         : 0;
                 top            : 0px;

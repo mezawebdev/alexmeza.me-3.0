@@ -24,7 +24,7 @@ export default function Header(props) {
     }, []);
 
     return (
-        <div className="ct">
+        <div className="ct-2">
             <div className={`header ${ props.align ? props.align : '' }`}>
                 {props.align === 'right' ? <span className={`box-shadow-white filter-shadow decor ${ props.align }`}></span> : null}
                 <h3 

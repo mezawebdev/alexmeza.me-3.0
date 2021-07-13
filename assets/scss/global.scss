@@ -112,7 +112,8 @@ h6 {
     font-family : "Stellar-Light", Hevetica, sans-serif;
 }
 
-.ct {
+.ct,
+.ct-2 {
     padding-left  : $container-padding;
     padding-right : $container-padding;
     position      : relative;
@@ -120,6 +121,13 @@ h6 {
     margin-left   : auto;
     margin-right  : auto;
 }
+
+.ct-2 {
+    padding-left  : $container-padding + 10;
+    padding-right : $container-padding + 10;
+    max-width     : 975px;
+}
+
 
 // #alex-meza {
 //     .navigation {

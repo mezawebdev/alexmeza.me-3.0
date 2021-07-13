@@ -10,9 +10,7 @@ const app: any = App;
 export default function Navigation(props) {
     const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        gsap.to("#navigation", { opacity: 1, y: 0, duration: 0.5, delay: 1 });
-    }, []);
+    useEffect(() => { gsap.to("#navigation", { opacity: 1, y: 0, duration: 0.5, delay: 1 }) }, []);
 
     return (
         <div
@@ -26,13 +24,11 @@ export default function Navigation(props) {
                     {props.mobileMenuOpened ? <i className="las la-times"></i> : <i className="las la-bars"></i>}
                 </button>
                 <div className={`logo-wrapper${ props.currentPage.path !== '/' ? " toggled-logo" : "" }`}>
-                    <Link href="/">
-                        <a onClick={() => { props.goToPage(app.pages[0]); }}>
-                            <Panel classes={`font-family-title text-shadow logo${ props.currentPage.path !== '/' ? " toggled-logo" : "" }`}>
-                                <span className="filter-shadow">ALEX MEZA</span>
-                            </Panel>
-                        </a>
-                    </Link>
+                    <a onClick={() => { props.goToPage(app.pages[0]); }}>
+                        <Panel classes={`font-family-title text-shadow logo${ props.currentPage.path !== '/' ? " toggled-logo" : "" }`}>
+                            <span className="filter-shadow">ALEX MEZA</span>
+                        </Panel>
+                    </a>
                 </div>
                 <div className={`inner${ props.mobileMenuOpened ? ' mobile-menu-toggled' : '' }`}>
                     {app.pages.map((page, i) => {

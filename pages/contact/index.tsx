@@ -5,6 +5,7 @@ import Field from "../../components/Blocks/Field";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import Panel from "../../components/Layout/SpaceUI/Panel";
+import axios from "axios";
 
 export default function Contact(props) {
     const [name, setName] = useState(""),
@@ -12,8 +13,16 @@ export default function Contact(props) {
         [message, setMessage] = useState(""),
         [submitted, setSubmitted] = useState(false),
         handlers = {
-            submit() {
+            async submit(e) {
+                e.preventDefault();
                 setSubmitted(true);
+                const req = await axios.post("/api/send-email", {
+                    name: "test",
+                    email: "test",
+                    message: "test"
+                });
+                console.log(req);
+                
             }
         };
 
@@ -46,7 +55,7 @@ export default function Contact(props) {
                 <span className="sp-7 sp">T</span>
             </Header>
             <Body>
-                <div className="ct">
+                <div className="ct-2">
                     <div className="picture row-1 row">
                         <img 
                             className="filter-shadow box-shadow-white"
@@ -56,7 +65,7 @@ export default function Contact(props) {
                         <Panel>
                             <p>Let's grow together.</p>
                             <Fields>
-                                <form onSubmit={() => handlers.submit()}>
+                                <form onSubmit={e => handlers.submit(e)}>
                                     <Field 
                                         handler={e => setName(e.target.value)}
                                         placeholder="Full Name"

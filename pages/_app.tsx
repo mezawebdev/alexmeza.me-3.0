@@ -39,9 +39,34 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             world.startGame();
         },
         goToPage = (page: any): void => {
-            setCurrentPage(page);
-            router.push(page.path);
-            setMobileMenuOpened(false);
+            if (window.location.pathname !== page.path && !transition) {
+                setTransition(true);
+                setMobileMenuOpened(false);
+                setCurrentPage(page);
+
+                let planet;
+
+                switch (page.path) {
+                    case "/":
+                        planet = "earth";
+                    break;
+                    case "/about":
+                        planet = "venus";
+                    break;
+                    case "/work":
+                        planet = "mars"
+                    break;
+                    case "/contact":
+                        planet = "mercury";
+                    break;
+                }
+
+                // @ts-ignore
+                window.moveToNewTarget(planet, () => { 
+                    router.push(page.path);
+                    setTimeout(() => setTransition(false), 250);
+                });
+            }
         },
         getCurrentPage = () => { 
             const current = Router.router.pathname === "/" ? config.pages[0] : config.pages.find(page => {  return Router.router.pathname.includes(page.path) && page.path !== "/" }),
@@ -60,7 +85,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         setCurrentPage(getCurrentPage());
 
         if (App.showWorld) {
-            world = new World("canvas");
+            world = new World("canvas", router.pathname);
             window.addEventListener("resize", () => { world.resize() });
         }
 
