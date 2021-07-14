@@ -60,13 +60,19 @@ export default function Home() {
                             </h1>
                             <h2 className="sp-9 filter-shadow">FULL-STACK WEB DEVELOPER</h2>
                             <div className="social-media">
-                                <a href="https://www.linkedin.com/in/alex-meza-6419b4117">
+                                <a 
+                                    target="_blank"
+                                    href="https://www.linkedin.com/in/alex-meza-6419b4117">
                                     <i className="lab la-linkedin"></i>
                                 </a>
-                                <a href="">
+                                <a 
+                                    target="_blank"
+                                    href="https://codepen.io/mezawebdev">
                                     <i className="lab la-codepen"></i>
                                 </a>
-                                <a href="">
+                                <a 
+                                    target="_blank"
+                                    href="https://github.com/mezawebdev">
                                     <i className="lab la-github"></i>
                                 </a>
                             </div>
