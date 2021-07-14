@@ -67,7 +67,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 // @ts-ignore
                 window.moveToNewTarget(planet, () => { 
                     router.push(page.path);
-                    setTimeout(() => setTransition(false), 250);
+                    setTimeout(() => setTransition(false), 500);
                 });
             }
         },
