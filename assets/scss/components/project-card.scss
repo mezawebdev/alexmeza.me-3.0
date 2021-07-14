@@ -13,13 +13,17 @@
     * {
         box-sizing : border-box;
     }
-
+    
     .space-ui-panel {
         min-height : 300px;
         width      : 90%;
 
         @media (min-width : $breakpoint-md) {
             padding : 25px;
+        }
+
+        .not-loaded {
+            
         }
 
         hr {

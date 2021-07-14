@@ -59,6 +59,9 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     case "/contact":
                         planet = "mercury";
                     break;
+                    default: 
+                        planet = "earth";
+                    break;
                 }
 
                 // @ts-ignore

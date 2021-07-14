@@ -32,19 +32,14 @@ export default function Projects(props) {
         [showSpotlight, setShowSpotlight] = useState(false),
         [spotlightData, setSpotlightData] = useState({ images: [], index: 0 }),
         params = {
-            spaceBetween: -120,
+            spaceBetween: 100,
             slidesPerView: 1,
             centeredSlides: true,
-            centerInsufficientSlides: true,
+            centerInsufficientSlides: false,
             breakpoints: {
-                500: {
-                    spaceBetween: -170
-                },
-                680: {
-                    spaceBetween: -250,
-                    slidesPerView: "auto"
+                800: {
+                    spaceBetween: 200
                 }
-
             },
             navigation: {
                 nextEl: ".nav-next",
@@ -62,8 +57,6 @@ export default function Projects(props) {
                 if (window.innerWidth < 962 && top > 275) $("html, body").animate({ scrollTop: 0 }, "slow");
             },
             onResize(e) {
-                console.log(e);
-                console.log("move!");
                 e.updateSize();
                 e.update();
             }

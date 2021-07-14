@@ -1,4 +1,5 @@
 interface Props {
+    value?: string;
     type: string;
     placeholder?: string;
     handler: Function;
@@ -13,13 +14,15 @@ export default function Field(props: Props) {
             {props.type === "text" || props.type === 'email' ? 
                 <input
                     required
-                    onKeyDown={e => props.handler(e)}
+                    value={props.value}
+                    onChange={e => props.handler(e)}
                     placeholder={props.placeholder} 
                     type={props.type} /> : null}
             {props.type === "textarea" ? 
                 <textarea 
+                    value={props.value}
                     required
-                    onKeyDown={e => props.handler(e)} 
+                    onChange={e => props.handler(e)} 
                     placeholder={props.placeholder}>
                 </textarea> : null}
             {props.type === 'button' ?

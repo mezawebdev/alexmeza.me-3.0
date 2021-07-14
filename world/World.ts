@@ -125,6 +125,9 @@ class World {
                 case "/contact":
                     planetToFollowKey = "mercury";
                 break;
+                default: 
+                    planetToFollowKey = "earth";
+                break;
             }
 
             const planetToFollow = this.planets.find(planet => { return planet.key === planetToFollowKey });

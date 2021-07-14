@@ -41,22 +41,63 @@
             }
 
             .space-ui-panel {
-                padding : 25px;
+                padding  : 25px;
+                position : relative;
 
                 @media (min-width : $breakpoint-md) {
                     padding : 45px;
                     width   : 50%;
                 }
 
-                p {
-                    margin     : 0;
-                    font-size  : 1.5em;
-                    font-style : italic;
-                    text-align : center;
+                .contact-form-wrapper {
+                    transition : opacity 0.25s ease-in-out;
+
+                    &.finished {
+                        opacity : 0;
+                    }
+
+                    p {
+                        margin     : 0;
+                        font-size  : 1.5em;
+                        font-style : italic;
+                        text-align : center;
+                    }
+    
+                    .fields {
+                        margin-top : 25px;
+                    }
                 }
 
-                .fields {
-                    margin-top : 25px;
+                .success,
+                .error {
+                    position      : absolute;
+                    top           : 0;
+                    right         : 0;
+                    bottom        : 0;
+                    left          : 0;
+                    text-align    : center;
+                    margin        : auto;
+                    width         : calc(100% - 50px);
+                    padding-right : 25px;
+                    padding-left  : 25px;
+                    display       : flex;
+                    align-items   : center;
+                    opacity       : 0;
+                    animation     : fade-in 0.25s ease-in-out 1 forwards;
+
+                    > div {
+                        width : 100%;
+
+                        i {
+                            font-size   : 5em;
+                            line-height : 0.65;
+                        }
+                    }
+
+                    @keyframes fade-in {
+                        0% { opacity : 0 }
+                        100% { opacity : 1 }
+                    }
                 }
             }
         }

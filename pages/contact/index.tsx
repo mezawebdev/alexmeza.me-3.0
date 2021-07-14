@@ -12,17 +12,27 @@ export default function Contact(props) {
         [email, setEmail] = useState(""),
         [message, setMessage] = useState(""),
         [submitted, setSubmitted] = useState(false),
+        [formState, setFormState] = useState({ finished: false, success: false, error: false }),
         handlers = {
             async submit(e) {
                 e.preventDefault();
                 setSubmitted(true);
-                const req = await axios.post("/api/send-email", {
-                    name: "test",
-                    email: "test",
-                    message: "test"
-                });
-                console.log(req);
                 
+                try {
+                    await axios.post("/api/send-email", { name, email, message });
+                    setFormState({ finished: true, success: true, error: false });
+                } catch (e) {
+                    console.log(e);
+                    setFormState({ finished: true, success: false, error: true });
+                }
+
+                setTimeout(() => {
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                    setFormState({ finished: false, success: false, error: false });
+                    setSubmitted(false);
+                }, 2500);
             }
         };
 
@@ -63,32 +73,55 @@ export default function Contact(props) {
                     </div>
                     <div className="contact-form row-2 row text-shadow">
                         <Panel>
-                            <p>Let's grow together.</p>
-                            <Fields>
-                                <form onSubmit={e => handlers.submit(e)}>
-                                    <Field 
-                                        handler={e => setName(e.target.value)}
-                                        placeholder="Full Name"
-                                        type="text">
-                                    </Field>
-                                    <Field 
-                                        handler={e => setEmail(e.target.value)}
-                                        placeholder="Email"
-                                        type="email">
-                                    </Field>
-                                    <Field 
-                                        handler={e => setMessage(e.target.value)}
-                                        placeholder="Message"
-                                        type="textarea">
-                                    </Field>
-                                    <Field 
-                                        disabled={submitted}
-                                        handler={() => {}}
-                                        type="button">
-                                        Send
-                                    </Field>
-                                </form>
-                            </Fields>
+                            <div className={`contact-form-wrapper${ formState.finished ? ' finished' : '' }`}>
+                                <p>Let's grow together.</p>
+                                <Fields>
+                                    <form onSubmit={e => handlers.submit(e)}>
+                                        <Field 
+                                            value={name}
+                                            handler={e => setName(e.target.value)}
+                                            placeholder="Full Name"
+                                            type="text">
+                                        </Field>
+                                        <Field 
+                                            value={email}
+                                            handler={e => setEmail(e.target.value)}
+                                            placeholder="Email"
+                                            type="email">
+                                        </Field>
+                                        <Field 
+                                            value={message}
+                                            handler={e => setMessage(e.target.value)}
+                                            placeholder="Message"
+                                            type="textarea">
+                                        </Field>
+                                        <Field 
+                                            disabled={submitted}
+                                            handler={() => {}}
+                                            type="button">
+                                            Send
+                                        </Field>
+                                    </form>
+                                </Fields>
+                            </div>
+                            {formState.success ? (
+                                <div className="success">
+                                    <div>
+                                        <i className="las la-check"></i>
+                                        <br />
+                                        Message sent!<br />I will reach out to you shortly.<br />Thank you!
+                                    </div>
+                                </div>
+                            ) : null}
+                            {formState.error ? (
+                                <div className="error">
+                                    <div>
+                                        <i className="las la-times"></i>
+                                        <br />
+                                        Message not sent!<br />Please try again.
+                                    </div>
+                                </div>
+                            ) : null}
                         </Panel>
                     </div>
                 </div>
