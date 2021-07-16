@@ -27,7 +27,7 @@ function iOS(): boolean {
 
 export default function Home() {
     const [uuid, setUuid] = useState(Math.round(Math.random() * 10000));
-
+    
     useEffect(() => {
         let tl1 = gsap.timeline();
         tl1.to(".sp-1", { opacity: 1, y: 0, duration: 0.5, }, 0);
@@ -39,6 +39,7 @@ export default function Home() {
         tl1.to(".sp-7", { opacity: 1, y: 0, duration: 0.5, }, 0.6);
         tl1.to(".sp-8", { opacity: 1, y: 0, duration: 0.5, }, 0.7);
         tl1.to(".sp-9", { opacity: 1, y: 0, duration: 0.5, }, 0.8);
+        console.log("ran header");
     }, []);
 
     return (
