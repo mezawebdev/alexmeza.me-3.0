@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 4123"
+    "start": "next start -p 8391"
   },
   "dependencies": {
     "3d-react-carousal": "^3.1.0",
