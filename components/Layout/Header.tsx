@@ -10,6 +10,7 @@ export default function Header(props) {
     useEffect(() => {
         if (props.animate) {
             const tl = gsap.timeline({ clearProps: "all" }),
+            // @ts-ignore
                 children: HTMLCollection = refs.content.current.children,
                 speed = 0.1;
 

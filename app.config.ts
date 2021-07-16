@@ -435,6 +435,11 @@ const config = {
                 debug: {
                     showRing: false,
                     showInitialPosition: false
+                },
+                cameraPlacement: {
+                    alpha: -2.2,
+                    beta: 1.3,
+                    radius: 17
                 }
             },
             planets: [

@@ -12,7 +12,10 @@ interface target {
 interface cameraPlacement {
     x: number,
     y: number,
-    z: number
+    z: number,
+    alpha: number;
+    beta: number;
+    radius: number;
 }
 
 export default class Sun extends Planet {

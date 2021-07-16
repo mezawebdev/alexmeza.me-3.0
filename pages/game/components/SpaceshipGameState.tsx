@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
-
-const Joystick = dynamic(() => import('react-joystick'), { ssr: false });
+// const Joystick = dynamic(() => import('react-joystick'), { ssr: false });
 
 export default function IntroGameState(props) {
     const joystick = {
@@ -28,10 +27,10 @@ export default function IntroGameState(props) {
     return (
         <div className="spacheship-game-state">
             <div className="cockpit-overlay"></div>
-            <Joystick 
+            {/* <Joystick 
                 joyOptions={joystick.options} 
                 containerStyle={joystick.containerStyle}
-                managerListener={joystick.handler} />
+                managerListener={joystick.handler} /> */}
         </div>
     );
 }
