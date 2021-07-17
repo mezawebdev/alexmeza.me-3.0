@@ -29,6 +29,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         router = useRouter(),
         onBodyClick = () => { setMobileMenuOpened(false) },
         onLoad = () => {
+            console.log("on load!");
             setTimeout(() => {
                 setLoadingScreenFadeout(true);
                 setTimeout(() => { setAppLoaded(true) }, 500);
@@ -148,7 +149,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 playingGame={playingGame}
                 setPlayingGame={setPlayingGame} /> */}
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
-            { App.showPages && worldLoaded && appLoaded ? 
+            { App.showPages && appLoaded ? 
                 <div className={`pages-wrapper${ transition ? " transition" : "" }`}>   
                     <PageTransition  
                         key={router.route}
