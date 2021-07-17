@@ -35,8 +35,10 @@ class World {
     asteroidBelt: AsteroidBelt;
     playingGame: boolean;
     game: Game;
+    onLoaded: Function;
     
-    constructor(canvasElId: string, initialPagePath: string) {
+    constructor(canvasElId: string, initialPagePath: string, onLoaded: Function) {
+        this.onLoaded = onLoaded;
         this.mode = Utils.isMobile() ? "mobile" : "desktop";
         this.canvasElId = canvasElId;
         this.initialPagePath = initialPagePath;
@@ -62,6 +64,8 @@ class World {
 
         // @ts-ignore
         window.moveToNewTarget = (target, callback) => { this.moveToNewTarget(target, callback) };
+        
+        setTimeout(() => onLoaded(), 1000);
     }
 
     public resize(): void {

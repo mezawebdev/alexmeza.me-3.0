@@ -89,7 +89,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         setCurrentPage(getCurrentPage());
 
         if (App.showWorld) {
-            world = new World("canvas", router.pathname);
+            world = new World("canvas", router.pathname, () => setAppLoaded(true));
             window.addEventListener("resize", () => { world.resize() });
         }
 
@@ -144,7 +144,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 setMobileMenuOpened={setMobileMenuOpened}
                 hide={playingGame} />
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
-            { App.showPages ? 
+            { App.showPages && appLoaded ? 
                 <div className={`pages-wrapper${ transition ? " transition" : "" }`}>   
                     <PageTransition  
                         key={router.route}
