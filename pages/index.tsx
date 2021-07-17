@@ -1,33 +1,10 @@
-import App from "../app.config";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useState } from "react";
-import Panel from "../components/Layout/SpaceUI/Panel";
-
-const app: any = App;
-
-const debug: boolean = false;
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function iOS(): boolean {
-    if (process.browser) {
-        return [
-            'iPad Simulator',
-            'iPhone Simulator',
-            'iPod Simulator',
-            'iPad',
-            'iPhone',
-            'iPod'
-        ].includes(navigator.platform)
-        // iPad on iOS 13 detection
-        || (navigator.userAgent.includes("Mac") && "ontouchend" in document) 
-    }
-}
-
 export default function Home() {
-    const [uuid, setUuid] = useState(Math.round(Math.random() * 10000));
-    
     useEffect(() => {
         let tl1 = gsap.timeline();
         tl1.to(".sp-1", { opacity: 1, y: 0, duration: 0.5, }, 0);
