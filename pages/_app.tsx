@@ -113,7 +113,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     content="My name is Alex Meza, I am a full-stack web developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
                 <meta 
                     property="og:image" 
-                    content="/assets/images/meta.jpg" />
+                    content="http://alexmeza.mezaweblab.com/assets/images/meta.jpg" />
                 <link 
                     rel="icon" 
                     href="/favicon.ico" />
