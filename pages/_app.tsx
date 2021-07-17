@@ -136,8 +136,6 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     rel="stylesheet"
                     href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"></link>
             </Head>
-            { !appLoaded && App.showLoadingScreen ? <LoadingScreenWindow fadeout={loadingScreenFadeout} /> : null }
-            {/* { App.world.debug.showConsole ? <Console /> : null } */}
             <Navigation 
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
@@ -145,11 +143,8 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 mobileMenuOpened={mobileMenuOpened}
                 setMobileMenuOpened={setMobileMenuOpened}
                 hide={playingGame} />
-            {/* <LaunchButton 
-                playingGame={playingGame}
-                setPlayingGame={setPlayingGame} /> */}
             { App.showWorld ? <canvas id="canvas"></canvas> : null  }
-            { App.showPages && appLoaded ? 
+            { App.showPages ? 
                 <div className={`pages-wrapper${ transition ? " transition" : "" }`}>   
                     <PageTransition  
                         key={router.route}
