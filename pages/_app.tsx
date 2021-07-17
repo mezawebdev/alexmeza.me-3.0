@@ -79,11 +79,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             return current ? current : defaultPage;
         };
 
-    if (process.browser) {
-        router.events.on("routeChangeEnd", url => {
-            setCurrentPage(getCurrentPage());
-        });
-    }
+    if (process.browser) router.events.on("routeChangeEnd", url => setCurrentPage(getCurrentPage()));
 
     useEffect(() => {
         setCurrentPage(getCurrentPage());
@@ -94,8 +90,6 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         }
 
         window.addEventListener("load", onLoad);
-        // window.onload = onLoad;
-        // setTimeout(() => { onLoad() }, 3500);
     }, []);
 
     return (
@@ -108,6 +102,18 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     name="viewport" 
                     content="width=device-width, initial-scale=1.0">
                 </meta>
+                <meta 
+                    name="description" 
+                    content="My name is Alex Meza, I am a full-stack web developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
+                <meta 
+                    property="og:title" 
+                    content="ALEX MEZA | Full-Stack Web Developer" />
+                <meta 
+                    property="og:description" 
+                    content="My name is Alex Meza, I am a full-stack web developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
+                <meta 
+                    property="og:image" 
+                    content="/assets/images/meta.jpg" />
                 <link 
                     rel="icon" 
                     href="/favicon.ico" />
@@ -118,11 +124,6 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <link 
                     rel="stylesheet" 
                     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
-                {/* <script
-                    src="https://code.jquery.com/jquery-3.5.1.min.js"
-                    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-                    crossOrigin="anonymous">
-                </script> */}
                 <script
                     src="https://code.jquery.com/jquery-3.5.1.min.js"
                     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
