@@ -750,120 +750,120 @@ const config = {
                     }
                 },
                 // Uranus
-                {
-                    key: "uranus",
-                    texture: "/assets/textures/uranus.jpg",
-                    get diameter() {  return getPlanetDiameter(26.8); },
-                    initialPosition: {
-                        get x() { return getPlanetPosition(config.world.objects.planets[6], 11.75); },
-                        y: 0,
-                        get z() { return getPlanetPosition(config.world.objects.planets[6], 11.75); },
-                    },
-                    rotation: {
-                        axis: {
-                            x: 0,
-                            y: 0,
-                            z: 0
-                        },
-                        get angle() { return 0.002 * config.world.speed },
-                        speed: 0.001
-                    },
-                    debug: {
-                        showRing: false,
-                        showInitialPosition: false
-                    },
-                    effects: {
-                        highlight: true,
-                        highlightColor: "#57faff"
-                    },
-                    layers: [
-                        {
-                            type: "texture",
-                            texture: "/assets/textures/clouds_2.png",
-                            rotate: true,
-                            rotationSpeed: -0.001,
-                            highlight: false,
-                            highlightColor: "#57faff",
-                            alpha: 0.25
-                        },
-                        {
-                            type: "texture",
-                            texture: "/assets/textures/clouds_1.png",
-                            rotate: true,
-                            rotationSpeed: 0.001,
-                            highlight: false,
-                            highlightColor: "#57faff",
-                            alpha: 0.25
-                        }
-                    ],
-                    ring: true,
-                    target: {
-                        get x() { return config.world.objects.planets[6].initialPosition.x },
-                        get y() { return config.world.objects.planets[6].initialPosition.y + 10 },
-                        get z() { return config.world.objects.planets[6].initialPosition.z }
-                    },
-                    cameraPlacement: {
-                        x: 1250,
-                        y: 11,
-                        z: 1250,
-                        alpha: 0.9,
-                        beta: 1.5,
-                        radius: 17
-                    }
-                },
-                // Neptune
-                {
-                    key: "neptune",
-                    texture: "/assets/textures/neptune.jpg",
-                    get diameter() {  return getPlanetDiameter(27.7); },
-                    initialPosition: {
-                        get x() { return getPlanetPosition(config.world.objects.planets[7], 13.5); },
-                        y: 0,
-                        get z() { return getPlanetPosition(config.world.objects.planets[7], 13.5); },
-                    },
-                    rotation: {
-                        axis: {
-                            x: 0,
-                            y: 0,
-                            z: 0
-                        },
-                        get angle() { return 0.001 * config.world.speed },
-                        speed: 0.001
-                    },
-                    debug: {
-                        showRing: false,
-                        showInitialPosition: false
-                    },
-                    effects: {
-                        highlight: true,
-                        highlightColor: "#4267bf"
-                    },
-                    layers: [
-                        {
-                            type: "texture",
-                            texture: "/assets/textures/clouds_1.png",
-                            rotate: true,
-                            rotationSpeed: 0.001,
-                            highlight: false,
-                            highlightColor: "#4267bf",
-                            alpha: 0.1
-                        }
-                    ],
-                    ring: true,
-                    target: {
-                        get x() { return config.world.objects.planets[7].initialPosition.x },
-                        get y() { return config.world.objects.planets[7].initialPosition.y + 10 },
-                        get z() { return config.world.objects.planets[7].initialPosition.z }
-                    },
-                    cameraPlacement: {
-                        x: 1400,
-                        y: 11,
-                        z: 1400,
-                        alpha: 0.9,
-                        beta: 1.5,
-                        radius: 17
-                    }
-                }
+                // {
+                //     key: "uranus",
+                //     texture: "/assets/textures/uranus.jpg",
+                //     get diameter() {  return getPlanetDiameter(26.8); },
+                //     initialPosition: {
+                //         get x() { return getPlanetPosition(config.world.objects.planets[6], 11.75); },
+                //         y: 0,
+                //         get z() { return getPlanetPosition(config.world.objects.planets[6], 11.75); },
+                //     },
+                //     rotation: {
+                //         axis: {
+                //             x: 0,
+                //             y: 0,
+                //             z: 0
+                //         },
+                //         get angle() { return 0.002 * config.world.speed },
+                //         speed: 0.001
+                //     },
+                //     debug: {
+                //         showRing: false,
+                //         showInitialPosition: false
+                //     },
+                //     effects: {
+                //         highlight: true,
+                //         highlightColor: "#57faff"
+                //     },
+                //     layers: [
+                //         {
+                //             type: "texture",
+                //             texture: "/assets/textures/clouds_2.png",
+                //             rotate: true,
+                //             rotationSpeed: -0.001,
+                //             highlight: false,
+                //             highlightColor: "#57faff",
+                //             alpha: 0.25
+                //         },
+                //         {
+                //             type: "texture",
+                //             texture: "/assets/textures/clouds_1.png",
+                //             rotate: true,
+                //             rotationSpeed: 0.001,
+                //             highlight: false,
+                //             highlightColor: "#57faff",
+                //             alpha: 0.25
+                //         }
+                //     ],
+                //     ring: true,
+                //     target: {
+                //         get x() { return config.world.objects.planets[6].initialPosition.x },
+                //         get y() { return config.world.objects.planets[6].initialPosition.y + 10 },
+                //         get z() { return config.world.objects.planets[6].initialPosition.z }
+                //     },
+                //     cameraPlacement: {
+                //         x: 1250,
+                //         y: 11,
+                //         z: 1250,
+                //         alpha: 0.9,
+                //         beta: 1.5,
+                //         radius: 17
+                //     }
+                // },
+                // // Neptune
+                // {
+                //     key: "neptune",
+                //     texture: "/assets/textures/neptune.jpg",
+                //     get diameter() {  return getPlanetDiameter(27.7); },
+                //     initialPosition: {
+                //         get x() { return getPlanetPosition(config.world.objects.planets[7], 13.5); },
+                //         y: 0,
+                //         get z() { return getPlanetPosition(config.world.objects.planets[7], 13.5); },
+                //     },
+                //     rotation: {
+                //         axis: {
+                //             x: 0,
+                //             y: 0,
+                //             z: 0
+                //         },
+                //         get angle() { return 0.001 * config.world.speed },
+                //         speed: 0.001
+                //     },
+                //     debug: {
+                //         showRing: false,
+                //         showInitialPosition: false
+                //     },
+                //     effects: {
+                //         highlight: true,
+                //         highlightColor: "#4267bf"
+                //     },
+                //     layers: [
+                //         {
+                //             type: "texture",
+                //             texture: "/assets/textures/clouds_1.png",
+                //             rotate: true,
+                //             rotationSpeed: 0.001,
+                //             highlight: false,
+                //             highlightColor: "#4267bf",
+                //             alpha: 0.1
+                //         }
+                //     ],
+                //     ring: true,
+                //     target: {
+                //         get x() { return config.world.objects.planets[7].initialPosition.x },
+                //         get y() { return config.world.objects.planets[7].initialPosition.y + 10 },
+                //         get z() { return config.world.objects.planets[7].initialPosition.z }
+                //     },
+                //     cameraPlacement: {
+                //         x: 1400,
+                //         y: 11,
+                //         z: 1400,
+                //         alpha: 0.9,
+                //         beta: 1.5,
+                //         radius: 17
+                //     }
+                // }
             ]
         }
     }
