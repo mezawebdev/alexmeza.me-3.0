@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 interface Props {
-    images: Array<string>,
+    media: Array<string>,
     index: number,
     close: Function
 }
@@ -19,7 +19,7 @@ export default function Spotlight(props: Props) {
                 spaceBetween={15}
                 initialSlide={props.index}
                 centeredSlides={true}>
-                {props.images.map((imageSrc, i) => { 
+                {props.media.map((imageSrc, i) => { 
                     return (
                         <SwiperSlide key={i}>
                             <img src={imageSrc} />

@@ -36,9 +36,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Vue.js", "Wordpress"],
             githubUrl: "http://myapp.com",
@@ -52,9 +60,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -68,9 +84,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -84,9 +108,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -100,9 +132,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -116,9 +156,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -132,9 +180,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -148,9 +204,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -164,9 +228,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",
@@ -180,9 +252,17 @@ const config = {
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
             thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            images: [
-                "/assets/images/projects/sunsick-studio-1.png",
-                "/assets/images/projects/sunsick-studio-1.png"
+            media: [
+                {
+                    type: "video",
+                    isTransparent: true,
+                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                },
+                {
+                    type: "image",
+                    src: "/assets/images/projects/sunsick-studio-1.png"
+                }
             ],
             technologies: [],
             githubUrl: "",

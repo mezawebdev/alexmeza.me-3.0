@@ -13,6 +13,24 @@ export default function ProjectCard(props) {
                 nextEl: ".swiper-next",
                 prevEl: ".swiper-prev"
             }
+        },
+        helpers = {
+            getMediaAsset(assetObj) {
+                switch (assetObj.type) {
+                    case "image":
+                    return (<img src={assetObj.src} />);
+                    case "video":
+                        if (assetObj.isTransparent) {
+                            return (
+                                <video autoPlay loop muted playsInline>
+                                    <source src={assetObj.srcMov} type="video/quicktime" />
+                                    <source src={assetObj.srcWebM} type="video/webm" />
+                                </video>
+                            );
+                        }
+                    break;
+                }
+            }
         };
 
     return (
@@ -24,11 +42,11 @@ export default function ProjectCard(props) {
                         <hr />
                         <div className="images">
                             <Swiper {...sliderParams}>
-                                {props.images.map((image, i) => { 
+                                {props.media.map((mediaAsset, i) => { 
                                     return (
                                         <SwiperSlide key={i}>
-                                            <button onClick={() => props.handlers.openSpotlight(props.images, i)}>
-                                                <img src={image} />
+                                            <button onClick={() => props.handlers.openSpotlight(props.media, i)}>
+                                                {helpers.getMediaAsset(mediaAsset)}
                                             </button>
                                         </SwiperSlide>
                                     );
