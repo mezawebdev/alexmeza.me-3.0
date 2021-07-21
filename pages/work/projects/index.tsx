@@ -99,7 +99,7 @@ export default function Projects(props) {
                     type="text/css" 
                     href="/assets/plugins/jquery-file-tree/jQueryFileTree.min.css" />
             </Head>
-            {showSpotlight ? <Spotlight images={spotlightData.images} index={spotlightData.index} close={handlers.closeSpotlight} /> : null}
+            {showSpotlight ? <Spotlight media={spotlightData.images} index={spotlightData.index} close={handlers.closeSpotlight} /> : null}
             <Header 
                 animate={true}
                 align="left">
