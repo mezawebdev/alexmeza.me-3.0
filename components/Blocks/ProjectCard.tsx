@@ -52,14 +52,16 @@ export default function ProjectCard(props) {
                                     );
                                 })}
                             </Swiper>
-                            <div className="swiper-navigation">
-                                <button className="swiper-prev">
-                                    <i className="las la-angle-left"></i>
-                                </button>
-                                <button className="swiper-next">
-                                    <i className="las la-angle-right"></i>
-                                </button>
-                            </div>
+                            {props.media.length > 1 ? (
+                                <div className="swiper-navigation">
+                                    <button className="swiper-prev">
+                                        <i className="las la-angle-left"></i>
+                                    </button>
+                                    <button className="swiper-next">
+                                        <i className="las la-angle-right"></i>
+                                    </button>
+                                </div>
+                            ) : null}
                         </div>
                         <div className="general-info">{props.description}</div>
                         <div className="options">

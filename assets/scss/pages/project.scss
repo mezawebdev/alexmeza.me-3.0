@@ -42,14 +42,14 @@
             left            : 50%;
             top             : 280px;
             transform       : translate(-50%, 0);
-            width           : 90%;
+            width           : 95%;
             z-index         : 10;
             max-width       : 900px;
             justify-content : space-between;
-            display         : none;
+            display         : flex;
 
-            @media (min-width : 500px) {
-                display : flex;
+            @media (min-width : 640px) {
+                width : 90%;
             }
 
             button {

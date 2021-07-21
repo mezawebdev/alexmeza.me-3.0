@@ -42,10 +42,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Vue.js", "Wordpress"],
@@ -66,11 +62,11 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
+                // {
+                //     type: "image",
+                //     src: "/assets/images/projects/sunsick-studio-1.png"
+                // }
             ],
             technologies: [],
             githubUrl: "",
@@ -90,10 +86,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -114,10 +106,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -138,10 +126,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -162,10 +146,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -186,10 +166,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -210,10 +186,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -234,10 +206,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],
@@ -258,10 +226,6 @@ const config = {
                     isTransparent: true,
                     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
                     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                },
-                {
-                    type: "image",
-                    src: "/assets/images/projects/sunsick-studio-1.png"
                 }
             ],
             technologies: [],

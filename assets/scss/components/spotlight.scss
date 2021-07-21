@@ -23,7 +23,13 @@
     }
 
     .swiper-container {
-        img {
+        .swiper-slide {
+            width        : auto !important;
+            margin-right : 0px !important;
+        }
+
+        img,
+        video {
             width     : 90%;
             display   : block;
             max-width : 1024px;
