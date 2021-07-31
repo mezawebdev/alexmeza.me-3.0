@@ -36,7 +36,7 @@ export default function Home() {
                                 <span className="sp-7">Z</span>
                                 <span className="sp-8">A</span>
                             </h1>
-                            <h2 className="sp-9 filter-shadow">FULL-STACK WEB DEVELOPER</h2>
+                            <h2 className="sp-9 filter-shadow">FULL-STACK SOFTWARE DEVELOPER</h2>
                             <div className="social-media">
                                 <a 
                                     target="_blank"

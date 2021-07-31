@@ -97,20 +97,20 @@ function AlexMeza({ Component, pageProps }: AppProps) {
             id="alex-meza"
             onClick={() => onBodyClick()}> 
             <Head>
-                <title>ALEX MEZA | Full-Stack Web Developer</title>
+                <title>ALEX MEZA | Full-Stack Software Developer</title>
                 <meta 
                     name="viewport" 
                     content="width=device-width, initial-scale=1.0">
                 </meta>
                 <meta 
                     name="description" 
-                    content="My name is Alex Meza, I am a full-stack web developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
+                    content="My name is Alex Meza, I am a full-stack software developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
                 <meta 
                     property="og:title" 
-                    content="ALEX MEZA | Full-Stack Web Developer" />
+                    content="ALEX MEZA | Full-Stack Software Developer" />
                 <meta 
                     property="og:description" 
-                    content="My name is Alex Meza, I am a full-stack web developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
+                    content="My name is Alex Meza, I am a full-stack software developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
                 <meta 
                     property="og:image" 
                     content="http://alexmeza.mezaweblab.com/assets/images/meta.jpg" />

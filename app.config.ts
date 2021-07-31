@@ -48,190 +48,6 @@ const config = {
             githubUrl: "http://myapp.com",
             appUrl: "http://myapp.com",
             codebaseSrc: "/test"
-        },
-        {
-            id: 2,
-            type: "professional",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-                // {
-                //     type: "image",
-                //     src: "/assets/images/projects/sunsick-studio-1.png"
-                // }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 3,
-            type: "professional",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 4,
-            type: "professional",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 5,
-            type: "personal",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 6,
-            type: "personal",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 7,
-            type: "personal",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 8,
-            type: "personal",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 9,
-            type: "experimental",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
-        },
-        {
-            id: 10,
-            type: "experimental",
-            title: "Awesome Project",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
-            media: [
-                {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                }
-            ],
-            technologies: [],
-            githubUrl: "",
-            appUrl: "",
-            codebaseSrc: ""
         }
     ],
     technologies: [
@@ -367,51 +183,51 @@ const config = {
                 },
                 intensity: 1
             },
-            {
-                key: "ambient-light-2",
-                initialPosition: {
-                    x: 0,
-                    y:  600,
-                    z: 0
-                },
-                intensity: 0.5
-            },
-            {
-                key: "ambient-light-3",
-                initialPosition: {
-                    x: 600,
-                    y: 0,
-                    z: 0
-                },
-                intensity: 0.5
-            },
-            {
-                key: "ambient-light-4",
-                initialPosition: {
-                    x:  600,
-                    y: 0,
-                    z: 0
-                },
-                intensity: 0.5  
-            },
-            {
-                key: "ambient-light-5",
-                initialPosition: {
-                    x: 0,
-                    y: 0,
-                    z: 600
-                },
-                intensity: 0.5
-            },
-            {
-                key: "ambient-light-6",
-                initialPosition: {
-                    x: 0,
-                    y: 0,
-                    z:  600
-                },
-                intensity: 0.5
-            }
+            // {
+            //     key: "ambient-light-2",
+            //     initialPosition: {
+            //         x: 0,
+            //         y:  600,
+            //         z: 0
+            //     },
+            //     intensity: 0.5
+            // },
+            // {
+            //     key: "ambient-light-3",
+            //     initialPosition: {
+            //         x: 600,
+            //         y: 0,
+            //         z: 0
+            //     },
+            //     intensity: 0.5
+            // },
+            // {
+            //     key: "ambient-light-4",
+            //     initialPosition: {
+            //         x:  600,
+            //         y: 0,
+            //         z: 0
+            //     },
+            //     intensity: 0.5  
+            // },
+            // {
+            //     key: "ambient-light-5",
+            //     initialPosition: {
+            //         x: 0,
+            //         y: 0,
+            //         z: 600
+            //     },
+            //     intensity: 0.5
+            // },
+            // {
+            //     key: "ambient-light-6",
+            //     initialPosition: {
+            //         x: 0,
+            //         y: 0,
+            //         z:  600
+            //     },
+            //     intensity: 0.5
+            // }
         ],
         debug: {
             showAxis: false,
