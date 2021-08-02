@@ -142,34 +142,41 @@
                 .brands {
                     margin-top            : 30px;
                     display               : grid;
-                    grid-template-columns : 1fr 1fr;
+                    grid-template-columns : minmax(0, 1fr) minmax(0, 1fr);
+                    grid-gap              : 10px;
 
                     @media (min-width : $breakpoint-xsm) {
                         margin-top : 50px;
                     }
 
-                    .brand {
-                        display    : grid;
-                        text-align : center;
-                        font-size  : 0.75em;
+                    @media (min-width : $breakpoint-md) {
+                        display               : grid;
+                        grid-template-columns : minmax(0, 1fr) minmax(0, 1fr);
+                    }   
 
-                        &:nth-child(1) {
-                            img {
-                                width : 120px;
-                            }
-                        }
+                    .brand {
+                        text-align      : center;
+                        font-size       : 0.75em;
+                        display         : flex;
+                        align-items     : center;
+                        justify-content : center;
 
                         div {
                             display         : flex;
                             align-items     : center;
                             justify-content : center;
+                            min-height      : 80px;
+                            width           : 100px;
+                            background      : red;
+                            box-shadow      : 0px 2px 4px rgba(0, 0, 0, .2);
+                            padding         : 10px;
+                            border-radius   : 5px;
+                            background      : rgba(29, 36, 50, 0.5);
 
                             img {
-                                width : 70px;
-                                // height : 20px;
+                               max-width : 80px;
         
                                 @media (min-width : $breakpoint-xmd) {
-                                    // height : 50px;
                                 }
                             }
                         }   

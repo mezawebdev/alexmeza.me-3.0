@@ -140,6 +140,13 @@
 
         .section {
             margin-top : 35px;
+
+            &.source-code {
+                span.small {
+                    font-size  : 14px;
+                    font-style : italic;
+                }
+            }
         }
     }
 }

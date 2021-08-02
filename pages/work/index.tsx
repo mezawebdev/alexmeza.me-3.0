@@ -9,7 +9,7 @@ import { ScrollTrigger } from "../../node_modules/gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Work(props) {
+export default function Work() {
     const professionalProjects = useRef(null);
 
     useEffect(() => {
@@ -65,6 +65,7 @@ export default function Work(props) {
                                         id={`project-${ project.id }`}
                                         className="row">
                                         <WorkProject 
+                                            projectTitle={project.title}
                                             projectId={project.id}
                                             thumbnail={project.thumbnail} 
                                             key={i} />

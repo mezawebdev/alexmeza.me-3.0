@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function About(props) {
+export default function About() {
     useEffect(() => {
         let tl = gsap.timeline(),
             tl2 = gsap.timeline();
@@ -67,7 +67,7 @@ export default function About(props) {
                                 <h4 className="font-family-regular filter-shadow">Tools I Frequent</h4>
                                 <div className="list">
                                     {App.technologies.map((tech, i) => {
-                                        return <Tech key={i} image={tech.image} label={tech.label} />
+                                        return tech.showBadge ? <Tech key={i} image={tech.image} label={tech.label} /> : null;
                                     })}
                                 </div>
                             </div>

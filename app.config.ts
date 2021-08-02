@@ -32,84 +32,252 @@ const config = {
         {
             id: 1,
             type: "professional",
-            title: "Awesome Project",
+            title: "Quit The Hit",
             description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
             year: 2018,
-            thumbnail: "/assets/images/projects/hustlestrive-thumbnail.png",
+            thumbnail: "/assets/images/projects/Quit-The-Hit-Thumbnail.png",
             media: [
+                // {
+                //     type: "video",
+                //     isTransparent: true,
+                //     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
+                //     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                // },
                 {
-                    type: "video",
-                    isTransparent: true,
-                    srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                    srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
+                    type: "image",
+                    src: "/assets/images/projects/Quit-The-Hit-1.png"
                 }
             ],
-            technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Vue.js", "Wordpress"],
-            githubUrl: "http://myapp.com",
-            appUrl: "http://myapp.com",
-            codebaseSrc: "/test"
+            technologies: ["HTML5", "CSS3", "JavaScript", "Node.js", "Vue.js", "Nuxt.js", "MySQL", "Apache"],
+            githubUrl: "",
+            appUrl: "https://quitthehitnow.com",
+            codebaseSrc: "",
+            isRescue: true
+        },
+        {
+            id: 2,
+            type: "professional",
+            title: "Hustle & Strive",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Hustle-And-Strive-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Hustle-And-Strive-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Laravel", "MySQL", "Apache"],
+            githubUrl: "",
+            appUrl: "https://hustlestrive.com",
+            codebaseSrc: "",
+            isRescue: true
+        },
+        {
+            id: 3,
+            type: "professional",
+            title: "Sunsick Studio",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Sunsick-Studio-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Sunsick-Studio-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Node.js", "MySQL", "Strapi", "Nginx"],
+            githubUrl: "",
+            appUrl: "https://sunsickstudio.mezaweblab.com",
+            codebaseSrc: "/sunsick-studio",
+            isRescue: false
+        },
+        {
+            id: 4,
+            type: "professional",
+            title: "Behind The Haze",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Behind-The-Haze-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Behind-The-Haze-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Node.js", "Apache"],
+            githubUrl: "",
+            appUrl: "https://behindthehaze.com",
+            codebaseSrc: "",
+            isRescue: true
+        },
+        {
+            id: 5,
+            type: "professional",
+            title: "Quit Now SC",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Quit-Now-SC-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Quit-Now-SC-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Node.js", "Apache"],
+            githubUrl: "",
+            appUrl: "https://quitnowsc.org",
+            codebaseSrc: "",
+            isRescue: true
+        },
+        {
+            id: 6,
+            type: "professional",
+            title: "Rethink Recovery",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Rethink-Recovery-IL-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Rethink-Recovery-IL-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Node.js", "Apache"],
+            githubUrl: "",
+            appUrl: "https://rethinkrecoveryil.org",
+            codebaseSrc: "",
+            isRescue: true
+        },
+        {
+            id: 7,
+            type: "professional",
+            title: "Outlast VT",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Outlast-VT-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Outlast-VT-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "PHP", "Apache"],
+            githubUrl: "",
+            appUrl: "https://rethinkrecoveryil.org",
+            codebaseSrc: "",
+            isRescue: true
+        },
+        {
+            id: 8,
+            type: "professional",
+            title: "ParentUp VT",
+            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            year: 2018,
+            thumbnail: "/assets/images/projects/Parent-Up-VT-Thumbnail.png",
+            media: [
+                {
+                    type: "image",
+                    src: "/assets/images/projects/Parent-Up-VT-1.png"
+                }
+            ],
+            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Apache"],
+            githubUrl: "",
+            appUrl: "https://parentupvt.org",
+            codebaseSrc: "",
+            isRescue: true
         }
     ],
     technologies: [
         {
             label: "HTML5",
-            image: "/assets/images/html5-white.png"
+            image: "/assets/images/html5-white.png",
+            showBadge: true
         },
         {
             label: "CSS3",
-            image: "/assets/images/css3-white.png"
+            image: "/assets/images/css3-white.png",
+            showBadge: true
         },
         {
             label: "JavaScript",
-            image: "/assets/images/js-white.png"
+            image: "/assets/images/js-white.png",
+            showBadge: true
         },
         {
             label: "Vue.js",
-            image: "/assets/images/vue.png"
+            image: "/assets/images/vue.png",
+            showBadge: true
         },
         {
             label: "Nuxt.js",
-            image: "/assets/images/nuxtjs.svg"
+            image: "/assets/images/nuxtjs.svg",
+            showBadge: true
         },
         {
             label: "React.js",
-            image: "/assets/images/react.png"
+            image: "/assets/images/react.png",
+            showBadge: true
         },
         {
             label: "Next.js",
-            image: "/assets/images/nextjs.png"
+            image: "/assets/images/nextjs.png",
+            showBadge: true
         },
         {
             label: "Babylon.js",
-            image: "/assets/images/babylonjs.png"
+            image: "/assets/images/babylonjs.png",
+            showBadge: true
         },
         {
             label: "Node.js",
-            image: "/assets/images/nodejs.svg"
+            image: "/assets/images/nodejs.svg",
+            showBadge: true
         },
         {
             label: "MySQL",
-            image: "/assets/images/mysql.png"
+            image: "/assets/images/mysql.png",
+            showBadge: true
         },
         {
             label: "PHP",
-            image: "/assets/images/php.png"
+            image: "/assets/images/php.png",
+            showBadge: true
         },
         {
             label: "Laravel",
-            image: "/assets/images/laravel.png"
+            image: "/assets/images/laravel.png",
+            showBadge: true
         },
         {
             label: "Wordpress",
-            image: "/assets/images/wordpress.png"
+            image: "/assets/images/wordpress.png",
+            showBadge: true
         },
         {
             label: "Sass",
-            image: "/assets/images/sass.png"
+            image: "/assets/images/sass.png",
+            showBadge: true
         },
         {
             label: "Bootstrap",
-            image: "/assets/images/bootstrap.png"
+            image: "/assets/images/bootstrap.png",
+            showBadge: true
+        },
+        {
+            label: "Apache",
+            image: "/assets/images/Apache_Feather_Logo.png",
+            showBadge: false
+        },
+        {
+            label: "Nginx",
+            image: "/assets/images/Nginx_logo.png",
+            showBadge: false
+        },
+        {
+            label: "Strapi",
+            image: "/assets/images/hp-logo-hero_c94026101f.svg",
+            showBadge: false
         }
     ],
     brands: [
@@ -122,8 +290,32 @@ const config = {
             image: "/assets/images/brands/sunsick.png"
         },
         {
-            label: "F",
-            image: "/assets/images/brands/sunsick.png"
+            label: "Quit the Hit",
+            image: "/assets/images/brands/quit-the-hit-logo-highres.png"
+        },
+        {
+            label: "Hustle & Strive",
+            image: "/assets/images/brands/hustlle-strive-logo.svg"
+        },
+        {
+            label: "Behind The Haze",
+            image: "/assets/images/brands/bth-logo-white.svg"
+        },
+        {
+            label: "OutlastVT",
+            image: "/assets/images/brands/outlast-logo.png"
+        },
+        {
+            label: "QuitNowSC",
+            image: "/assets/images/brands/logo-sctql.svg"
+        },
+        {
+            label: "RethinkRecoveryIL",
+            image: "/assets/images/brands/rethink-recovery-logo.svg"
+        },
+        {
+            label: "ParentUpVT",
+            image: "/assets/images/brands/logo-1.svg"
         }
     ],
     world: {

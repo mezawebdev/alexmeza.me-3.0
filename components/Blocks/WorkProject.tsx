@@ -8,7 +8,7 @@ export default function WorkProject(props) {
             <div
                 style={{backgroundImage: `url(${ props.thumbnail })`}}
                 className="work-project box-shadow">
-                
+                <div className="overlay">{props.projectTitle}</div>
             </div>
         </Link>
     );

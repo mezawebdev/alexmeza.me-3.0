@@ -67,6 +67,7 @@
                 cursor              : pointer;
                 opacity             : 0;
                 pointer-events      : all;
+                box-sizing          : border-box;
 
                 &:hover {
                     transform : scale(1.5);
@@ -88,16 +89,28 @@
                     height : 340px;
                 }
 
-                // &:hover {
-                //     transition : transitions(0.25s, transform);
-                //     transform  : scale(1.05) !important;
-                //     cursor     : pointer;
-                // }
-
-                // &:active {
-                //     transform  : scale(0.95) !important;
-                //     cursor     : pointer;
-                // }
+                .overlay {
+                    position                   : absolute;
+                    bottom                     : 0px;
+                    display                    : flex;
+                    box-sizing                 : border-box;
+                    justify-content            : center;
+                    width                      : 100%;
+                    align-items                : center;
+                    border-bottom-left-radius  : 5px;
+                    border-bottom-right-radius : 5px;
+                    font-size                  : 12px;
+                    background                 : rgba(25, 25, 25, 0.8);
+                    padding                    : 5px;
+                    
+                    @media (min-width : $breakpoint-md) {
+                        top        : 0px;
+                        background : rgba(0, 0, 0, 0.5);
+                        left       : 0px;
+                        height     : 100%;
+                        opacity    : 0px;
+                    }
+                }
             }
         }
     }

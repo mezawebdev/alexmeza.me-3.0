@@ -9,8 +9,6 @@ import Navigation from "../components/Navigation/Navigation";
 import Router from "next/router";
 import { useRouter } from "next/router";
 import { PageTransition } from 'next-page-transitions';
-import LoadingScreenWindow from "../components/Utils/LoadingScreenWindow";
-import LaunchButton from "../components/Navigation/LaunchButton";
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 
@@ -19,19 +17,14 @@ let world: World,
 
 function AlexMeza({ Component, pageProps }: AppProps) {
     const [currentPage, setCurrentPage] = useState({ path: "/" }), 
-        [activePage, setActivePage] = useState({ label: "", path: "", active: false }),
         [mobileMenuOpened, setMobileMenuOpened] = useState(false),
-        [worldLoaded, setWorldLoaded] = useState(true),
         [appLoaded, setAppLoaded] = useState(false),
         [transition, setTransition] = useState(false),
-        [loadingScreenFadeout, setLoadingScreenFadeout] = useState(false),
         [playingGame, setPlayingGame] = useState(false),
         router = useRouter(),
         onBodyClick = () => { setMobileMenuOpened(false) },
         onLoad = () => {
-            console.log("on load!");
             setTimeout(() => {
-                setLoadingScreenFadeout(true);
                 setTimeout(() => { setAppLoaded(true) }, 500);
             }, 500);
         },

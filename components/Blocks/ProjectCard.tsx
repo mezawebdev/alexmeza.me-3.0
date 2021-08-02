@@ -97,7 +97,8 @@ export default function ProjectCard(props) {
                             </div>
                         ) : (
                             <div className="section source-code">
-                                <p>No Source Code To Display</p>
+                                <p>No source available code to display</p>
+                                {props.isRescue ? (<span className="small">All source code belongs to Rescue Agency.</span>) : null}
                             </div>
                         )}
                     </div>
