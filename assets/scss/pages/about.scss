@@ -173,10 +173,16 @@
                             border-radius   : 5px;
                             background      : rgba(29, 36, 50, 0.5);
 
+                            @media (min-width : $breakpoint-md) {
+                                width      : 100%;
+                                min-height : 100px;
+                            }
+
                             img {
                                max-width : 80px;
         
-                                @media (min-width : $breakpoint-xmd) {
+                                @media (min-width : $breakpoint-md) {
+                                    max-width : 100px
                                 }
                             }
                         }   

@@ -17,7 +17,7 @@ export default function FileViewer(props: Props) {
             <h4>{props.header}</h4>
             <div className={styles.fileContentsWrapper}>
                 <SyntaxHighlighter 
-                    useInlineStyles={false}
+                    useInlineStyles={true}
                     language="javascript">
                     {props.contents}
                 </SyntaxHighlighter>

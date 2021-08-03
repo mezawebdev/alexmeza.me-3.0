@@ -271,7 +271,7 @@ const config = {
         },
         {
             label: "Nginx",
-            image: "/assets/images/Nginx_logo.png",
+            image: "/assets/images/Nginx_Cube.png",
             showBadge: false
         },
         {

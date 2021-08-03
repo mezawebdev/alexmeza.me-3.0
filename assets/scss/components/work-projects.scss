@@ -71,6 +71,10 @@
 
                 &:hover {
                     transform : scale(1.5);
+
+                    .overlay {
+                        opacity : 1;
+                    }
                 }
 
                 @media (min-width : $breakpoint-xsm) {
@@ -101,14 +105,21 @@
                     border-bottom-right-radius : 5px;
                     font-size                  : 12px;
                     background                 : rgba(25, 25, 25, 0.8);
+                    transition                 : opacity 0.25s ease-in-out;
                     padding                    : 5px;
                     
                     @media (min-width : $breakpoint-md) {
                         top        : 0px;
-                        background : rgba(0, 0, 0, 0.5);
+                        background : rgba(0, 0, 0, 0.8);
                         left       : 0px;
                         height     : 100%;
-                        opacity    : 0px;
+                        padding    : 15px;
+                        opacity    : 0;
+                        font-size  : 32px;
+                    }
+
+                    @media (min-width : $breakpoint-lg) {
+                        font-size : 40px;
                     }
                 }
             }
