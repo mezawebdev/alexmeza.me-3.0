@@ -16,7 +16,6 @@ export default function Home() {
         tl1.to(".sp-7", { opacity: 1, y: 0, duration: 0.5, }, 0.6);
         tl1.to(".sp-8", { opacity: 1, y: 0, duration: 0.5, }, 0.7);
         tl1.to(".sp-9", { opacity: 1, y: 0, duration: 0.5, }, 0.8);
-        console.log("ran header");
     }, []);
 
     return (

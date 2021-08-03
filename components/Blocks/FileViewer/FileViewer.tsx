@@ -1,5 +1,6 @@
 import styles from "./FileViewer.module.scss";
 import SyntaxHighlighter from 'react-syntax-highlighter';
+// import { style } from 'react-syntax-highlighter/dist/esm/styles/prism;
 
 interface Props {
     contents: string;
@@ -17,6 +18,7 @@ export default function FileViewer(props: Props) {
             <h4>{props.header}</h4>
             <div className={styles.fileContentsWrapper}>
                 <SyntaxHighlighter 
+                    stylesheet="twilight"
                     useInlineStyles={true}
                     language="javascript">
                     {props.contents}

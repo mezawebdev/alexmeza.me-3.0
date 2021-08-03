@@ -37,6 +37,9 @@ export default function Projects(props) {
             centeredSlides: true,
             centerInsufficientSlides: false,
             breakpoints: {
+                640: {
+                    allowTouchMove: false
+                },
                 800: {
                     spaceBetween: 200
                 }
@@ -45,7 +48,12 @@ export default function Projects(props) {
                 nextEl: ".nav-next",
                 prevEl: ".nav-prev"
             },
+            preventClicks: true,
+            preventClicksPropagation: true,
+            simulateTouch: true,
             initialSlide: activeSlide,
+            edgeSwipeDetection: false,
+            touchStartForcePreventDefault: true,
             onSlideChange(e) {
                 router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true });
                 setActiveSlide(e.realIndex);

@@ -43,14 +43,16 @@
     }
 
     button {
-        width         : 100%;
-        background    : white;
-        padding       : 15px;
-        border        : none;
-        max-width     : 300px;
-        display       : block;
-        border-radius : 5px;
-        margin        : 0 auto;
-        box-shadow    : 0px 4px 16px rgba(0, 0, 0, 0.5);
+        width           : 100%;
+        background      : linear-gradient(70deg, rgba(82, 101, 138, 0.5), rgba(131, 146, 177, 0.5), rgba(82, 101, 138, 0.5));
+        padding         : 15px;
+        border          : none;
+        max-width       : 300px;
+        display         : block;
+        color           : white;
+        border-radius   : 5px;
+        backdrop-filter : blur(2px);
+        margin          : 0 auto;
+        box-shadow      : 0px 4px 16px rgba(0, 0, 0, 0.5);
     }
 }
