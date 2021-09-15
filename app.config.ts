@@ -33,7 +33,12 @@ const config = {
             id: 1,
             type: "professional",
             title: "Quit The Hit",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            description: `
+                Quit the Hit is a program that helps youth and adult audiences quit vaping through the guidance of a coach. 
+                As of September 2021, more than +900 users have signed up and successfully gone through the program. 
+                The web app is built with Nuxt.js, with a heavy Node.js + Express.js back-end. For the database, we used MySQL
+                combined with the Sequelize ORM. We also used the Qualtrics API to integrate surveys within the program.
+            `,
             year: 2018,
             thumbnail: "/assets/images/projects/Quit-The-Hit-Thumbnail.png",
             media: [
@@ -58,7 +63,16 @@ const config = {
             id: 2,
             type: "professional",
             title: "Hustle & Strive",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            description: `
+                Hustle & Strive is a online self-help program which helps youth audiences to
+                stay away from addictive substances by learning various coping techniques.
+                The website incorporates videos, front-end experiences and quizzes in order to guide 
+                the user through dealing with life's difficult situations.
+                The web app is built with PHP Laravel, MySQL and Vue.js. 
+                As of September 2021, over a thousand users have signed up and successfully gone
+                through the program. As a result, the program obtained another multi-million, multi-year
+                contract for this work.
+            `,
             year: 2018,
             thumbnail: "/assets/images/projects/Hustle-And-Strive-Thumbnail.png",
             media: [
@@ -77,7 +91,13 @@ const config = {
             id: 3,
             type: "professional",
             title: "Sunsick Studio",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            description: `
+                Sunsick Studio is a music recording studio located in San Diego, California. Through the collaboration
+                of Sunsick Studio and myself, we developed a website to serve as the main hub for Sunsick
+                Studio's online presence, to display their work and, more importantly, to gather more inquiries for recording work. 
+                The website was built with React.js and Next.js, with Strapi serving as a headless CMS for content editing. 
+                This project is currently in the final stages of development, to be launched soon. 
+            `,
             year: 2018,
             thumbnail: "/assets/images/projects/Sunsick-Studio-Thumbnail.png",
             media: [
@@ -96,7 +116,13 @@ const config = {
             id: 4,
             type: "professional",
             title: "Behind The Haze",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            description: `
+                Behind the Haze is a multi-state anti-vaping campaign aimed at youth audiences. It spreads awareness
+                about the negative consequences of vapin and the realities of the vaping industry and their products.
+                The website was built with Nuxt.js, and it's very heavy on the front-end. There multiple interactive widgets built, such as
+                carousels, sliders, tappers, etc., combined with CSS animations and transitions to create a site that feels alive.
+                This work resulted in obtaining multiple clients across various states that have adoped the site.
+            `,
             year: 2018,
             thumbnail: "/assets/images/projects/Behind-The-Haze-Thumbnail.png",
             media: [
@@ -115,7 +141,13 @@ const config = {
             id: 5,
             type: "professional",
             title: "Quit Now SC",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            description: `
+                Quit Now SC is a website for the South Carolina Tobacco Quitline. The purpose of this website was to
+                create a main hub to raise awareness about the client's quitline resources and the road to quitting
+                tobacco for good.
+                This website was built with Nuxt.js and was very well abstracted in order to allow quick, plug-and-play customization
+                accross the site.
+            `,
             year: 2018,
             thumbnail: "/assets/images/projects/Quit-Now-SC-Thumbnail.png",
             media: [
@@ -134,7 +166,12 @@ const config = {
             id: 6,
             type: "professional",
             title: "Rethink Recovery",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+            description: `
+                Rethink Recovery is a website for the  Illinois Department of Human Services, to promote and
+                raise awareness of their Medication-Assisted Recovery (MAR) treatment. 
+                This website was built with Nuxt.js. We put a lot of effort on the visual effects. We incorporated
+                lots of parallax, transitions, and scroll animations to make the website stand out.
+            `,
             year: 2018,
             thumbnail: "/assets/images/projects/Rethink-Recovery-IL-Thumbnail.png",
             media: [
@@ -149,44 +186,44 @@ const config = {
             codebaseSrc: "",
             isRescue: true
         },
-        {
-            id: 7,
-            type: "professional",
-            title: "Outlast VT",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/Outlast-VT-Thumbnail.png",
-            media: [
-                {
-                    type: "image",
-                    src: "/assets/images/projects/Outlast-VT-1.png"
-                }
-            ],
-            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "PHP", "Apache"],
-            githubUrl: "",
-            appUrl: "https://rethinkrecoveryil.org",
-            codebaseSrc: "",
-            isRescue: true
-        },
-        {
-            id: 8,
-            type: "professional",
-            title: "ParentUp VT",
-            description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
-            year: 2018,
-            thumbnail: "/assets/images/projects/Parent-Up-VT-Thumbnail.png",
-            media: [
-                {
-                    type: "image",
-                    src: "/assets/images/projects/Parent-Up-VT-1.png"
-                }
-            ],
-            technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Apache"],
-            githubUrl: "",
-            appUrl: "https://parentupvt.org",
-            codebaseSrc: "",
-            isRescue: true
-        }
+        // {
+        //     id: 7,
+        //     type: "professional",
+        //     title: "Outlast VT",
+        //     description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+        //     year: 2018,
+        //     thumbnail: "/assets/images/projects/Outlast-VT-Thumbnail.png",
+        //     media: [
+        //         {
+        //             type: "image",
+        //             src: "/assets/images/projects/Outlast-VT-1.png"
+        //         }
+        //     ],
+        //     technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "PHP", "Apache"],
+        //     githubUrl: "",
+        //     appUrl: "https://rethinkrecoveryil.org",
+        //     codebaseSrc: "",
+        //     isRescue: true
+        // // },
+        // {
+        //     id: 7,
+        //     type: "professional",
+        //     title: "ParentUp VT",
+        //     description: "Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem Lorem Lorem Lorem LOrem",
+        //     year: 2018,
+        //     thumbnail: "/assets/images/projects/Parent-Up-VT-Thumbnail.png",
+        //     media: [
+        //         {
+        //             type: "image",
+        //             src: "/assets/images/projects/Parent-Up-VT-1.png"
+        //         }
+        //     ],
+        //     technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Apache"],
+        //     githubUrl: "",
+        //     appUrl: "https://parentupvt.org",
+        //     codebaseSrc: "",
+        //     isRescue: true
+        // }
     ],
     technologies: [
         {
@@ -440,9 +477,9 @@ const config = {
                 }
             },
             stars: {
-                enabled: false,
+                enabled: true,
                 texture: "/assets/textures/particle.png",
-                emitRate: 5000,
+                emitRate: 2500,
                 minSize: 5,
                 maxSize: 10,
                 minLifeTime: 10,

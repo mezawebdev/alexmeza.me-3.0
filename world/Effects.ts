@@ -15,13 +15,8 @@ export default class Effects {
         this.world = world;
         this.meshesToGlow = [];
 
-        if (App.world.effects.fog.enabled) {
-            this.initFog();
-        }
-
-        if (App.world.effects.glow.enabled) {
-            this.initGlow();
-        }
+        if (App.world.effects.fog.enabled) this.initFog();
+        if (App.world.effects.glow.enabled) this.initGlow();
     }
 
     public initFog(): void {
@@ -33,7 +28,7 @@ export default class Effects {
     public initGlow(): void {
         this.glow = new BN.GlowLayer("glow", this.scene);
         this.glow.intensity = App.world.effects.glow.intensity;
-        this.glow.addIncludedOnlyMesh(this.scene.getMeshByName("sun"));
+        // this.glow.addIncludedOnlyMesh(this.scene.getMeshByName("sun"));
         this.glow.addIncludedOnlyMesh(this.scene.getMeshByName("sun-second-layer"));
         this.world.planets.forEach(planet => {
             this.glow.addIncludedOnlyMesh(this.scene.getMeshByName(planet.key));
