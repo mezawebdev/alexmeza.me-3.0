@@ -48,7 +48,7 @@ export default function About() {
                             bottomPadding={true}>
                             <div className="section filter-shadow">
                                 My name is <span className="font-family-medium">Alex Meza,</span> I am a full-stack software developer from San Diego, California.
-                                My passion lives in merging graet art with great technology. I am very passionate about creating web applications that bring results.
+                                My passion lives in merging great art with great technology. I am very passionate about creating web applications that bring results.
                             </div>
                             <div className="section">
                                 <h4 className="font-family-regular filter-shadow">Brands I've Worked With</h4>
@@ -72,7 +72,7 @@ export default function About() {
                                 </div>
                             </div>
                             <div className="section">
-                                <p className="font-family-regular filter-sharo"><strong>About This Website:</strong> This website was created with Next.js and Babylon.js for the 3D world.</p>
+                                <p className="font-family-regular filter-sharo"><strong>About This Website:</strong> This website was created with Next.js, TypeScript and Babylon.js for the 3D world.</p>
                             </div>
                         </AboutBlock>
                     </div>
