@@ -2,6 +2,7 @@ import Panel from "../Layout/SpaceUI/Panel";
 import App from "../../app.config";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import FileBrowser from "./FileBrowser";
+import ReactHtmlParser from 'react-html-parser'; 
 
 export default function ProjectCard(props) {
     const app: any = App,
@@ -22,7 +23,11 @@ export default function ProjectCard(props) {
                     case "video":
                         if (assetObj.isTransparent) {
                             return (
-                                <video autoPlay loop muted playsInline>
+                                <video 
+                                    autoPlay 
+                                    loop 
+                                    muted 
+                                    playsInline>
                                     <source src={assetObj.srcMov} type="video/quicktime" />
                                     <source src={assetObj.srcWebM} type="video/webm" />
                                 </video>
@@ -41,7 +46,10 @@ export default function ProjectCard(props) {
                         <div className="title">{props.title}</div>  
                         <hr />
                         <div className="images">
-                            <Swiper {...sliderParams}>
+                            <button onClick={() => props.handlers.openSpotlight(props.media, 0)}>
+                                {helpers.getMediaAsset(props.media[0])}
+                            </button>
+                            {/* <Swiper {...sliderParams}>
                                 {props.media.map((mediaAsset, i) => { 
                                     return (
                                         <SwiperSlide key={i}>
@@ -61,9 +69,9 @@ export default function ProjectCard(props) {
                                         <i className="las la-angle-right"></i>
                                     </button>
                                 </div>
-                            ) : null}
+                            ) : null} */}
                         </div>
-                        <div className="general-info">{props.description}</div>
+                        <div className="general-info">{ReactHtmlParser(props.description)}</div>
                         <div className="options">
                             {props.appUrl.length > 0 ? <a target="_blank" href={props.appUrl}>
                                 <i className="las la-external-link-alt"></i>&nbsp;Go To App
@@ -77,6 +85,7 @@ export default function ProjectCard(props) {
                             <div className="grid">
                                 {props.technologies.map((tech, i) => {
                                     const techData = app.technologies.find(t => { return t.label === tech });
+
                                     return (
                                         <div
                                             key={i} 
