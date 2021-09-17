@@ -1,6 +1,6 @@
 const config = {
     showPages: true,
-    showWorld: false,
+    showWorld: true,
     showLoadingScreen: false,
     pages:[
         {
