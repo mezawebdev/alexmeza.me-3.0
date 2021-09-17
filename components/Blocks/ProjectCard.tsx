@@ -1,20 +1,19 @@
 import Panel from "../Layout/SpaceUI/Panel";
 import App from "../../app.config";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import FileBrowser from "./FileBrowser";
 import ReactHtmlParser from 'react-html-parser'; 
 
 export default function ProjectCard(props) {
     const app: any = App,
-        sliderParams = {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            centeredSlides: true,
-            navigation: {
-                nextEl: ".swiper-next",
-                prevEl: ".swiper-prev"
-            }
-        },
+        // sliderParams = {
+        //     slidesPerView: 1,
+        //     spaceBetween: 15,
+        //     centeredSlides: true,
+        //     navigation: {
+        //         nextEl: ".swiper-next",
+        //         prevEl: ".swiper-prev"
+        //     }
+        // },
         helpers = {
             getMediaAsset(assetObj) {
                 switch (assetObj.type) {
