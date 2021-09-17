@@ -1,4 +1,4 @@
-import * as BABYLON from 'babylonjs';
+// import * as BABYLON from 'babylonjs';
 import Utils from "./Utils";
 import config from "../app.config";
 import Planet from "./Planet";
@@ -10,6 +10,17 @@ import Stars from "./Stars";
 import AsteroidBelt from './AsteroidBelt';
 import Target from './Target';
 import Game from "./Game/Game";
+import { 
+    Engine, 
+    Scene, 
+    ArcRotateCamera, 
+    Vector3, 
+    Color4, 
+    MeshBuilder, 
+    HemisphericLight, 
+    Animation, 
+    PowerEase,
+    EasingFunction } from "babylonjs";
 
 const App: any = config;
 
@@ -18,13 +29,13 @@ class World {
     canvasElId: string;
     initialPagePath: string;
     canvas: HTMLCanvasElement;
-    engine: BABYLON.Engine;
-    scene: BABYLON.Scene;
+    engine: Engine;
+    scene: Scene;
     camera: any;
-    light: BABYLON.HemisphericLight;
+    light: HemisphericLight;
     spaceBox: SpaceBox;
     effects: Effects;
-    sphere: BABYLON.MeshBuilder;
+    sphere: MeshBuilder;
     sun: Sun;
     planets: Array<Planet>;
     lights: Array<Light>;
@@ -43,13 +54,13 @@ class World {
         this.canvasElId = canvasElId;
         this.initialPagePath = initialPagePath;
         this.canvas = document.getElementById(this.canvasElId) as HTMLCanvasElement;
-        this.engine = new BABYLON.Engine(this.canvas, true, { stencil: true });
-        this.scene = new BABYLON.Scene(this.engine);
-        this.camera = new BABYLON.ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
-        this.camera.setTarget(BABYLON.Vector3.Zero());
+        this.engine = new Engine(this.canvas, true, { stencil: true });
+        this.scene = new Scene(this.engine);
+        this.camera = new ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
+        this.camera.setTarget(Vector3.Zero());
         // this.camera.attachControl(this.canvas, true);
         this.camera.maxZ = 17000;
-        this.scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
+        this.scene.clearColor = new Color4(0, 0, 0, 1);
         this.planets = [];
         this.lights = [];
         this.playingGame = false;
@@ -191,19 +202,19 @@ class World {
 
     public async moveToNewTarget(targetKey: string, cb: any = function(){}) {
         let targetAnimation = {
-                x:  new BABYLON.Animation("newTargetX", "position.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
-                y: new BABYLON.Animation("newTargetY", "position.y", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
-                z: new BABYLON.Animation("newTargetZ", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT)
+                x:  new Animation("newTargetX", "position.x", 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CONSTANT),
+                y: new Animation("newTargetY", "position.y", 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CONSTANT),
+                z: new Animation("newTargetZ", "position.z", 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CONSTANT)
             },
             cameraAnimation = {
-                alpha: new BABYLON.Animation("alpha", "alpha", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
-                beta: new BABYLON.Animation("beta", "beta", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT),
-                radius: new BABYLON.Animation("radius", "radius", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT)
+                alpha: new Animation("alpha", "alpha", 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CONSTANT),
+                beta: new Animation("beta", "beta", 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CONSTANT),
+                radius: new Animation("radius", "radius", 30, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CONSTANT)
             }, 
             newTargetPlanet: Planet = this.getPlanetByKey(targetKey),
-            easingFunction = new BABYLON.PowerEase();
+            easingFunction = new PowerEase();
         
-        easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+        easingFunction.setEasingMode(EasingFunction.EASINGMODE_EASEINOUT);
         targetAnimation.x.setEasingFunction(easingFunction);
         targetAnimation.y.setEasingFunction(easingFunction);
         targetAnimation.z.setEasingFunction(easingFunction);
@@ -299,7 +310,6 @@ class World {
         this.camera.setTarget(this.target.mesh);
         this.game = new Game(this);
         this.playingGame = true;
-        console.log(this);
     }
 }
 
