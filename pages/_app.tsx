@@ -111,10 +111,10 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 <link 
                     rel="icon" 
                     href="/favicon.ico" />
-                <link 
+                {/* <link 
                     rel="stylesheet" 
                     type="text/css" 
-                    href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+                    href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> */}
                 <link 
                     rel="stylesheet" 
                     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
@@ -127,9 +127,9 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     src="/assets/plugins/jquery-file-tree/jQueryFileTree.min.js"
                     type="text/javascript">
                 </script>
-                <link 
+                {/* <link 
                     rel="stylesheet"
-                    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"></link>
+                    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"></link> */}
             </Head>
             <Navigation 
                 setCurrentPage={setCurrentPage}
