@@ -48,7 +48,7 @@ export default function About() {
                             bottomPadding={true}>
                             <div className="section filter-shadow">
                                 My name is <span className="font-family-medium">Alex Meza,</span> I am a full-stack software developer from San Diego, California.
-                                My passion lives in merging great art with great technology. I am very passionate about creating web applications that create results.
+                                My passion lives in merging great art with great technology. I am very passionate about creating web applications that generate results.
                             </div>
                             <div className="section">
                                 <h4 className="font-family-regular filter-shadow">Brands I've Worked With</h4>
