@@ -1,6 +1,6 @@
 const config = {
     showPages: true,
-    showWorld: true,
+    showWorld: false,
     showLoadingScreen: false,
     pages:[
         {
@@ -40,18 +40,30 @@ const config = {
                 The web app is built with Nuxt.js, with a heavy Node.js + Express.js back-end. For the database, we used MySQL
                 combined with the Sequelize ORM. We also used the Qualtrics API to integrate surveys within the program.
             `,
-            year: 2018,
+            year: 2019,
             thumbnail: "/assets/images/projects/Quit-The-Hit-Thumbnail.png",
             media: [
-                // {
-                //     type: "video",
-                //     isTransparent: true,
-                //     srcWebM: "/assets/videos/Behind-The-Haze-Mockup-1.webm",
-                //     srcMov: "/assets/videos/Behind-The-Haze-Mockup-1.mov"
-                // },
                 {
                     type: "image",
                     src: "/assets/images/projects/Quit-The-Hit-1.png"
+                },
+                {
+                    type: "video",
+                    mimeType: "video/mp4",
+                    src: "/assets/work/projects/qth-video-1.mov",
+                    vertical: true
+                },
+                {
+                    type: "video",
+                    mimeType: "video/mp4",
+                    src: "/assets/work/projects/qth-video-2.mov",
+                    vertical: false
+                },
+                {
+                    type: "video",
+                    mimeType: "video/mp4",
+                    src: "/assets/work/projects/qth-video-3.mov",
+                    vertical: false
                 }
             ],
             technologies: ["HTML5", "CSS3", "JavaScript", "Node.js", "Vue.js", "Nuxt.js", "MySQL", "Apache"],
@@ -102,7 +114,7 @@ const config = {
                 <br /><br />
                 This project is currently in the final stages of development, to be launched soon. 
             `,
-            year: 2018,
+            year: 2021,
             thumbnail: "/assets/images/projects/Sunsick-Studio-Thumbnail.png",
             media: [
                 {
@@ -129,7 +141,7 @@ const config = {
                 <br /><br />
                 This work resulted in obtaining multiple clients across various states that have now adoped the site.
             `,
-            year: 2018,
+            year: 2020,
             thumbnail: "/assets/images/projects/Behind-The-Haze-Thumbnail.png",
             media: [
                 {

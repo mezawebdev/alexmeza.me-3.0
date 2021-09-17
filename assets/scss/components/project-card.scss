@@ -77,6 +77,25 @@
                 background : none;
                 cursor     : zoom-in;
                 border     : none;
+                position   : relative;
+
+                span {
+                    position        : absolute;
+                    bottom          : 0;
+                    left            : 25px;
+                    width           : 36px;
+                    height          : 36px;
+                    border-radius   : 18px;
+                    display         : flex;
+                    align-items     : center;
+                    justify-content : center;
+                    background      : rgba(0, 0, 0, 0.75);
+
+                    i {
+                        color     : white;
+                        font-size : 19px;
+                    }
+                }
             }
 
             .swiper-navigation {

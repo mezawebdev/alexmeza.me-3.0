@@ -1,35 +1,42 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect } from "react";
 
 interface Props {
-    media: Array<string>,
-    index: number,
-    close: Function
+    media: Array<string>;
+    index: number;
+    close: Function;
 }
 
 export default function Spotlight(props: Props) {
     const helpers = {
-        getMediaAsset(assetObj) {
-            switch (assetObj.type) {
-                case "image":
-                return (<img src={assetObj.src} />);
-                case "video":
-                    if (assetObj.isTransparent) {
+            getMediaAsset(assetObj) {
+                switch (assetObj.type) {
+                    case "image":
+                        return (<img src={assetObj.src} />);
+                    case "video":
                         return (
-                            <video autoPlay loop muted playsInline>
-                                <source src={assetObj.srcMov} type="video/quicktime" />
-                                <source src={assetObj.srcWebM} type="video/webm" />
+                            <video className={assetObj.vertical ? 'vertical' : ''} controls>
+                                <source src={assetObj.src} type={assetObj.mimeType} />
                             </video>
                         );
-                    }
-                break;
+                }
             }
-        }
-    };
+        },
+        handlers = {
+            onClose() {
+                document.body.style.overflow = "scroll";
+                props.close();
+            }
+        };
+
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+    }, []);
 
     return (
         <main className="spotlight">
             <button 
-                onClick={() => props.close()}
+                onClick={() => handlers.onClose()}
                 className="close-btn">
                 <i className="las la-times"></i>
             </button>

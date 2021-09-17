@@ -48,6 +48,7 @@ export default function ProjectCard(props) {
                         <div className="images">
                             <button onClick={() => props.handlers.openSpotlight(props.media, 0)}>
                                 {helpers.getMediaAsset(props.media[0])}
+                                <span><i className="las la-search-plus"></i></span>
                             </button>
                             {/* <Swiper {...sliderParams}>
                                 {props.media.map((mediaAsset, i) => { 
