@@ -104,7 +104,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     content="ALEX MEZA | Software Developer" />
                 <meta 
                     property="og:description" 
-                    content="My name is Alex Meza, I am a full-stack software developer from San Diego, California. My passion lives in merging great art with great technology. I am very passionate about creating web applications that generate results." />
+                    content="I am a Software developer from San Diego, CA. and I am extremely passionate about creating beautiful web applications that generate results. My work involves researching, planning, designing and developing full stack web applications, using the required tools. I am a fast-learner and a creative developer always looking for growth opportunities." />
                 <meta 
                     property="og:image" 
                     content="http://alexmeza.mezaweblab.com/assets/images/meta.jpg" />
