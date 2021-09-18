@@ -107,7 +107,10 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                     content="I am a Software developer from San Diego, CA. and I am extremely passionate about creating beautiful web applications that generate results. My work involves researching, planning, designing and developing full stack web applications, using the required tools. I am a fast-learner and a creative developer always looking for growth opportunities." />
                 <meta 
                     property="og:image" 
-                    content="http://alexmeza.mezaweblab.com/assets/images/meta.jpg" />
+                    content="https://alexmeza.io/assets/images/meta.jpg" />
+                <meta 
+                    name="twitter:image" 
+                    content="https://alexmeza.io/assets/images/meta.jpg" />
                 <link 
                     rel="icon" 
                     href="/favicon.ico" />
