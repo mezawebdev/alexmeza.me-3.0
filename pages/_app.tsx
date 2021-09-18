@@ -98,13 +98,13 @@ function AlexMeza({ Component, pageProps }: AppProps) {
                 </meta>
                 <meta 
                     name="description" 
-                    content="My name is Alex Meza, I am a software developer from San Diego, California. I love creating user-friendly web applications and interfaces that bring long-lasting emotional connections with their users." />
+                    content="My name is Alex Meza, I am a Software developer from San Diego, CA. I am extremely passionate about creating beautiful web applications that generate results. My work involves researching, planning, designing and developing full stack web applications, using the required tools. I am a fast-learner and a creative developer always looking for growth opportunities." />
                 <meta 
                     property="og:title" 
                     content="ALEX MEZA | Software Developer" />
                 <meta 
                     property="og:description" 
-                    content="I am a Software developer from San Diego, CA. and I am extremely passionate about creating beautiful web applications that generate results. My work involves researching, planning, designing and developing full stack web applications, using the required tools. I am a fast-learner and a creative developer always looking for growth opportunities." />
+                    content="My name is Alex Meza, I am a Software developer from San Diego, CA. I am extremely passionate about creating beautiful web applications that generate results. My work involves researching, planning, designing and developing full stack web applications, using the required tools. I am a fast-learner and a creative developer always looking for growth opportunities." />
                 <meta 
                     property="og:image" 
                     content="https://alexmeza.io/assets/images/meta.jpg" />
