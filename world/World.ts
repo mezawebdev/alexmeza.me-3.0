@@ -56,7 +56,7 @@ class World {
         this.canvas = document.getElementById(this.canvasElId) as HTMLCanvasElement;
         this.engine = new Engine(this.canvas, true, { stencil: true });
         this.scene = new Scene(this.engine);
-        this.camera = new ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new BABYLON.Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
+        this.camera = new ArcRotateCamera("Camera", App.world.camera.initialPosition.alpha, App.world.camera.initialPosition.beta, App.world.camera.initialPosition.radius, new Vector3(App.world.camera.initialPosition.x, App.world.camera.initialPosition.y, App.world.camera.initialPosition.z), this.scene);
         this.camera.setTarget(Vector3.Zero());
         // this.camera.attachControl(this.canvas, true);
         this.camera.maxZ = 17000;
