@@ -7,8 +7,8 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 
         if (req.body.name && req.body.email && req.body.message) {
             const msg = {
-                to: "alex@mezaweblab.com",
-                from: "noreply@mezaweblab.com",
+                to: "mezawebdev@gmail.com",
+                from: "alex@mezaweblab.com",
                 subject: "AlexMeza.me Contact Form Submission",
                 text: "AlexMeza.me",
                 html: `
