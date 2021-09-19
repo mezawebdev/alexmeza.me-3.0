@@ -1,4 +1,4 @@
-import * as BABYLON from "babylonjs";
+import { Scene, MeshBuilder, StandardMaterial, Texture, Color3, HighlightLayer } from "babylonjs";
 import RotationAxis from "./RotationAxis";
 
 interface rotation {
@@ -43,7 +43,7 @@ export default class Planet {
     layers: Array<any>;
     effects: any;
     layerMeshes: Array<any>;
-    scene: BABYLON.Scene;
+    scene: Scene;
     rotationAxis: RotationAxis;
     debug: debug;
     target: target;
@@ -64,7 +64,7 @@ export default class Planet {
         target: target,
         cameraPlacement: cameraPlacement,
         debug: debug, 
-        scene: BABYLON.Scene) {
+        scene: Scene) {
         this.key = key;
         this.diameter = diameter;
         this.x = x;
@@ -83,7 +83,7 @@ export default class Planet {
     }
 
     public create(): void {
-        this.mesh = BABYLON.MeshBuilder.CreateSphere(this.key, { diameter: this.diameter }, this.scene);
+        this.mesh = MeshBuilder.CreateSphere(this.key, { diameter: this.diameter }, this.scene);
 
         this.mesh.position.x = this.x;
         this.mesh.position.y = this.y;
@@ -91,28 +91,28 @@ export default class Planet {
         this.rotationAxis = new RotationAxis(`${ this.key }-axis`, this.rotation.axis.x, this.rotation.axis.y, this.rotation.axis.z);
 
         if (this.texture.length > 0) {
-            this.mesh.material = new BABYLON.StandardMaterial(`${ this.key }-texture`, this.scene);
-            this.mesh.material.ambientTexture = new BABYLON.Texture(this.texture, this.scene);
+            this.mesh.material = new StandardMaterial(`${ this.key }-texture`, this.scene);
+            this.mesh.material.ambientTexture = new Texture(this.texture, this.scene);
             this.mesh.material.ambientTexture.uScale = -1;
             this.mesh.material.ambientTexture.vScale = -1;
             this.mesh.material.ambientTexture.unlit = true;
-            this.mesh.material.specularColor = new BABYLON.Color3(0, 0, 0);
+            this.mesh.material.specularColor = new Color3(0, 0, 0);
             this.mesh.material.transparencyMode = 0;
         }
 
         if (this.debug.showInitialPosition) {
-            this.initialPositionMesh = BABYLON.MeshBuilder.CreateBox(`${ this.key }-initial-position`, {
+            this.initialPositionMesh = MeshBuilder.CreateBox(`${ this.key }-initial-position`, {
                 size: 50
             }, this.scene);
             this.initialPositionMesh.position.x = this.x;
             this.initialPositionMesh.position.y = this.y;
             this.initialPositionMesh.position.z = this.z;
-            this.initialPositionMesh.material = new BABYLON.StandardMaterial(`${ this.key }-initial-position-material`, this.scene);
-            this.initialPositionMesh.material.emissiveColor = new BABYLON.Color3(1, 0, 0);
+            this.initialPositionMesh.material = new StandardMaterial(`${ this.key }-initial-position-material`, this.scene);
+            this.initialPositionMesh.material.emissiveColor = new Color3(1, 0, 0);
         }
 
         if (this.debug.showRing) {
-            this.ring = BABYLON.MeshBuilder.CreateTorus(`${ this.key }-torus`, {
+            this.ring = MeshBuilder.CreateTorus(`${ this.key }-torus`, {
                 thickness: 2,
                 diameter: (Math.abs(this.z) * 3) - this.diameter,
                 tessellation: 100
@@ -130,18 +130,18 @@ export default class Planet {
         this.layers.forEach((layer, i) => {
             switch (layer.type) {
                 case "texture":
-                    this.layerMeshes.push(BABYLON.MeshBuilder.CreateSphere(`${ this.key }-layer-${ i }`, { diameter: this.diameter + (0.4 * (i + 1)) }, this.scene));
+                    this.layerMeshes.push(MeshBuilder.CreateSphere(`${ this.key }-layer-${ i }`, { diameter: this.diameter + (0.4 * (i + 1)) }, this.scene));
                     this.layerMeshes[this.layerMeshes.length - 1].position.x = this.x;
                     this.layerMeshes[this.layerMeshes.length - 1].position.y = this.y;
                     this.layerMeshes[this.layerMeshes.length - 1].position.z = this.z;
                     this.layerMeshes[this.layerMeshes.length - 1].parent = this.rotationAxis.pivot;
-                    this.layerMeshes[this.layerMeshes.length - 1].material = new BABYLON.StandardMaterial(`${ this.key }-layer-${ i }-material`, this.scene);
-                    this.layerMeshes[this.layerMeshes.length - 1].material.diffuseTexture = new BABYLON.Texture(layer.texture, this.scene);
+                    this.layerMeshes[this.layerMeshes.length - 1].material = new StandardMaterial(`${ this.key }-layer-${ i }-material`, this.scene);
+                    this.layerMeshes[this.layerMeshes.length - 1].material.diffuseTexture = new Texture(layer.texture, this.scene);
                     this.layerMeshes[this.layerMeshes.length - 1].material.disableLighting = false;
                     this.layerMeshes[this.layerMeshes.length - 1].material.useAlphaFromDiffuseTexture = true;
                     this.layerMeshes[this.layerMeshes.length - 1].material.diffuseTexture.hasAlpha = true;
                     this.layerMeshes[this.layerMeshes.length - 1].material.backFaceCulling = false;
-                    this.layerMeshes[this.layerMeshes.length - 1].material.specularColor = new BABYLON.Color3(0, 0, 0);
+                    this.layerMeshes[this.layerMeshes.length - 1].material.specularColor = new Color3(0, 0, 0);
                     this.layerMeshes[this.layerMeshes.length - 1].material.alpha = layer.alpha || 1;
                     this.layerMeshes[this.layerMeshes.length - 1].material.roughness = 10;
 
@@ -153,8 +153,8 @@ export default class Planet {
                     }
 
                     if (layer.highlight) {
-                        hlLayers.push(new BABYLON.HighlightLayer(`${ layer.type }-${ i }-hl`, this.scene));
-                        hlLayers[hlLayers.length - 1].addMesh(this.layerMeshes[this.layerMeshes.length - 1], BABYLON.Color3.FromHexString(layer.highlightColor));
+                        hlLayers.push(new HighlightLayer(`${ layer.type }-${ i }-hl`, this.scene));
+                        hlLayers[hlLayers.length - 1].addMesh(this.layerMeshes[this.layerMeshes.length - 1], Color3.FromHexString(layer.highlightColor));
                     }
                 break;
                 // case "highlight":
@@ -178,8 +178,8 @@ export default class Planet {
     }
 
     public applyHighlight(): void {
-        const hl = new BABYLON.HighlightLayer(`${ this.key }-hl`, this.scene);
-        hl.addMesh(this.mesh, BABYLON.Color3.FromHexString(this.effects.highlightColor));
+        const hl = new HighlightLayer(`${ this.key }-hl`, this.scene);
+        hl.addMesh(this.mesh, Color3.FromHexString(this.effects.highlightColor));
         hl.blurHorizontalSize = 100;
         hl.blurVerticalSize = 100;
     }

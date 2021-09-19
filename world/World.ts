@@ -1,4 +1,3 @@
-// import * as BABYLON from 'babylonjs';
 import Utils from "./Utils";
 import config from "../app.config";
 import Planet from "./Planet";

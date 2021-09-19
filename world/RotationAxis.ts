@@ -1,3 +1,5 @@
+import { TransformNode, Vector3 } from "babylonjs";
+
 export default class RotationAxes {
     key: string;
     x: number;
@@ -10,11 +12,7 @@ export default class RotationAxes {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.pivot = new BABYLON.TransformNode(this.key);
-        this.pivot.position = new BABYLON.Vector3(
-            this.x, 
-            this.y, 
-            this.z
-        );
+        this.pivot = new TransformNode(this.key);
+        this.pivot.position = new Vector3(this.x, this.y, this.z);
     }
 }
