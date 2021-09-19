@@ -1,5 +1,5 @@
 const config = {
-    showPages: false,
+    showPages: true,
     showWorld: true,
     showLoadingScreen: false,
     pages:[
