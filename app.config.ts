@@ -1,5 +1,5 @@
 const config = {
-    showPages: true,
+    showPages: false,
     showWorld: true,
     showLoadingScreen: false,
     pages:[
@@ -563,7 +563,7 @@ const config = {
                     layers: [
                         {
                             type: "texture",
-                            texture: "/assets/textures/clouds_1.png",
+                            texture: "/assets/textures/clouds_1-small.png",
                             rotate: true,
                             rotationSpeed: -0.001,
                             highlight: false,
@@ -615,7 +615,7 @@ const config = {
                     layers: [
                         {
                             type: "texture",
-                            texture: "/assets/textures/earth_atmosphere.png",
+                            texture: "/assets/textures/earth_atmosphere-small.png",
                             rotate: true,
                             rotationSpeed: -0.001,
                             highlight: false,
@@ -674,7 +674,7 @@ const config = {
                     layers: [
                         {
                             type: "texture",
-                            texture: "/assets/textures/clouds_2.png",
+                            texture: "/assets/textures/clouds_2-small.png",
                             rotate: true,
                             rotationSpeed: -0.001,
                             highlight: false,
@@ -723,22 +723,22 @@ const config = {
                     layers: [
                         {
                             type: "texture",
-                            texture: "/assets/textures/clouds_2.png",
+                            texture: "/assets/textures/clouds_2-small.png",
                             rotate: true,
                             rotationSpeed: -0.001,
                             highlight: false,
                             highlightColor: "#fae4b4",
                             alpha: 0.25
                         },
-                        {
-                            type: "texture",
-                            texture: "/assets/textures/clouds_1.png",
-                            rotate: true,
-                            rotationSpeed: 0.001,
-                            highlight: false,
-                            highlightColor: "#fae4b4",
-                            alpha: 0.25
-                        }
+                        // {
+                        //     type: "texture",
+                        //     texture: "/assets/textures/clouds_1-small.png",
+                        //     rotate: true,
+                        //     rotationSpeed: 0.001,
+                        //     highlight: false,
+                        //     highlightColor: "#fae4b4",
+                        //     alpha: 0.25
+                        // }
                     ],
                     target: {
                         get x() { return config.world.objects.planets[4].initialPosition.x - 70 },
@@ -784,22 +784,22 @@ const config = {
                     layers: [
                         {
                             type: "texture",
-                            texture: "/assets/textures/clouds_2.png",
+                            texture: "/assets/textures/clouds_2-small.png",
                             rotate: true,
                             rotationSpeed: -0.001,
                             highlight: false,
                             highlightColor: "#bbb37c",
                             alpha: 0.25
                         },
-                        {
-                            type: "texture",
-                            texture: "/assets/textures/clouds_1.png",
-                            rotate: true,
-                            rotationSpeed: 0.001,
-                            highlight: false,
-                            highlightColor: "#bbb37c",
-                            alpha: 0.25
-                        }
+                        // {
+                        //     type: "texture",
+                        //     texture: "/assets/textures/clouds_1-small.png",
+                        //     rotate: true,
+                        //     rotationSpeed: 0.001,
+                        //     highlight: false,
+                        //     highlightColor: "#bbb37c",
+                        //     alpha: 0.25
+                        // }
                     ],
                     ring: true,
                     target: {
