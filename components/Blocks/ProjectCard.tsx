@@ -97,7 +97,7 @@ export default function ProjectCard(props) {
                                 })}
                             </div>
                         </div>
-                        {props.codebaseSrc.length > 0 ? (
+                        {/* {props.codebaseSrc.length > 0 ? (
                             <div className="section source-code">
                                 <p className="headline">Source Code</p>
                                 <div className="code">
@@ -109,7 +109,7 @@ export default function ProjectCard(props) {
                                 <p>No source available code to display</p>
                                 {props.isRescue ? (<span className="small">All source code belongs to Rescue Agency.</span>) : null}
                             </div>
-                        )}
+                        )} */}
                     </div>
                 ) : null}
             </Panel>
