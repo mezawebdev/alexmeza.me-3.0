@@ -55,6 +55,21 @@
     
         .general-info {
             margin-top : 35px;
+
+            strong {
+                text-decoration : underline;
+                font-weight     : 900;
+            }
+
+            ul {
+                li {
+                    margin-bottom : 10px;
+
+                    &:last-child {
+                        margin-bottom : 0px;
+                    }
+                }
+            }
         }
 
         .images {

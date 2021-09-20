@@ -34,10 +34,13 @@ const config = {
             type: "professional",
             title: "Quit The Hit",
             description: `
-                Quit the Hit is a program that helps youth and adult audiences quit vaping through the guidance of a coach.
-                <br /><br />
-                The web app is built with Nuxt.js, with a heavy Node.js + Express.js back-end. For the database, we used MySQL
-                combined with the Sequelize ORM. We also used the Qualtrics API to integrate surveys within the program.
+                <ul>
+                    <li><strong>Overview:</strong> Quit the Hit is a program that helps youth and adult audiences quit vaping through the guidance of a coach.</li>
+                    <li><strong>Goal:</strong> Create a system that connects youth audiences with coaches.</li>
+                    <li><strong>My Roles:</strong> lead developer, project architecture, database design, UI/UX</li>
+                    <li><strong>Solution:</strong> I created a web application with Nuxt.js and Node.js + Express.js on the back-end. I used MySQL as the database language alongside the Sequelize ORM for Node.js. I also used the Qualtrics API for survey integration.</li>
+                    <li></strong>Result:</strong> Multi-year extension of original contract as well as the acquisition of new contracts for other national organizations.</li>
+                </ul>
             `,
             year: 2019,
             thumbnail: "/assets/images/projects/Quit-The-Hit-Thumbnail.png",
@@ -79,12 +82,19 @@ const config = {
                 Hustle & Strive is an online self-help program which helps youth audiences to
                 stay away from addictive substances by learning various coping techniques.
                 <br /><br />
-                The web app is built with PHP Laravel, MySQL and Vue.js. It incorporates videos, 
+                I built the web app with PHP Laravel, MySQL and Vue.js. I incorporated videos, 
                 front-end experiences and quizzes in order to guide the user through dealing with life's difficult situations.
                 <br /><br />
                 As a result from this work, the program obtained another multi-million, multi-year
                 contract for this work.
             `,
+            // <ul>
+            //         <li><strong>Overview:</strong> Hustle & Strive is an online self-help program which helps youth audiences stay away from addictive substances by teaching them coping techniques.</li>
+            //         <li><strong>Goal:</strong> Create interactive program with surveys, videos and digital experiences to teach users core coping mechanisims.</li>
+            //         <li><strong>My Roles:</strong> lead developer, front-end architecture, UI/UX</li>
+            //         <li><strong>Solution:</strong> I created a PHP laravel application with Vue.js on the front. </li>
+            //         <li></strong>Result:</strong> </li>
+            //     </ul>
             year: 2018,
             thumbnail: "/assets/images/projects/Hustle-And-Strive-Thumbnail.png",
             media: [
@@ -105,10 +115,10 @@ const config = {
             title: "Sunsick Studio",
             description: `
                 Sunsick Studio is a music recording studio located in San Diego, California. Through the collaboration
-                of Sunsick Studio and myself, we developed a website to serve as the main hub for Sunsick
+                of Sunsick Studio and myself, I developed a website to serve as the main hub for Sunsick
                 Studio's online presence, to display their work and, more importantly, to gather more inquiries for recording work. 
                 <br /><br />
-                The website was built with React.js and Next.js, with Strapi serving as a headless CMS for content editing. 
+                I built the website with React.js and Next.js, and set up Strapi to serve as a headless CMS for content editing. 
                 <br /><br />
                 This project is currently in the final stages of development, to be launched soon. 
             `,
@@ -134,8 +144,8 @@ const config = {
                 Behind the Haze is a multi-state anti-vaping campaign aimed at youth audiences. It spreads awareness
                 about the negative consequences of vaping and the realities of the vaping industry and their products.
                 <br /><br />
-                The website was built with Nuxt.js, and it's very heavy on the front-end. There are multiple interactive widgets built, such as
-                carousels, sliders, tappers, etc., combined with CSS animations and transitions to create a site that feels alive.
+                I built the website with Nuxt.js, and it's very heavy on the front-end. I built multiple interactive widgets, such as
+                carousels, sliders, tappers, etc., combined with CSS animations and transitions and created a site that feels alive.
                 <br /><br />
                 This work resulted in obtaining multiple clients across various states that have now adoped the site.
             `,
@@ -162,8 +172,7 @@ const config = {
                 create a main hub to raise awareness about the client's quitline resources and the road to quitting
                 tobacco for good.
                 <br /><br />
-                This website was built with Nuxt.js and was very well abstracted in order to allow quick, plug-and-play customization
-                accross the site.
+                I built this website with Nuxt.js and I created a system that allows for very quick content editing, through the use of abstraction.
             `,
             year: 2018,
             thumbnail: "/assets/images/projects/Quit-Now-SC-Thumbnail.png",
@@ -187,8 +196,8 @@ const config = {
                 Rethink Recovery is a website for the  Illinois Department of Human Services, to promote and
                 raise awareness of their Medication-Assisted Recovery (MAR) treatment. 
                 <br /><br />
-                This website was built with Nuxt.js. We put a lot of effort on the visual effects. We incorporated
-                lots of parallax, transitions, and scroll animations to make the website stand out.
+                I built this website with Nuxt.js and I put a lot of effort on the visual effects. I incorporated
+                lots of parallax, CSS transitions, and scroll animations to make the website stand out.
             `,
             year: 2018,
             thumbnail: "/assets/images/projects/Rethink-Recovery-IL-Thumbnail.png",
