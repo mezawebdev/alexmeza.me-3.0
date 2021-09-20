@@ -34,8 +34,7 @@ const config = {
             type: "professional",
             title: "Quit The Hit",
             description: `
-                Quit the Hit is a program that helps youth and adult audiences quit vaping through the guidance of a coach. 
-                As of September 2021, more than +900 users have signed up and successfully gone through the program.
+                Quit the Hit is a program that helps youth and adult audiences quit vaping through the guidance of a coach.
                 <br /><br />
                 The web app is built with Nuxt.js, with a heavy Node.js + Express.js back-end. For the database, we used MySQL
                 combined with the Sequelize ORM. We also used the Qualtrics API to integrate surveys within the program.
@@ -83,8 +82,7 @@ const config = {
                 The web app is built with PHP Laravel, MySQL and Vue.js. It incorporates videos, 
                 front-end experiences and quizzes in order to guide the user through dealing with life's difficult situations.
                 <br /><br />
-                As of September 2021, over a thousand users have signed up and successfully gone
-                through the program. As a result, the program obtained another multi-million, multi-year
+                As a result from this work, the program obtained another multi-million, multi-year
                 contract for this work.
             `,
             year: 2018,
