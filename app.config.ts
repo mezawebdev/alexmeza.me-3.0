@@ -131,7 +131,7 @@ const config = {
                 }
             ],
             technologies: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Node.js", "MySQL", "Strapi", "Nginx"],
-            githubUrl: "",
+            githubUrl: "https://github.com/mezaWebLab/sunsickstudio-2021-client",
             appUrl: "https://sunsickstudio.mezaweblab.com",
             codebaseSrc: "/sunsick-studio",
             isRescue: false
