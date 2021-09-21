@@ -110,7 +110,7 @@ const config = {
                     <li><strong>Overview:</strong> Sunsick Studio is a music recording studio located in San Diego, California.</li>
                     <li><strong>Goal:</strong> develop a customizable website to serve as the main hub for Sunsick Studio's online presence, to display their work and, to gather more inquiries for recording work.</li>
                     <li><strong>My Roles:</strong> UI/UX designer, lead developer, front-end development, headless CMS setup and configuration</li>
-                    <li><strong>Solution:</strong> I designed a website that aligns with Sunsick Studio's brand. I used Figma to create wireframes and comps. I developed the website with React.js, TypeScript, and Next.js for SEO. In order to make the site customizble, I created a headless CMS architecture using Strapi.</li>
+                    <li><strong>Solution:</strong> I designed a website that aligns with Sunsick Studio's brand. I used Figma to create wireframes and comps. I developed the website with React.js, JavaScript, and Next.js for SEO. In order to make the site customizble, I created a headless CMS architecture using Strapi.</li>
                     <li><strong>Result:</strong> Program is currently in the final stages of development and is expected to launch soon.</li>
                 </ul>
             `,
