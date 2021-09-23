@@ -36,9 +36,10 @@ export default function Projects(props) {
             slidesPerView: 1,
             centeredSlides: true,
             centerInsufficientSlides: false,
+            allowTouchMove: false,
             breakpoints: {
                 640: {
-                    allowTouchMove: false
+                    allowTouchMove: true
                 },
                 800: {
                     spaceBetween: 200
@@ -48,12 +49,12 @@ export default function Projects(props) {
                 nextEl: ".nav-next",
                 prevEl: ".nav-prev"
             },
-            preventClicks: true,
-            preventClicksPropagation: true,
-            simulateTouch: true,
+            // preventClicks: true,
+            // preventClicksPropagation: true,
+            // simulateTouch: true,
             initialSlide: activeSlide,
-            edgeSwipeDetection: false,
-            touchStartForcePreventDefault: true,
+            // edgeSwipeDetection: false,
+            // touchStartForcePreventDefault: true,
             onSlideChange(e) {
                 router.push("/work/projects?id=" + e.realIndex, undefined, { shallow: true });
                 setActiveSlide(e.realIndex);

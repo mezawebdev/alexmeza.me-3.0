@@ -205,7 +205,7 @@ const config = {
             ],
             technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Nuxt.js", "Node.js", "Apache"],
             githubUrl: "",
-            appUrl: "https://rethinkrecoveryil.org",
+            appUrl: "https://rethinkrecoveryil.com",
             codebaseSrc: "",
             isRescue: true
         },
