@@ -151,7 +151,7 @@ export default class Planet {
     }
 
     if (this.layers.length > 0) this.applyLayers();
-    // if (this.effects.highlight) this.applyHighlight();
+    if (this.effects.highlight) this.applyHighlight();
     this.mesh.parent = this.rotationAxis.pivot;
   }
 
@@ -236,9 +236,12 @@ export default class Planet {
   }
 
   public applyHighlight(): void {
-    const hl = new HighlightLayer(`${this.key}-hl`, this.scene);
+    const hl = new HighlightLayer(`${this.key}-hl`, this.scene, {
+      renderingGroupId: 1,
+    });
     hl.addMesh(this.mesh, Color3.FromHexString(this.effects.highlightColor));
     hl.blurHorizontalSize = 100;
     hl.blurVerticalSize = 100;
+    this.mesh.renderingGroupId = 1;
   }
 }
