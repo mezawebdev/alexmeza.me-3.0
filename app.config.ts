@@ -37,7 +37,7 @@ const config = {
                 <ul>
                     <li><strong>Overview:</strong> Quit the Hit is a program that helps youth and adult audiences quit vaping through the guidance of a coach.</li>
                     <li><strong>Goal:</strong> Create a system that connects youth audiences with coaches.</li>
-                    <li><strong>My Roles:</strong> lead developer, project architecture, database design, UI/UX</li>
+                    <li><strong>My Roles:</strong> lead engineer, project architecture, database design, UI/UX</li>
                     <li><strong>Solution:</strong> I created a web application with Nuxt.js and Node.js + Express.js on the back-end. I used MySQL as the database language alongside the Sequelize ORM for Node.js. I also used the Qualtrics API for survey integration.</li>
                     <li><strong>Result:</strong> Multi-year extension of original contract as well as the acquisition of new contracts for other national organizations.</li>
                 </ul>
@@ -91,7 +91,7 @@ const config = {
                 <ul>
                     <li><strong>Overview:</strong> Hustle & Strive is an online self-help program which helps youth audiences stay away from addictive substances by teaching them coping techniques.</li>
                     <li><strong>Goal:</strong> Create interactive program with surveys, videos and digital experiences to teach users core coping mechanisims.</li>
-                    <li><strong>My Roles:</strong> lead developer, front-end architecture, UI/UX, back-end development</li>
+                    <li><strong>My Roles:</strong> lead engineer, front-end architecture, UI/UX, back-end development</li>
                     <li><strong>Solution:</strong> I created a PHP laravel application with Vue.js on the front. I used MySQL for the database, and incorporated Laravel Nova as an administration back-end which was used by admins and stakeholders</li>
                     <li><strong>Result:</strong> program ran for multiple years, generated wide range of users and facilitated a new contract recently.</li>
                 </ul>
@@ -126,7 +126,7 @@ const config = {
                 <ul>
                     <li><strong>Overview:</strong> Sunsick Studio is a music recording studio located in San Diego, California.</li>
                     <li><strong>Goal:</strong> develop a customizable website to serve as the main hub for Sunsick Studio's online presence, to display their work and, to gather more inquiries for recording work.</li>
-                    <li><strong>My Roles:</strong> UI/UX designer, lead developer, front-end development, headless CMS setup and configuration</li>
+                    <li><strong>My Roles:</strong> UI/UX designer, lead engineer, front-end development, headless CMS setup and configuration</li>
                     <li><strong>Solution:</strong> I designed a website that aligns with Sunsick Studio's brand. I used Figma to create wireframes and comps. I developed the website with React.js, JavaScript, and Next.js for SEO. In order to make the site customizble, I created a headless CMS architecture using Strapi.</li>
                     <li><strong>Result:</strong> Program is currently in the final stages of development and is expected to launch soon.</li>
                 </ul>
@@ -163,7 +163,7 @@ const config = {
                 <ul>
                     <li><strong>Overview:</strong> Behind the Haze is a multi-state anti-vaping campaign aimed at youth audiences.</li>
                     <li><strong>Goal:</strong> develop a high quality website that can be easily repurposed and licensed. Implement lots of interactive modules to create an eye-catching website.</li>
-                    <li><strong>My Roles:</strong> lead developer, front-end development, project architecture</li>
+                    <li><strong>My Roles:</strong> lead engineer, front-end development, project architecture</li>
                     <li><strong>Solution:</strong> I created a website that is highly abstracted and modular. Following a component-based pattern, I developed fully abstracted UIs that can be easily plugged in anywhere. I created various interactive modules such as carousels, sliders, tappers, etc., and implemented parallax effects and CSS animations/transitions to make the website feel alive.</li>
                     <li><strong>Result:</strong> Obtained multiple clients across various states that have now adoped and licensed the site.</li>
                 </ul>
@@ -198,7 +198,7 @@ const config = {
                 <ul>
                     <li><strong>Overview:</strong> Quit Now SC is a website for the South Carolina Tobacco Quitline. The purpose of this website was to create a main hub to raise awareness about the client's quitline resources and the road to quitting tobacco for good.</li>
                     <li><strong>Goal:</strong> develop a website that easy to navigate, accessible and can be updated easily.</li>
-                    <li><strong>My Roles:</strong> lead developer, front-end development, project architecture</li>
+                    <li><strong>My Roles:</strong> lead engineer, front-end development, project architecture</li>
                     <li><strong>Solution:</strong> I created a system that fully abstracts the markup, and it's all configured with JavaScript objects and abstracted components. I used HTML, SCSS, JavaScript, Nuxt.js, Vue.js + more tools to develop the site.</li>
                     <li><strong>Result:</strong> This website resulted in successful contract completion and a happy client. The site has been viewed now by thousands of users and is still serving as one of the main hubs for users looking to use the Quitline resources in South Carolina.</li>
                 </ul>
@@ -233,7 +233,7 @@ const config = {
                 <ul>
                     <li><strong>Overview:</strong> Rethink Recovery is a website for the  Illinois Department of Human Services, to promote and raise awareness of their Medication-Assisted Recovery (MAR) treatment. </li>
                     <li><strong>Goal:</strong> Develop a website that is highly aesthetic, eye-catching and informative.</li>
-                    <li><strong>My Roles:</strong> lead developer, front-end development, project architecture</li>
+                    <li><strong>My Roles:</strong> lead engineer, front-end development, project architecture</li>
                     <li><strong>Solution:</strong> I used HTML, SCSS, Vue.js and Nuxt.js to create a website that completed the requirements. I also used parallax effects, fade-in animations and CSS transitions and animations to create an eye-catching website.</li>
                     <li><strong>Result:</strong> This work resulted in the acquisition of a new client contract.</li>
                 </ul>
