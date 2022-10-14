@@ -39,7 +39,7 @@ const config = {
                     <li><strong>Goal:</strong> Improve current ACF/PHP-based app with a new system that allows authors to manage web content effectively as well as improve website speed, detach data-layer from UI, and greatly improve the website experience for the end-users.</li>
                     <li><strong>My Roles:</strong> Full-Stack Engineer</li>
                     <li><strong>Solution:</strong> Developed a cutting-edge headless architecture using React.js/Next.js and PHP/WordPress as the CMS using custom Gutenberg blocks along with a shared UI library from scratch using React.js & Storybook.</li>
-                    <li><strong>Result:</strong> Delivered a one-of-a-kind headless system with a shared UI library that is fed to both WordPress' Gutenberg page editor as well as a separate Next.js app to generate static pages using the data from the WordPress API. This provided authors with advanced page building capabilities andd allowed engineers to develop efficient & semantic UI and deliver it to the end-users faster.</li>
+                    <li><strong>Result:</strong> Delivered a one-of-a-kind headless system with a shared UI library that is fed to both WordPress' Gutenberg page editor as well as a separate Next.js app to generate static pages using the data from the WordPress API. This provided authors with advanced page building capabilities and allowed engineers to develop efficient & semantic UI and deliver it to the end-users faster.</li>
                 </ul>
             `,
       year: 2022,
