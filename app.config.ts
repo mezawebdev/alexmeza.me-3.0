@@ -32,6 +32,46 @@ const config = {
     {
       id: 1,
       type: "professional",
+      title: "Biteable.com",
+      description: `
+                <ul>
+                    <li><strong>Overview:</strong> Biteable is an online video maker. Their core mission is to allow people to bring their messages to life. Biteable.com is the main home and entry point for the Biteable app.</li>
+                    <li><strong>Goal:</strong> Improve current ACF/PHP-based app with a new system that allows authors to manage web content effectively as well as improve website speed, detach data-layer from UI, and greatly improve the website experience for the end-users.</li>
+                    <li><strong>My Roles:</strong> Full-Stack Engineer</li>
+                    <li><strong>Solution:</strong> Developed a cutting-edge headless architecture using React.js/Next.js and PHP/WordPress as the CMS using custom Gutenberg blocks along with a shared UI library from scratch using React.js & Storybook.</li>
+                    <li><strong>Result:</strong> Delivered a one-of-a-kind headless system with a shared UI library that is fed to both WordPress' Gutenberg page editor as well as a separate Next.js app to generate static pages using the data from the WordPress API. This provided authors with advanced page building capabilities amd allowed engineers to develop efficient & semantic UI and deliver it to the end-users faster.</li>
+                </ul>
+            `,
+      year: 2022,
+      thumbnail: "/assets/images/projects/Biteable-Thumbnail-Thumbnail.png",
+      media: [
+        {
+          type: "image",
+          src: "/assets/images/projects/Biteable-Apple-Mockups.png",
+        },
+      ],
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "Sass",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "React.js",
+        "Next.js",
+        "PHP",
+        "MySQL",
+        "Docker",
+        "Wordpress",
+      ],
+      githubUrl: "",
+      appUrl: "https://biteable.com",
+      codebaseSrc: "",
+      isRescue: false,
+    },
+    {
+      id: 2,
+      type: "professional",
       title: "Quit The Hit",
       description: `
                 <ul>
@@ -84,7 +124,7 @@ const config = {
       isRescue: true,
     },
     {
-      id: 2,
+      id: 3,
       type: "professional",
       title: "Hustle & Strive",
       description: `
@@ -119,7 +159,7 @@ const config = {
       isRescue: true,
     },
     {
-      id: 3,
+      id: 4,
       type: "professional",
       title: "Sunsick Studio",
       description: `
@@ -156,7 +196,7 @@ const config = {
       isRescue: false,
     },
     {
-      id: 4,
+      id: 5,
       type: "professional",
       title: "Behind The Haze",
       description: `
@@ -191,7 +231,7 @@ const config = {
       isRescue: true,
     },
     {
-      id: 5,
+      id: 6,
       type: "professional",
       title: "Quit Now SC",
       description: `
@@ -226,7 +266,7 @@ const config = {
       isRescue: true,
     },
     {
-      id: 6,
+      id: 7,
       type: "professional",
       title: "Rethink Recovery",
       description: `
@@ -311,6 +351,11 @@ const config = {
       showBadge: true,
     },
     {
+      label: "TypeScript",
+      image: "/assets/images/typescript.png",
+      showBadge: true,
+    },
+    {
       label: "JavaScript",
       image: "/assets/images/js-white.png",
       showBadge: true,
@@ -373,6 +418,11 @@ const config = {
     {
       label: "Bootstrap",
       image: "/assets/images/bootstrap.png",
+      showBadge: false,
+    },
+    {
+      label: "Docker",
+      image: "/assets/images/docker.png",
       showBadge: true,
     },
     {
@@ -393,12 +443,12 @@ const config = {
   ],
   brands: [
     {
-      label: "Rescue Agency",
-      image: "/assets/images/brands/rescue.svg",
+      label: "Biteable",
+      image: "/assets/images/brands/Biteable-Logo.png",
     },
     {
-      label: "Sunsick Studio",
-      image: "/assets/images/brands/sunsick.png",
+      label: "Rescue Agency",
+      image: "/assets/images/brands/rescue.svg",
     },
     {
       label: "Quit the Hit",
@@ -407,6 +457,10 @@ const config = {
     {
       label: "Hustle & Strive",
       image: "/assets/images/brands/hustlle-strive-logo.svg",
+    },
+    {
+      label: "Sunsick Studio",
+      image: "/assets/images/brands/sunsick.png",
     },
     {
       label: "Behind The Haze",
@@ -418,7 +472,7 @@ const config = {
     // },
     {
       label: "QuitNowSC",
-      image: "/assets/images/brands/logo-sctql.svg",
+      image: "/assets/images/brands/logo-sctql.png",
     },
     {
       label: "RethinkRecoveryIL",
