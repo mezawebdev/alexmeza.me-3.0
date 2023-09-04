@@ -1,27 +1,27 @@
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "../../node_modules/gsap/dist/ScrollTrigger";
-import Header from "../../components/Layout/Header";
-import Body from "../../components/Layout/Body";
-import Tech from "../../components/Blocks/Tech";
-import App from "../../app.config";
-import AboutBlock from "../../components/Blocks/AboutBlock";
-import Brand from "../../components/Blocks/Brand";
-import { useEffect } from "react";
+import Header from 'components/Layout/Header';
+import Body from 'components/Layout/Body';
+import Tech from 'components/Blocks/Tech';
+import App from 'app.config';
+import AboutBlock from 'components/Blocks/AboutBlock';
+import Brand from 'components/Blocks/Brand';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'node_modules/gsap/dist/ScrollTrigger';
+import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useEffect(() => {
-    let tl = gsap.timeline(),
-      tl2 = gsap.timeline();
+    const tl = gsap.timeline();
+    const tl2 = gsap.timeline();
 
-    tl.to(".sp-1", { opacity: 1, y: 0, duration: 0.5 });
-    tl.to(".sp-2", { opacity: 1, y: 0, duration: 0.5 }, 0.1);
-    tl.to(".sp-3", { opacity: 1, y: 0, duration: 0.5 }, 0.2);
-    tl.to(".sp-4", { opacity: 1, y: 0, duration: 0.5 }, 0.3);
-    tl.to(".sp-5", { opacity: 1, y: 0, duration: 0.5 }, 0.4);
-    tl2.to(".row-1", { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.5 }, 1);
-    tl2.to(".row-2", { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.5 }, 1.5);
+    tl.to('.sp-1', { opacity: 1, y: 0, duration: 0.5 });
+    tl.to('.sp-2', { opacity: 1, y: 0, duration: 0.5 }, 0.1);
+    tl.to('.sp-3', { opacity: 1, y: 0, duration: 0.5 }, 0.2);
+    tl.to('.sp-4', { opacity: 1, y: 0, duration: 0.5 }, 0.3);
+    tl.to('.sp-5', { opacity: 1, y: 0, duration: 0.5 }, 0.4);
+    tl2.to('.row-1', { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.5 }, 1);
+    tl2.to('.row-2', { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.5 }, 1.5);
   }, []);
 
   return (
@@ -44,7 +44,7 @@ export default function About() {
           <div className="row-2">
             <AboutBlock align="right" bottomPadding={true}>
               <div className="section filter-shadow">
-                My name is{" "}
+                My name is{' '}
                 <span className="font-family-medium">Alex Meza,</span> I am a
                 Software engineer from San Diego, CA. and I am extremely
                 passionate about creating beautiful web applications that
@@ -55,7 +55,7 @@ export default function About() {
               </div>
               <div className="section">
                 <h4 className="font-family-regular filter-shadow">
-                  Brands I've Worked With
+                  Brands I&apos;ve Worked With
                 </h4>
                 <div className="brands">
                   {App.brands.map((brand, i) => {

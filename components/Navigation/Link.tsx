@@ -1,11 +1,9 @@
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-export default function Link(props) {
-    return (
-        <NextLink 
-            href={props.path}
-            className="link">
-            <a>{ props.label }</a>
-        </NextLink>
-    );
+export default function Link(props: { path: string; label: string }) {
+  return (
+    <NextLink href={props.path} className="link">
+      <a>{props.label}</a>
+    </NextLink>
+  );
 }

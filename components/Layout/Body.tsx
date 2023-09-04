@@ -1,7 +1,5 @@
-export default function Body(props) {
-    return (
-        <div className="body">
-            {props.children}
-        </div>
-    );
+import { ReactNode } from 'react';
+
+export default function Body({ children }: { children: ReactNode }) {
+  return <div className="body">{children}</div>;
 }

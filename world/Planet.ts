@@ -5,10 +5,11 @@ import {
   Texture,
   Color3,
   HighlightLayer,
-} from "babylonjs";
-import RotationAxis from "./RotationAxis";
+  Mesh,
+} from 'babylonjs';
+import RotationAxis from './RotationAxis';
 
-interface rotation {
+export interface rotation {
   axis: {
     x: number;
     y: number;
@@ -18,7 +19,7 @@ interface rotation {
   speed: number;
 }
 
-interface debug {
+export interface debug {
   showRing: boolean;
   showInitialPosition: boolean;
 }
@@ -40,23 +41,23 @@ interface cameraPlacement {
 
 export default class Planet {
   key: string;
-  mesh: any;
+  mesh: Mesh;
   diameter: number;
   x: number;
   y: number;
   z: number;
   texture: string;
   rotation: rotation;
-  layers: Array<any>;
-  effects: any;
-  layerMeshes: Array<any>;
+  layers: { [key: string]: string | number | boolean }[];
+  effects: { [key: string]: string | number | boolean };
+  layerMeshes: Mesh[];
   scene: Scene;
   rotationAxis: RotationAxis;
   debug: debug;
   target: target;
   cameraPlacement: cameraPlacement;
-  ring: any;
-  initialPositionMesh: any;
+  ring: Mesh;
+  initialPositionMesh: Mesh;
 
   constructor(
     key: string,
@@ -66,8 +67,8 @@ export default class Planet {
     z: number,
     texture: string,
     rotation: rotation,
-    layers: Array<any>,
-    effects: any,
+    layers: { [key: string]: string | number | boolean }[],
+    effects: { [key: string]: string | number | boolean },
     target: target,
     cameraPlacement: cameraPlacement,
     debug: debug,
@@ -112,12 +113,16 @@ export default class Planet {
         `${this.key}-texture`,
         this.scene
       );
-      this.mesh.material.ambientTexture = new Texture(this.texture, this.scene);
-      this.mesh.material.ambientTexture.uScale = -1;
-      this.mesh.material.ambientTexture.vScale = -1;
-      this.mesh.material.ambientTexture.unlit = true;
-      this.mesh.material.specularColor = new Color3(0, 0, 0);
-      this.mesh.material.transparencyMode = 0;
+
+      const material = this.mesh.material as StandardMaterial;
+      const texture = new Texture(this.texture, this.scene);
+      texture.uScale = -1;
+      texture.vScale = -1;
+      // texture.unlit = true;
+
+      material.ambientTexture = texture;
+      material.specularColor = new Color3(0, 0, 0);
+      material.transparencyMode = 0;
     }
 
     if (this.debug.showInitialPosition) {
@@ -131,11 +136,14 @@ export default class Planet {
       this.initialPositionMesh.position.x = this.x;
       this.initialPositionMesh.position.y = this.y;
       this.initialPositionMesh.position.z = this.z;
-      this.initialPositionMesh.material = new StandardMaterial(
+
+      const material = new StandardMaterial(
         `${this.key}-initial-position-material`,
         this.scene
       );
-      this.initialPositionMesh.material.emissiveColor = new Color3(1, 0, 0);
+
+      material.emissiveColor = new Color3(1, 0, 0);
+      this.initialPositionMesh.material = material;
     }
 
     if (this.debug.showRing) {
@@ -152,85 +160,53 @@ export default class Planet {
 
     if (this.layers.length > 0) this.applyLayers();
     if (this.effects.highlight) this.applyHighlight();
+
     this.mesh.parent = this.rotationAxis.pivot;
   }
 
   public applyLayers(): void {
-    const hlLayers: Array<any> = [];
-
     this.layers.forEach((layer, i) => {
-      switch (layer.type) {
-        case "texture":
-          this.layerMeshes.push(
-            MeshBuilder.CreateSphere(
-              `${this.key}-layer-${i}`,
-              { diameter: this.diameter + 0.4 * (i + 1) },
-              this.scene
-            )
-          );
-          this.layerMeshes[this.layerMeshes.length - 1].position.x = this.x;
-          this.layerMeshes[this.layerMeshes.length - 1].position.y = this.y;
-          this.layerMeshes[this.layerMeshes.length - 1].position.z = this.z;
-          this.layerMeshes[this.layerMeshes.length - 1].parent =
-            this.rotationAxis.pivot;
-          this.layerMeshes[this.layerMeshes.length - 1].material =
-            new StandardMaterial(`${this.key}-layer-${i}-material`, this.scene);
-          this.layerMeshes[
-            this.layerMeshes.length - 1
-          ].material.diffuseTexture = new Texture(layer.texture, this.scene);
-          this.layerMeshes[
-            this.layerMeshes.length - 1
-          ].material.disableLighting = false;
-          this.layerMeshes[
-            this.layerMeshes.length - 1
-          ].material.useAlphaFromDiffuseTexture = true;
-          this.layerMeshes[
-            this.layerMeshes.length - 1
-          ].material.diffuseTexture.hasAlpha = true;
-          this.layerMeshes[
-            this.layerMeshes.length - 1
-          ].material.backFaceCulling = false;
-          this.layerMeshes[this.layerMeshes.length - 1].material.specularColor =
-            new Color3(0, 0, 0);
-          this.layerMeshes[this.layerMeshes.length - 1].material.alpha =
-            layer.alpha || 1;
-          this.layerMeshes[this.layerMeshes.length - 1].material.roughness = 10;
+      if (layer.type === 'texture') {
+        this.layerMeshes.push(
+          MeshBuilder.CreateSphere(
+            `${this.key}-layer-${i}`,
+            { diameter: this.diameter + 0.4 * (i + 1) },
+            this.scene
+          )
+        );
 
-          if (layer.rotate) {
-            this.scene.registerAfterRender(() => {
-              this.layerMeshes[this.layerMeshes.length - 1].rotation.y +=
-                layer.rotationSpeed;
-              this.layerMeshes[this.layerMeshes.length - 1].rotation.z +=
-                layer.rotationSpeed;
-            });
-          }
+        const currentLayerMesh = this.layerMeshes[this.layerMeshes.length - 1];
 
-          // if (layer.highlight) {
-          //   hlLayers.push(
-          //     new HighlightLayer(`${layer.type}-${i}-hl`, this.scene)
-          //   );
-          //   hlLayers[hlLayers.length - 1].addMesh(
-          //     this.layerMeshes[this.layerMeshes.length - 1],
-          //     Color3.FromHexString(layer.highlightColor)
-          //   );
-          // }
-          break;
-        // case "highlight":
-        //     this.layerMeshes.push(
-        //         BABYLON.MeshBuilder.CreateSphere(`${ this.key }-layer-${ i }`, {
-        //             diameter: this.diameter + (0.5 * (i + 1))
-        //         }, this.scene)
-        //     );
+        currentLayerMesh.position.x = this.x;
+        currentLayerMesh.position.y = this.y;
+        currentLayerMesh.position.z = this.z;
+        currentLayerMesh.parent = this.rotationAxis.pivot;
 
-        //     this.layerMeshes[this.layerMeshes.length - 1].position.x = this.x;
-        //     this.layerMeshes[this.layerMeshes.length - 1].position.y = this.y;
-        //     this.layerMeshes[this.layerMeshes.length - 1].position.z = this.z;
-        //     this.layerMeshes[this.layerMeshes.length - 1].parent = this.rotationAxis.pivot;
-        //     this.layerMeshes[this.layerMeshes.length - 1].material = new BABYLON.StandardMaterial(`${ this.key }-layer-${ i }-material`, this.scene);
-        //     this.layerMeshes[this.layerMeshes.length - 1].material.emissiveColor = BABYLON.Color3.FromHexString(layer.color);
-        //     this.layerMeshes[this.layerMeshes.length - 1].material.backFaceCulling = false;
-        //     this.layerMeshes[this.layerMeshes.length - 1].material.alpha = 0.02;
-        // break;
+        const material = new StandardMaterial(
+          `${this.key}-layer-${i}-material`,
+          this.scene
+        );
+
+        material.diffuseTexture = new Texture(
+          layer.texture as string,
+          this.scene
+        );
+        material.disableLighting = false;
+        material.useAlphaFromDiffuseTexture = true;
+        material.diffuseTexture.hasAlpha = true;
+        material.backFaceCulling = false;
+        material.specularColor = new Color3(0, 0, 0);
+        material.alpha = (layer.alpha as number) || 1;
+        material.roughness = 10;
+
+        currentLayerMesh.material = material;
+
+        if (layer.rotate) {
+          this.scene.registerAfterRender(() => {
+            currentLayerMesh.rotation.y += layer.rotationSpeed as number;
+            currentLayerMesh.rotation.z += layer.rotationSpeed as number;
+          });
+        }
       }
     });
   }
@@ -239,7 +215,10 @@ export default class Planet {
     const hl = new HighlightLayer(`${this.key}-hl`, this.scene, {
       renderingGroupId: 1,
     });
-    hl.addMesh(this.mesh, Color3.FromHexString(this.effects.highlightColor));
+    hl.addMesh(
+      this.mesh,
+      Color3.FromHexString(this.effects.highlightColor as string)
+    );
     hl.blurHorizontalSize = 100;
     hl.blurVerticalSize = 100;
     this.mesh.renderingGroupId = 1;

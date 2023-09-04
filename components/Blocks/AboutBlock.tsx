@@ -1,9 +1,18 @@
-export default function AboutBlock(props) {
-    return (
-        <div className={`about-block ${ props.align ? props.align : null } ${ props.bottomPadding ? 'bottom-padding' : null }`}>
-            <div className="block-content space-ui-panel text-shadow">
-                {props.children}
-            </div>
-        </div>
-    );
+import { ReactNode } from 'react';
+
+interface Props {
+  align?: string;
+  bottomPadding?: boolean;
+  children: ReactNode;
+}
+
+export default function AboutBlock({ align, bottomPadding, children }: Props) {
+  return (
+    <div
+      className={`about-block ${align ? align : null} ${
+        bottomPadding ? 'bottom-padding' : null
+      }`}>
+      <div className="block-content space-ui-panel text-shadow">{children}</div>
+    </div>
+  );
 }

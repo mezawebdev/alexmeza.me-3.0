@@ -1,7 +1,5 @@
-export default function Fields(props) {
-    return (
-        <div className="fields">
-            {props.children}
-        </div>
-    );
+import { ReactNode } from 'react';
+
+export default function Fields({ children }: { children: ReactNode }) {
+  return <div className="fields">{children}</div>;
 }
