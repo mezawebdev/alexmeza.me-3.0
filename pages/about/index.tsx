@@ -59,9 +59,7 @@ export default function About() {
                 </h4>
                 <div className="brands">
                   {App.brands.map((brand, i) => {
-                    return (
-                      <Brand key={i} image={brand.image} label={brand.label} />
-                    );
+                    return <Brand key={i} image={brand.image} />;
                   })}
                 </div>
               </div>

@@ -134,7 +134,6 @@ function AlexMeza({ Component, pageProps }: AppProps) {
           type="text/javascript"></script>
       </Head>
       <Navigation
-        setCurrentPage={setCurrentPage}
         currentPage={currentPage}
         goToPage={goToPage}
         mobileMenuOpened={mobileMenuOpened}

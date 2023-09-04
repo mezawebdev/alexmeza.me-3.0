@@ -20,10 +20,13 @@ export default {
         true
       );
       var plane = BABYLON.Mesh.CreatePlane('TextPlane', size, scene, true);
-      plane.material = new BABYLON.StandardMaterial('TextPlaneMaterial', scene);
-      plane.material.backFaceCulling = false;
-      plane.material.specularColor = new BABYLON.Color3(0, 0, 0);
-      plane.material.diffuseTexture = dynamicTexture;
+      const material = new BABYLON.StandardMaterial('TextPlaneMaterial', scene);
+
+      material.backFaceCulling = false;
+      material.specularColor = new BABYLON.Color3(0, 0, 0);
+      material.diffuseTexture = dynamicTexture;
+      plane.material = material;
+
       return plane;
     };
     var axisX = BABYLON.Mesh.CreateLines(
@@ -81,7 +84,7 @@ export default {
         )
       )
         check = true;
-    })(navigator.userAgent || navigator.vendor || window.opera);
+    })(navigator.userAgent || navigator.vendor);
     return check;
   },
 };

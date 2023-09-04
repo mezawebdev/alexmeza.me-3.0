@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 
 export default function Navigation(props: {
-  currentPage: { path: string; label: string };
+  currentPage: { path: string; label?: string };
   goToPage: (any) => void;
   mobileMenuOpened: boolean;
   setMobileMenuOpened: (boolean) => void;

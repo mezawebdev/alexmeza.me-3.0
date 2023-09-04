@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, ReactNode } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 
 interface Props {
-  children: string;
+  children: ReactNode;
   animate?: boolean;
   align?: string;
 }

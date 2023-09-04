@@ -4,14 +4,14 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 interface Props {
   contents: string;
   header: string;
-  handlers: { [key: string]: () => void };
+  closeFile: () => void;
 }
 
 export default function FileViewer(props: Props) {
   return (
     <div className={styles['file-viewer']}>
       <button
-        onClick={props.handlers.closeFile}
+        onClick={props.closeFile}
         className={styles['close-button']}></button>
       <h4>{props.header}</h4>
       <div className={styles.fileContentsWrapper}>

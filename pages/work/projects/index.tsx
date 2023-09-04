@@ -166,12 +166,7 @@ export default function Projects() {
       </Body>
       {viewingFile ? (
         <FileViewer
-          handlers={{
-            openFile,
-            closeFile,
-            openSpotlight,
-            closeSpotlight,
-          }}
+          closeFile={closeFile}
           contents={currentFileContents}
           header={currentFileName}
         />
