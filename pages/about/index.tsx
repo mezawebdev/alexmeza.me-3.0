@@ -44,14 +44,14 @@ export default function About() {
           <div className="row-2">
             <AboutBlock align="right" bottomPadding={true}>
               <div className="section filter-shadow">
-                My name is{' '}
-                <span className="font-family-medium">Alex Meza,</span> I am a
-                Software engineer from San Diego, CA. and I am extremely
-                passionate about creating beautiful web applications that
-                generate results. My work involves researching, planning,
-                designing and developing full stack web applications, using the
-                required tools. I am a fast-learner and a creative engineer
-                always looking for growth opportunities.
+                Hi! I m <span className="font-family-medium">Alex</span>, a San
+                Diego-based software engineer with a passion for crafting
+                exceptional web applications that yield concrete results. My
+                expertise spans the entire web development process, from
+                research and planning to full-stack implementation. My toolkit
+                includes JavaScript/TypeScript, Node.js, React.js/Vue.js, MySQL,
+                PHP/Laravel, WordPress, + more, allowing me to create diverse
+                and engaging web experiences.
               </div>
               <div className="section">
                 <h4 className="font-family-regular filter-shadow">
