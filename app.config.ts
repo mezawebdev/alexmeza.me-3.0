@@ -443,6 +443,14 @@ export const config = {
   ],
   brands: [
     {
+      label: 'Barstool Sports',
+      image: '/assets/images/brands/barstool-sports.png',
+    },
+    {
+      label: 'Sports Recruits',
+      image: '/assets/images/brands/sports-recruits.png',
+    },
+    {
       label: 'Biteable',
       image: '/assets/images/brands/Biteable-Logo.png',
     },
