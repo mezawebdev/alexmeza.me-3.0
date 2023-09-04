@@ -44,8 +44,8 @@ export default function About() {
           <div className="row-2">
             <AboutBlock align="right" bottomPadding={true}>
               <div className="section filter-shadow">
-                Hi! I m <span className="font-family-medium">Alex</span>, a San
-                Diego-based software engineer with a passion for crafting
+                Hi! I&apos;m <span className="font-family-medium">Alex</span>, a
+                San Diego-based software engineer with a passion for crafting
                 exceptional web applications that yield concrete results. My
                 expertise spans the entire web development process, from
                 research and planning to full-stack implementation. My toolkit
