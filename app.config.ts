@@ -500,7 +500,7 @@ export const config = {
       },
       stars: {
         enabled: false,
-        texture: '/assets/textures/particle.png',
+        texture: '/assets/textures/particle.webp',
         emitRate: 2500,
         minSize: 5,
         maxSize: 10,
@@ -527,11 +527,9 @@ export const config = {
       },
       sun: {
         key: 'sun',
-        texture: '/assets/textures/sun.jpg',
+        texture: '/assets/textures/sun.webp',
         get diameter() {
-          /* sun's real size is 1377648 km */ return (
-            config.world.scale * 1377648
-          );
+          return config.world.scale * 1377648;
         },
         initialPosition: {
           x: 0,
@@ -561,7 +559,7 @@ export const config = {
         // Mercury
         {
           key: 'mercury',
-          texture: '/assets/textures/mercury.jpg',
+          texture: '/assets/textures/mercury.webp',
           get diameter() {
             return getPlanetDiameter(277);
           },
@@ -609,7 +607,7 @@ export const config = {
         //  Venus
         {
           key: 'venus',
-          texture: '/assets/textures/venus.jpg',
+          texture: '/assets/textures/venus.webp',
           get diameter() {
             return getPlanetDiameter(113);
           },
@@ -636,7 +634,7 @@ export const config = {
           layers: [
             {
               type: 'texture',
-              texture: '/assets/textures/clouds_1-small.png',
+              texture: '/assets/textures/clouds_1-small.webp',
               rotate: true,
               rotationSpeed: -0.001,
               highlight: false,
@@ -675,7 +673,7 @@ export const config = {
         // Earth
         {
           key: 'earth',
-          texture: '/assets/textures/earth.jpg',
+          texture: '/assets/textures/earth.webp',
           get diameter() {
             return getPlanetDiameter(108);
           },
@@ -702,7 +700,7 @@ export const config = {
           layers: [
             {
               type: 'texture',
-              texture: '/assets/textures/earth_atmosphere-small.png',
+              texture: '/assets/textures/earth_atmosphere-small.webp',
               rotate: true,
               rotationSpeed: -0.001,
               highlight: false,
@@ -740,7 +738,7 @@ export const config = {
         // Mars
         {
           key: 'mars',
-          texture: '/assets/textures/mars.jpg',
+          texture: '/assets/textures/mars.webp',
           get diameter() {
             return getPlanetDiameter(208);
           },
@@ -775,7 +773,7 @@ export const config = {
           layers: [
             {
               type: 'texture',
-              texture: '/assets/textures/clouds_2-small.png',
+              texture: '/assets/textures/clouds_2-small.webp',
               rotate: true,
               rotationSpeed: -0.001,
               highlight: false,
@@ -803,7 +801,7 @@ export const config = {
         // Jupiter
         {
           key: 'jupiter',
-          texture: '/assets/textures/jupiter.jpg',
+          texture: '/assets/textures/jupiter.webp',
           get diameter() {
             return getPlanetDiameter(9.68);
           },
@@ -838,7 +836,7 @@ export const config = {
           layers: [
             {
               type: 'texture',
-              texture: '/assets/textures/clouds_2-small.png',
+              texture: '/assets/textures/clouds_2-small.webp',
               rotate: true,
               rotationSpeed: -0.001,
               highlight: false,
@@ -878,7 +876,7 @@ export const config = {
         // Saturn
         {
           key: 'saturn',
-          texture: '/assets/textures/saturn.jpg',
+          texture: '/assets/textures/saturn.webp',
           get diameter() {
             return getPlanetDiameter(11.4);
           },
@@ -913,7 +911,7 @@ export const config = {
           layers: [
             {
               type: 'texture',
-              texture: '/assets/textures/clouds_2-small.png',
+              texture: '/assets/textures/clouds_2-small.webp',
               rotate: true,
               rotationSpeed: -0.001,
               highlight: false,

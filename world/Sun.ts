@@ -94,11 +94,11 @@ export default class Sun extends Planet {
     const material3 = new Materials.LavaMaterial('lava', this.scene);
 
     material3.noiseTexture = new Texture(
-      '/assets/textures/cloud.png',
+      '/assets/textures/cloud.webp',
       this.scene
     );
     material3.diffuseTexture = new Texture(
-      '/assets/textures/lavatile.jpg',
+      '/assets/textures/lavatile.webp',
       this.scene
     );
     material3.speed = 1.5;
