@@ -40,18 +40,21 @@ export default function Home() {
                 <a
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Alex Meza on LinkedIn"
                   href="https://www.linkedin.com/in/alex-meza-6419b4117">
                   <i className="lab la-linkedin"></i>
                 </a>
                 <a
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Alex Meza on Codepen"
                   href="https://codepen.io/mezawebdev">
                   <i className="lab la-codepen"></i>
                 </a>
                 <a
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Alex Meza on Github"
                   href="https://github.com/mezawebdev">
                   <i className="lab la-github"></i>
                 </a>
