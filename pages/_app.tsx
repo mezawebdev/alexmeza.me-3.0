@@ -103,6 +103,7 @@ function AlexMeza({ Component, pageProps }: AppProps) {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"></meta>
+        <meta name="title" content="ALEX MEZA | Software Engineer" />
         <meta
           name="description"
           content="My name is Alex Meza, I am a Software engineer from San Diego, CA. I am extremely passionate about creating beautiful web applications that generate results. My work involves researching, planning, designing and developing full stack web applications, using the required tools. I am a fast-learner and a creative engineer always looking for growth opportunities."
