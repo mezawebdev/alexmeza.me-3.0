@@ -125,13 +125,6 @@ function AlexMeza({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
-        <script
-          src="https://code.jquery.com/jquery-3.5.1.min.js"
-          integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-          crossOrigin="anonymous"></script>
-        <script
-          src="/assets/plugins/jquery-file-tree/jQueryFileTree.min.js"
-          type="text/javascript"></script>
       </Head>
       <Navigation
         currentPage={currentPage}

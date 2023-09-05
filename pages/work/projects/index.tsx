@@ -64,7 +64,11 @@ export default function Projects() {
         top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
 
       if (window.innerWidth < 962 && top > 275)
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
     },
     onResize(e) {
       e.updateSize();
