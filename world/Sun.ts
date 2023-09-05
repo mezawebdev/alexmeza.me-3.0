@@ -63,7 +63,7 @@ export default class Sun extends Planet {
     const material1 = new StandardMaterial('sun-material', this.scene);
 
     material1.emissiveTexture = new Texture(
-      '/assets/textures/sun.jpg',
+      '/assets/textures/sun.webp',
       this.scene
     );
 
