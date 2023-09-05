@@ -21,7 +21,6 @@ export default function Work() {
     tl.to('.sp-2', { opacity: 1, y: 0, duration: 0.5 }, 0.1);
     tl.to('.sp-3', { opacity: 1, y: 0, duration: 0.5 }, 0.2);
     tl.to('.sp-4', { opacity: 1, y: 0, duration: 0.5 }, 0.3);
-    tl.to('.sp-5', { opacity: 1, y: 0, duration: 0.5 }, 0.8);
 
     for (let i = 0; i < professionalProjects.current.children.length; i++) {
       const current = professionalProjects.current.children[i].children[0];

@@ -35,11 +35,11 @@ export const config = {
       title: 'TwoYay.com',
       description: 'twoyay',
       year: 2023,
-      thumbnail: '/assets/images/projects/TwoYay-Thumbnail.png',
+      thumbnail: '/assets/images/projects/Twoyay-Thumbnail.png',
       media: [
         {
           type: 'image',
-          src: '/assets/images/projects/TwoYay-1.png',
+          src: '/assets/images/projects/TwoYay-1-1.png',
         },
       ],
       technologies: [

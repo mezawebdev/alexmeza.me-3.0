@@ -4,10 +4,7 @@ import Header from 'components/Layout/Header';
 import Body from 'components/Layout/Body';
 import ProjectCard from 'components/Blocks/ProjectCard';
 import SwiperCore from 'swiper';
-import Head from 'next/head';
-import axios from 'axios';
 import Spotlight from 'components/Blocks/Spotlight';
-import FileViewer from 'components/Blocks/FileViewer/FileViewer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -29,9 +26,6 @@ export default function Projects() {
   const [activeSlide, setActiveSlide] = useState(
     pid <= app.projects.length - 1 ? pid : 0
   );
-  const [viewingFile, setViewingFile] = useState(false);
-  const [currentFileName, setCurrentFileName] = useState('');
-  const [currentFileContents, setCurrentFileContents] = useState('');
   const [showSpotlight, setShowSpotlight] = useState(false);
   const [spotlightData, setSpotlightData] = useState({ images: [], index: 0 });
   const params = {
@@ -76,25 +70,6 @@ export default function Projects() {
     },
   };
 
-  async function openFile(filePath: string): Promise<void> {
-    try {
-      const filePathSplit = filePath.split('/');
-      setViewingFile(true);
-      const req = await axios.get('/api/get-file?path=' + filePath);
-      setCurrentFileName(filePathSplit[filePathSplit.length - 1]);
-      setCurrentFileContents(req.data);
-      window.document.body.style.overflowY = 'hidden';
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  function closeFile() {
-    setViewingFile(false);
-    setCurrentFileContents('');
-    window.document.body.style.overflowY = 'scroll';
-  }
-
   function openSpotlight(images: Array<string>, index: number): void {
     setSpotlightData({ images, index });
     setShowSpotlight(true);
@@ -107,13 +82,6 @@ export default function Projects() {
 
   return (
     <div className="subpage" id="page--project">
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="/assets/plugins/jquery-file-tree/jQueryFileTree.min.css"
-        />
-      </Head>
       {showSpotlight ? (
         <Spotlight
           media={spotlightData.images}
@@ -147,8 +115,6 @@ export default function Projects() {
               <SwiperSlide key={i}>
                 <ProjectCard
                   handlers={{
-                    openFile,
-                    closeFile,
                     openSpotlight,
                     closeSpotlight,
                   }}
@@ -168,13 +134,6 @@ export default function Projects() {
           </button>
         </div>
       </Body>
-      {viewingFile ? (
-        <FileViewer
-          closeFile={closeFile}
-          contents={currentFileContents}
-          header={currentFileName}
-        />
-      ) : null}
     </div>
   );
 }
