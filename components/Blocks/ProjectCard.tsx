@@ -1,6 +1,6 @@
 import Panel from 'components/Layout/SpaceUI/Panel';
-import ReactHtmlParser from 'react-html-parser';
 import { config } from 'app.config';
+import { Description } from 'components/Blocks/Description';
 
 interface Props {
   title: string;
@@ -55,7 +55,9 @@ export default function ProjectCard({
                 </span>
               </button>
             </div>
-            <div className="general-info">{ReactHtmlParser(description)}</div>
+            <div className="general-info">
+              <Description projectKey={description} />
+            </div>
             <div className="options">
               {appUrl.length > 0 && (
                 <a target="_blank" href={appUrl} rel="noreferrer">
