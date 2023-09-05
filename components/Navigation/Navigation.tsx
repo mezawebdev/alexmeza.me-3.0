@@ -27,7 +27,8 @@ export default function Navigation(props: {
           onClick={() =>
             props.setMobileMenuOpened(props.mobileMenuOpened ? false : true)
           }
-          className="burger space-ui-panel">
+          className="burger space-ui-panel"
+          aria-label="Toggle Menu">
           {props.mobileMenuOpened ? (
             <i className="las la-times"></i>
           ) : (
