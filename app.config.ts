@@ -222,15 +222,7 @@ export const config = {
       id: 7,
       type: 'professional',
       title: 'Quit Now SC',
-      description: `
-                <ul>
-                    <li><strong>Overview:</strong> Quit Now SC is a website for the South Carolina Tobacco Quitline. The purpose of this website was to create a main hub to raise awareness about the client's quitline resources and the road to quitting tobacco for good.</li>
-                    <li><strong>Goal:</strong> develop a website that easy to navigate, accessible and can be updated easily.</li>
-                    <li><strong>My Roles:</strong> lead engineer, front-end development, project architecture</li>
-                    <li><strong>Solution:</strong> I created a system that fully abstracts the markup, and it's all configured with JavaScript objects and abstracted components. I used HTML, SCSS, JavaScript, Nuxt.js, Vue.js + more tools to develop the site.</li>
-                    <li><strong>Result:</strong> This website resulted in successful contract completion and a happy client. The site has been viewed now by thousands of users and is still serving as one of the main hubs for users looking to use the Quitline resources in South Carolina.</li>
-                </ul>
-            `,
+      description: 'quitnowsc',
       year: 2018,
       thumbnail: '/assets/images/projects/Quit-Now-SC-Thumbnail.png',
       media: [
