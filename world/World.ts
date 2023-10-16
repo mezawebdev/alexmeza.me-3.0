@@ -212,7 +212,7 @@ class World {
 
   public rotatePlanets(): void {
     this.planets.forEach((planet) => {
-      planet.mesh.rotation.y += planet.rotation.speed;
+      planet.mesh.rotation.y -= planet.rotation.speed;
     });
 
     this.sun.mesh.rotation.y += this.sun.rotation.speed;
